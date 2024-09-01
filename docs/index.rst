@@ -26,3 +26,4 @@ Contents
    enums
    api/index
    errors
+   examples/index
