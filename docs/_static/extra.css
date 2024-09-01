@@ -12,6 +12,15 @@
     --text_color: #005599;
 }
 
+@media (prefers-color-scheme: light) {
+    body:not([data-theme="dark"]) {
+        --code_color1: #3fa3dd;
+        --code_color2: #000000;
+        --code_color3: #0033aa;
+        --text_color: #005599;
+    }
+}
+
 .k,
 .kn,
 .kc {
