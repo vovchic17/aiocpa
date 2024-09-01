@@ -60,10 +60,10 @@ class CreateInvoice:
     async def create_invoice(
         self: "cryptopay.CryptoPay",
         amount: float,
-        asset: Asset | None = None,
+        asset: Asset | str | None = None,
         *,
         currency_type: CurrencyType | None = None,
-        fiat: Fiat | None = None,
+        fiat: Fiat | str | None = None,
         accepted_assets: list[Asset] | None = None,
         description: str | None = None,
         hidden_message: str | None = None,

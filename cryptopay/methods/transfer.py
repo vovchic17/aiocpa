@@ -20,7 +20,7 @@ class Transfer:
         __method__ = "transfer"
 
         user_id: int
-        asset: Asset
+        asset: Asset | str
         amount: float
         spend_id: str | None
         comment: str | None

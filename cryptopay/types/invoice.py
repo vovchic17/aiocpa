@@ -100,7 +100,7 @@ class Invoice(CryptoPayObject):
         """
         return await self._client.delete_invoice(self.invoice_id)
 
-    def await_payment(self, **kwargs: "dict[str, Any]") -> None:
+    def await_payment(self, **kwargs: Any) -> None:  # noqa: ANN401
         """
         Send the invoice to the polling manager.
 

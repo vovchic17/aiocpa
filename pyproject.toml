@@ -54,11 +54,11 @@ indent-style = "space"
 docstring-code-line-length = "dynamic"
 
 [[tool.mypy.overrides]]
-module = ["*.methods.*", "*.webhook.*", "*.tools.*"]
+module = ["*.methods.*", "*.webhook.*", "*.tools.*", "*.polling.*"]
 disable_error_code = ["misc"]
 
 [tool.mypy]
-exclude = ["tests", "docs"]
+exclude = ["tests", "docs", "examples"]
 
 [build-system]
 requires = ["poetry-core"]

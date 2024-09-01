@@ -28,7 +28,7 @@ class AiohttpManager(WebhookManager[Application]):
         async def handle(request: "Request") -> "Response":
             await handler(
                 await request.json(),
-                request.headers,
+                dict(request.headers),
             )
             return json_response({"ok": True})
 

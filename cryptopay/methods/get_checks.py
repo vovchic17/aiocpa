@@ -24,9 +24,9 @@ class GetChecks:
 
     async def get_checks(
         self: "cryptopay.CryptoPay",
-        asset: Asset | None = None,
+        asset: Asset | str | None = None,
         check_ids: list[int] | None = None,
-        status: CheckStatus | None = None,
+        status: CheckStatus | str | None = None,
         offset: int | None = None,
         count: int | None = None,
     ) -> list[Check]:

@@ -1,7 +1,7 @@
 import functools
 import hashlib
 import json
-from abc import abstractmethod
+from abc import ABC, abstractmethod
 from hmac import HMAC
 from typing import TYPE_CHECKING, Any, Generic, TypeVar
 
@@ -19,7 +19,7 @@ if TYPE_CHECKING:
 _APP = TypeVar("_APP")
 
 
-class WebhookManager(Generic[_APP]):
+class WebhookManager(Generic[_APP], ABC):
     """
     Webhook manager.
 
@@ -48,7 +48,7 @@ class WebhookManager(Generic[_APP]):
         """
 
 
-class RequestHandler:
+class RequestHandler(Generic[_APP]):
     """Updates handler."""
 
     def __init__(

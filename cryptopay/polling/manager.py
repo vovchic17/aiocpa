@@ -1,7 +1,7 @@
 import asyncio
 import inspect
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, cast
 
 from cryptopay.enums import InvoiceStatus
 from cryptopay.exceptions import CryptoPayError
@@ -13,7 +13,7 @@ if TYPE_CHECKING:
     import cryptopay
     from cryptopay.types import Invoice
 
-    Handler = Callable[[Invoice, dict[Any]], Awaitable]
+    Handler = Callable[[Invoice, *Any], Awaitable]
 
 
 @dataclass(slots=True)
@@ -57,7 +57,7 @@ class PollingManager:
         self.timeout = config.timeout
         self.delay = config.delay
         self.tasks: dict[int, PollingTask] = {}
-        self.handler: "Handler | None" = None
+        self.handler: Handler | None = None
 
     def polling_handler(self) -> "Callable[[Handler], Handler]":
         """
@@ -92,7 +92,8 @@ class PollingManager:
         if invoice.status == InvoiceStatus.PAID:
             spec = inspect.getfullargspec(self.handler)
             data = self.tasks[invoice.invoice_id].data
-            await self.handler(
+            handler = cast("Handler", self.handler)
+            await handler(
                 invoice,
                 **data
                 if spec.varkw is not None

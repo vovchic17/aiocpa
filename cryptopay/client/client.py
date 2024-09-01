@@ -36,7 +36,10 @@ class CryptoPay(Methods, Tools, RequestHandler, PollingManager):
     ) -> None:
         self._token = token
         self._session = session(api_server)
-        RequestHandler.__init__(self, manager or AiohttpManager())
+        RequestHandler.__init__(
+            self,
+            manager or AiohttpManager(),  # type: ignore[arg-type]
+        )
         PollingManager.__init__(self, polling_config or PollingConfig())
 
     async def __call__(
