@@ -1,0 +1,36 @@
+:root {
+    --code_color1: #3fa3dd;
+    --code_color2: #dddddd;
+    --code_color3: #00ffff;
+    --text_color: #33bbff;
+}
+
+[data-theme="light"] {
+    --code_color1: #3fa3dd;
+    --code_color2: #000000;
+    --code_color3: #0033aa;
+    --text_color: #005599;
+}
+
+.k,
+.kn,
+.kc {
+    color: var(--code_color1) !important;
+}
+
+.n,
+.nn,
+.nd {
+    color: var(--code_color2) !important;
+    text-decoration: none !important;
+    font-weight: normal !important;
+}
+
+.s2 {
+    color: var(--text_color) !important;
+}
+
+.sa,
+.si {
+    color: var(--code_color3) !important;
+}

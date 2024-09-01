@@ -1,0 +1,117 @@
+import functools
+import hashlib
+import json
+from abc import abstractmethod
+from hmac import HMAC
+from typing import TYPE_CHECKING, Any, Generic, TypeVar
+
+from cryptopay.types import Update
+
+if TYPE_CHECKING:
+    from collections.abc import Awaitable, Callable
+
+    import cryptopay
+    from cryptopay.types import Invoice
+
+    InvoiceHandler = Callable[[Invoice], Awaitable]
+    Handler = Callable[[dict[str, Any], dict[str, str]], Awaitable]
+
+_APP = TypeVar("_APP")
+
+
+class WebhookManager(Generic[_APP]):
+    """
+    Webhook manager.
+
+    If you want to implement your own webhook
+    manager, you must inherit from this class.
+    """
+
+    @abstractmethod
+    def register_handler(
+        self,
+        app: _APP,
+        path: str,
+        handler: "Handler",
+    ) -> None:
+        """
+        Register webhook handler.
+
+        Override this method in your own webhook manager class.
+        This method is used for registering webhook handler in your app.
+        You should call `handler` whenever an update arrives.
+
+        :param app: Web application.
+        :param path: Path to webhook route.
+        :param handler: Handler object.
+        :return:
+        """
+
+
+class RequestHandler:
+    """Updates handler."""
+
+    def __init__(
+        self: "cryptopay.CryptoPay",
+        manager: WebhookManager[_APP],
+    ) -> None:
+        self._webhook_manager = manager
+
+    def _check_signature(
+        self: "cryptopay.CryptoPay",
+        body: "dict[str, Any]",
+        headers: dict[str, str],
+    ) -> bool:
+        """
+        Verify the received update and the integrity of the received data.
+
+        Source: https://help.crypt.bot/crypto-pay-api#verifying-webhook-updates
+
+        :param body: unparsed JSON string.
+        :param headers: request headers.
+        :return: True if the signature is correct, False otherwise.
+        """
+        secret = hashlib.sha256(self._token.encode()).digest()
+        check_string = json.dumps(body, separators=(",", ":"))
+        hmac = HMAC(secret, check_string.encode(), hashlib.sha256).hexdigest()
+        return hmac == headers.get("Crypto-Pay-Api-Signature")
+
+    async def feed_update(
+        self,
+        handler: "InvoiceHandler",
+        body: dict[str, Any],
+        headers: dict[str, str],
+    ) -> None:
+        """
+        Feed an update to the invoice handler.
+
+        :param body: parsed json body.
+        :param headers: request headers.
+        """
+        if self._check_signature(body, headers):
+            update = Update.model_validate(body, context={"client": self})
+            await handler(update.payload)
+
+    def webhook_handler(
+        self,
+        app: _APP,
+        path: str,
+    ) -> "Callable[[InvoiceHandler], InvoiceHandler]":
+        """
+        Register a handler for webhook invoice updates.
+
+        :param app: web application.
+        :param path: webhook path.
+
+        :return: handler function.
+        """
+
+        def wrapper(handler: "InvoiceHandler") -> "InvoiceHandler":
+            self._webhook_manager.register_handler(
+                app,
+                path,
+                functools.partial(self.feed_update, handler),
+            )
+            return handler
+
+        return wrapper

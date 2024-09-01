@@ -1,0 +1,65 @@
+[tool.poetry]
+name = "aiocpa"
+version = "0.1.0"
+description = "sync & async Crypto Pay API client."
+authors = ["VoVcHiC <tsvetkovvova17@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/vovchic17/aiocpa"
+documentation = "https://aiocpa.readthedocs.io/en/latest/"
+keywords = ["crypto pay", "CryptoBot", "Crypto Pay API"]
+packages = [{ include = "cryptopay", from = "." }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pydantic = "^2.8.2"
+aiohttp = "^3.10.5"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.3.7"
+mypy = "^1.11.2"
+
+[tool.ruff]
+line-length = 79
+indent-width = 4
+target-version = "py312"
+
+[tool.ruff.lint]
+ignore = [
+    "ANN101", # missing-type-self
+    "ANN102", # missing-type-cls
+    "ANN002", # missing-type-args
+    "ANN003", # missing-type-kwargs
+    "D100",   # undocumented-public-module
+    "D104",   # undocumented-public-package
+    "D106",   # undocumented-public-nested-class
+    "D107",   # undocumented-public-init
+    "D203",   # one-blank-line-before-class
+    "D212",   # multi-line-summary-first-line
+]
+select = ["ALL"]
+fixable = ["ALL"]
+
+[tool.ruff.lint.per-file-ignores]
+"*/methods/*" = ["PLR0913", "E501"] # too-many-arguments line-too-long
+"*/types/*" = ["E501"]              # line-too-long
+"*/client/*" = ["PLR0913"]          # too-many-arguments
+"tests/*" = ["ALL"]
+"examples/*" = ["ALL"]
+"docs/*" = ["ALL"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-line-length = "dynamic"
+
+[[tool.mypy.overrides]]
+module = ["*.methods.*", "*.webhook.*", "*.tools.*"]
+disable_error_code = ["misc"]
+
+[tool.mypy]
+exclude = ["tests", "docs"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
