@@ -1,8 +1,10 @@
 import asyncio
 import inspect
 from dataclasses import dataclass
+from functools import partial
 from typing import TYPE_CHECKING, cast
 
+from cryptopay import loggers
 from cryptopay.enums import InvoiceStatus
 from cryptopay.exceptions import CryptoPayError
 
@@ -79,6 +81,9 @@ class PollingManager:
         invoice: "Invoice",
         data: "dict[str, Any]",
     ) -> None:
+        if self.handler is None:
+            msg = "Polling handler hasn't been declared"
+            raise CryptoPayError(msg)
         self.tasks[invoice.invoice_id] = PollingTask(
             invoice=invoice,
             timeout=self.timeout,
@@ -91,13 +96,22 @@ class PollingManager:
     ) -> None:
         if invoice.status == InvoiceStatus.PAID:
             spec = inspect.getfullargspec(self.handler)
+            is_async = inspect.iscoroutinefunction(self.handler)
             data = self.tasks[invoice.invoice_id].data
-            handler = cast("Handler", self.handler)
-            await handler(
+            handler = partial(
+                cast("Handler", self.handler),
                 invoice,
                 **data
                 if spec.varkw is not None
                 else {k: v for k, v in data.items() if k in spec.args},
+            )
+            if is_async:
+                await handler()
+            else:
+                handler()
+            loggers.polling.info(
+                "Invoice id=%d has been paid",
+                invoice.invoice_id,
             )
         else:
             self.tasks[invoice.invoice_id].timeout -= self.delay
@@ -107,12 +121,19 @@ class PollingManager:
         ):
             del self.tasks[invoice.invoice_id]
 
-    async def run_polling(self: "cryptopay.CryptoPay") -> None:
+    async def run_polling(
+        self: "cryptopay.CryptoPay",
+        parallel: "Callable[[], Any] | None" = None,
+    ) -> None:
         """
         Run invoices polling.
 
-        :raises CryptoPayError: when polling handler is not defined.
+        :param parallel: function to run in background.
+        :raises CryptoPayError: when polling handler is not declared.
         """
+        if parallel is not None:
+            loop = asyncio.get_event_loop()
+            loop.run_in_executor(None, parallel)
         if self.handler is None:
             msg = (
                 "Polling handler hasn't been declared, example:\n"
@@ -122,6 +143,7 @@ class PollingManager:
                 "async def handler(invoice): ..."
             )
             raise CryptoPayError(msg)
+        loggers.polling.info("Start polling")
         while True:
             await asyncio.sleep(self.delay)
             if not self.tasks:

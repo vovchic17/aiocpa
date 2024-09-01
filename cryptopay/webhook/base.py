@@ -5,6 +5,7 @@ from abc import ABC, abstractmethod
 from hmac import HMAC
 from typing import TYPE_CHECKING, Any, Generic, TypeVar
 
+from cryptopay import loggers
 from cryptopay.types import Update
 
 if TYPE_CHECKING:
@@ -91,6 +92,15 @@ class RequestHandler(Generic[_APP]):
         if self._check_signature(body, headers):
             update = Update.model_validate(body, context={"client": self})
             await handler(update.payload)
+            loggers.webhook.info(
+                "Webhook Update id=%d is handled.",
+                update.update_id,
+            )
+        else:
+            loggers.webhook.info(
+                "Webhook Update id=%d is not handled. Signature is invalid.",
+                update.update_id,
+            )
 
     def webhook_handler(
         self,

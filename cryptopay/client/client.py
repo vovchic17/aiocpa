@@ -1,5 +1,6 @@
 from typing import TYPE_CHECKING
 
+from cryptopay import loggers
 from cryptopay.client import MAINNET
 from cryptopay.methods import Methods
 from cryptopay.polling import PollingConfig, PollingManager
@@ -54,4 +55,5 @@ class CryptoPay(Methods, Tools, RequestHandler, PollingManager):
         :param method: CryptoPayMethod object.
         :return: :class:`CryptoPayType` object.
         """
+        loggers.client.debug("Requesting: %s", method.__method__)
         return await self._session.request(self._token, self, method)
