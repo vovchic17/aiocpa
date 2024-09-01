@@ -34,16 +34,17 @@ class AiohttpSession(BaseSession):
         """Make http request."""
         if self._session is None or self._session.closed:
             self._session = ClientSession()
-        resp = await self._session.post(
-            url=self.api_server.url(method),
-            data=method.model_dump_json(exclude_none=True),
-            headers={
-                "Crypto-Pay-API-Token": token,
-                "Content-Type": "application/json",
-                "User-Agent": f"{SERVER_SOFTWARE} aiocpb/{__version__}",
-            },
-        )
-        response = self._check_response(client, method, await resp.text())
+        async with self._session as session:
+            resp = await session.post(
+                url=self.api_server.url(method),
+                data=method.model_dump_json(exclude_none=True),
+                headers={
+                    "Crypto-Pay-API-Token": token,
+                    "Content-Type": "application/json",
+                    "User-Agent": f"{SERVER_SOFTWARE} aiocpb/{__version__}",
+                },
+            )
+            response = self._check_response(client, method, await resp.text())
         return cast("CryptoPayType", response.result)
 
     async def close(self) -> None:

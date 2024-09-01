@@ -10,4 +10,4 @@ Usage example with `aiogram 3.x <https://aiogram.dev/>`_
 Preview
 -------
 
-.. image:: ../_static/aiogram3_example.png
+.. image:: ../_static/payment_handle_example.png
