@@ -1,12 +1,39 @@
 import asyncio
-from aiogram import Dispatcher, Bot
 
-from cryptopay.client.client import CryptoPay
+from aiogram import Bot, Dispatcher
+from aiogram.types import Message
+
+from cryptopay import CryptoPay
+from cryptopay.types import Invoice
+
+cp = CryptoPay("TOKEN")
+bot = Bot("TOKEN")
+dp = Dispatcher()
+
+
+@dp.message()
+async def get_invoice(message: Message) -> None:
+    invoice = await cp.create_invoice(1, "USDT")
+    await message.answer(f"pay: {invoice.mini_app_invoice_url}")
+    invoice.await_payment(message=message)
+
+
+@cp.polling_handler()
+async def handle_payment(
+    invoice: Invoice,
+    message: Message,
+) -> None:
+    await message.answer(
+        f"payment received: {invoice.amount} {invoice.asset}",
+    )
 
 
 async def main() -> None:
-    cp = CryptoPay("TOKEN")
-    bot = Bot(token="TOKEN")
-    dp = Dispatcher()
+    await asyncio.gather(
+        dp.start_polling(bot),
+        cp.run_polling(),
+    )
 
-    await asyncio.gather(dp.start_polling(bot))
+
+if __name__ == "__main__":
+    asyncio.run(main())
