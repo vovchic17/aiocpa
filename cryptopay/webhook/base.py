@@ -89,8 +89,8 @@ class RequestHandler(Generic[_APP]):
         :param body: parsed json body.
         :param headers: request headers.
         """
+        update = Update.model_validate(body, context={"client": self})
         if self._check_signature(body, headers):
-            update = Update.model_validate(body, context={"client": self})
             await handler(update.payload)
             loggers.webhook.info(
                 "Webhook Update id=%d is handled.",
