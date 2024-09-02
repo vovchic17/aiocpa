@@ -5,7 +5,6 @@ Methods
 `Crypto Pay API <https://help.crypt.bot/crypto-pay-api>`_ methods implementation.
 
 .. automethod:: cryptopay.CryptoPay.get_me
-    :async:
 .. automethod:: cryptopay.CryptoPay.create_invoice
 .. automethod:: cryptopay.CryptoPay.delete_invoice
 .. tip::
