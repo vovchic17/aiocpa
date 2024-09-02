@@ -9,13 +9,13 @@ from cryptopay.enums import InvoiceStatus
 from cryptopay.exceptions import CryptoPayError
 
 if TYPE_CHECKING:
-    from collections.abc import Awaitable, Callable
+    from collections.abc import Callable
     from typing import Any
 
     import cryptopay
     from cryptopay.types import Invoice
 
-    Handler = Callable[[Invoice, *Any], Awaitable]
+    Handler = Callable[..., Any]
 
 
 @dataclass(slots=True)
@@ -59,7 +59,7 @@ class PollingManager:
         self.timeout = config.timeout
         self.delay = config.delay
         self.tasks: dict[int, PollingTask] = {}
-        self.handler: Handler | None = None
+        self.handler: "Handler | None" = None
 
     def polling_handler(self) -> "Callable[[Handler], Handler]":
         """
