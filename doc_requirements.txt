@@ -1,6 +1,0 @@
-furo
-sphinx-autodoc-typehints
-sphinx_copybutton
-sphinxext-opengraph
-matplotlib
-git+https://github.com/vovchic17/aiocpa
