@@ -59,7 +59,7 @@ class PollingManager:
         self.timeout = config.timeout
         self.delay = config.delay
         self.tasks: dict[int, PollingTask] = {}
-        self.handler: "Handler | None" = None
+        self.handler: Handler | None = None
 
     def polling_handler(self) -> "Callable[[Handler], Handler]":
         """
