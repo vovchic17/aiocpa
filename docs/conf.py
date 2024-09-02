@@ -1,7 +1,8 @@
+from cryptopay import __version__
 project = "aiocpa"
 copyright = "2024, VoVcHiC"
 author = "VoVcHiC"
-release = "0.1.0"
+release = __version__
 
 extensions = [
     "sphinx.ext.autodoc",
