@@ -15,6 +15,16 @@ python = "^3.12"
 pydantic = "^2.8.2"
 aiohttp = "^3.10.5"
 
+[tool.poetry.extras]
+docs = [
+    "furo",
+    "sphinx-autodoc-typehints",
+    "sphinx_copybutton",
+    "sphinxext-opengraph",
+    "matplotlib",
+]
+
+
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.3.7"
 mypy = "^1.11.2"
