@@ -4,6 +4,13 @@ AsyncIOCryptoPayAPI
 
 **aiocpa** is a syncronous & asynchronous `Crypto Pay API <https://help.crypt.bot/crypto-pay-api>`_ client.
 
+Features
+--------
+* provides :doc:`polling handler <client/polling>`
+* provides additional :doc:`tools <client/tools>`
+* supports sync and async usage
+
+
 Quick start
 -----------
 
