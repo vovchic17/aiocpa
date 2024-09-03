@@ -1,7 +1,7 @@
-from enum import StrEnum
+from enum import Enum
 
 
-class UpdateType(StrEnum):
+class UpdateType(str, Enum):
     """Webhook update type."""
 
     INVOICE_PAID = "invoice_paid"

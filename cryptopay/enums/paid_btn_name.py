@@ -1,7 +1,7 @@
-from enum import StrEnum
+from enum import Enum
 
 
-class PaidBtnName(StrEnum):
+class PaidBtnName(str, Enum):
     """
     Paid button name.
 

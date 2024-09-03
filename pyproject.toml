@@ -11,7 +11,7 @@ keywords = ["crypto pay", "CryptoBot", "Crypto Pay API"]
 packages = [{ include = "cryptopay", from = "." }]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.10"
 pydantic = "^2.8.2"
 aiohttp = "^3.10.5"
 

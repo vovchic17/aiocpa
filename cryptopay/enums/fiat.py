@@ -1,7 +1,7 @@
-from enum import StrEnum
+from enum import Enum
 
 
-class Fiat(StrEnum):
+class Fiat(str, Enum):
     """Fiat currency code."""
 
     USD = "USD"

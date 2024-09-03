@@ -1,7 +1,7 @@
-from enum import StrEnum
+from enum import Enum
 
 
-class CheckStatus(StrEnum):
+class CheckStatus(str, Enum):
     """Status of check."""
 
     ACTIVE = "active"
