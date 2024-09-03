@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aiocpa"
-version = "0.1.2"
+version = "0.1.3"
 description = "sync & async Crypto Pay API client."
 authors = ["VoVcHiC <tsvetkovvova17@gmail.com>"]
 license = "MIT"
