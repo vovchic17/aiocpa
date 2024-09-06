@@ -56,10 +56,11 @@ class PollingManager:
         self,
         config: PollingConfig,
     ) -> None:
-        self.timeout = config.timeout
-        self.delay = config.delay
-        self.tasks: dict[int, PollingTask] = {}
-        self.handler: Handler | None = None
+        self._timeout = config.timeout
+        self._delay = config.delay
+        self._tasks: dict[int, PollingTask] = {}
+        self._handler: Handler | None = None
+        self._exp_handler: Handler | None = None
 
     def polling_handler(self) -> "Callable[[Handler], Handler]":
         """
@@ -71,7 +72,22 @@ class PollingManager:
         """
 
         def wrapper(handler: "Handler") -> "Handler":
-            self.handler = handler
+            self._handler = handler
+            return handler
+
+        return wrapper
+
+    def expired_handler(self) -> "Callable[[Handler], Handler]":
+        """
+        Register a handler for timed out invoices.
+
+        Decorator for handler function.
+
+        :return: handler function.
+        """
+
+        def wrapper(handler: "Handler") -> "Handler":
+            self._exp_handler = handler
             return handler
 
         return wrapper
@@ -81,45 +97,69 @@ class PollingManager:
         invoice: "Invoice",
         data: "dict[str, Any]",
     ) -> None:
-        if self.handler is None:
+        if self._handler is None:
             msg = "Polling handler hasn't been declared"
             raise CryptoPayError(msg)
-        self.tasks[invoice.invoice_id] = PollingTask(
+        self._tasks[invoice.invoice_id] = PollingTask(
             invoice=invoice,
-            timeout=self.timeout,
+            timeout=self._timeout,
             data=data,
         )
+
+    @staticmethod
+    async def __call_handler(
+        handler: "Handler",
+        invoice: "Invoice",
+        data: "dict[str, Any]",
+    ) -> None:
+        spec = inspect.getfullargspec(handler)
+        is_async = inspect.iscoroutinefunction(handler)
+        handler = partial(
+            handler,
+            invoice,
+            **data
+            if spec.varkw is not None
+            else {k: v for k, v in data.items() if k in spec.args},
+        )
+        if is_async:
+            await handler()
+        else:
+            handler()
 
     async def __process_invoice(
         self,
         invoice: "Invoice",
     ) -> None:
+        self._tasks[invoice.invoice_id].timeout -= self._delay
         if invoice.status == InvoiceStatus.PAID:
-            spec = inspect.getfullargspec(self.handler)
-            is_async = inspect.iscoroutinefunction(self.handler)
-            data = self.tasks[invoice.invoice_id].data
-            handler = partial(
-                cast("Handler", self.handler),
+            await self.__call_handler(
+                cast("Handler", self._handler),
                 invoice,
-                **data
-                if spec.varkw is not None
-                else {k: v for k, v in data.items() if k in spec.args},
+                self._tasks[invoice.invoice_id].data,
             )
-            if is_async:
-                await handler()
-            else:
-                handler()
             loggers.polling.info(
                 "Invoice id=%d has been paid",
                 invoice.invoice_id,
             )
-        else:
-            self.tasks[invoice.invoice_id].timeout -= self.delay
+        if (
+            self._tasks[invoice.invoice_id].timeout <= 0
+            or invoice.status == InvoiceStatus.EXPIRED
+        ):
+            if self._exp_handler is not None:
+                await self.__call_handler(
+                    cast("Handler", self._exp_handler),
+                    invoice,
+                    self._tasks[invoice.invoice_id].data,
+                )
+            loggers.polling.info(
+                "Invoice id=%d timed out",
+                invoice.invoice_id,
+            )
         if (
             invoice.status in (InvoiceStatus.PAID, InvoiceStatus.EXPIRED)
-            or self.tasks[invoice.invoice_id].timeout <= 0
+            or self._tasks[invoice.invoice_id].timeout <= 0
         ):
-            del self.tasks[invoice.invoice_id]
+            del self._tasks[invoice.invoice_id]
 
     async def run_polling(
         self: "cryptopay.CryptoPay",
@@ -134,7 +174,7 @@ class PollingManager:
         if parallel is not None:
             loop = asyncio.get_event_loop()
             loop.run_in_executor(None, parallel)
-        if self.handler is None:
+        if self._handler is None:
             msg = (
                 "Polling handler hasn't been declared, example:\n"
                 "from cryptopay import CryptoPay\n"
@@ -145,11 +185,16 @@ class PollingManager:
             raise CryptoPayError(msg)
         loggers.polling.info("Start polling")
         while True:
-            await asyncio.sleep(self.delay)
-            if not self.tasks:
+            await asyncio.sleep(self._delay)
+            if not self._tasks:
                 continue
             invoices = await self.get_invoices(
-                invoice_ids=list(self.tasks),
+                invoice_ids=list(self._tasks),
             )
             for invoice in invoices:
                 await self.__process_invoice(invoice)
+            loggers.polling.debug(
+                "Tasks left: %s Waiting %d seconds...",
+                len(self._tasks),
+                self._delay,
+            )

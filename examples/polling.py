@@ -7,8 +7,13 @@ cp = CryptoPay("TOKEN")
 
 
 @cp.polling_handler()
-async def handler(invoice: Invoice, payload: str):
+async def payment_handler(invoice: Invoice, payload: str):
     print(f"Received", invoice.amount, invoice.asset, payload)
+
+
+@cp.expired_handler()
+async def expired_invoice_handler(invoice: Invoice, payload: str):
+    print(f"Expired invoice", invoice.invoice_id, payload)
 
 
 async def main() -> None:
