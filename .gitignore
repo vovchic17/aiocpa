@@ -8,3 +8,4 @@ poetry.lock
 .venv
 /tests
 /dist
+*.session
