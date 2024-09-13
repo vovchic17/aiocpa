@@ -11,3 +11,4 @@ Examples of usage with libraries are presented here.
     pytba
     pytba_async
     pyrogram
+    telethon
