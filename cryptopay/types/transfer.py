@@ -15,6 +15,8 @@ class Transfer(CryptoPayObject):
 
     transfer_id: int
     """Unique ID for this transfer."""
+    spend_id: str | None = None # not returned by API on /transfer
+    """Unique UTF-8 string."""
     user_id: int
     """Telegram user ID the transfer was sent to."""
     asset: Asset | str

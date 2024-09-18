@@ -30,9 +30,7 @@ class Transfer:
         @classmethod
         def generate_spend_id(cls, v: str | None) -> str:
             """Generate spend_id if not present."""
-            if v is None:
-                v = secrets.token_hex()
-            return v
+            return v or secrets.token_hex()
 
     async def transfer(
         self: "cryptopay.CryptoPay",

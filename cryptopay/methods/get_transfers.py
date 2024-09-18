@@ -20,6 +20,7 @@ class GetTransfers:
 
         asset: Asset | str | None
         transfer_ids: SerList[int] | None
+        spend_id: str | None
         offset: int | None
         count: int | None = Field(None, ge=1, le=1000)
 
@@ -27,6 +28,7 @@ class GetTransfers:
         self: "cryptopay.CryptoPay",
         asset: Asset | None = None,
         transfer_ids: list[int] | None = None,
+        spend_id: str | None = None,
         offset: int | None = None,
         count: int | None = None,
     ) -> list[Transfer]:
@@ -40,6 +42,7 @@ class GetTransfers:
 
         :param asset: *Optional*. Cryptocurrency alphabetic code. Defaults to all currencies.
         :param transfer_ids: *Optional*. List of transfer IDs.
+        :param spend_id: *Optional*. Unique UTF-8 transfer string.
         :param offset: *Optional*. Offset needed to return a specific subset of transfers. Defaults to 0.
         :param count: *Optional*. Number of transfers to be returned. Values between 1-1000 are accepted. Defaults to 100.
         :return: List of :class:`Transfer` objects.

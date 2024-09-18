@@ -11,7 +11,7 @@ if TYPE_CHECKING:
 
 CryptoPayType = TypeVar("CryptoPayType", bound="CryptoPayObject | list | bool")
 T = TypeVar("T")
-SerList = Annotated[list[T], PlainSerializer(serialize_list, str)]
+SerList = Annotated[list[T], PlainSerializer(serialize_list, str | None)]
 
 
 class CryptoPayObject(BaseModel, ABC):
