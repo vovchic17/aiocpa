@@ -4,8 +4,8 @@ from telebot.types import Message
 from cryptopay import CryptoPay
 from cryptopay.types import Invoice
 
-bot = TeleBot("TOKEN")
 cp = CryptoPay("TOKEN")
+bot = TeleBot("TOKEN")
 
 
 @bot.message_handler()

@@ -7,8 +7,8 @@ from cryptopay.types import Invoice
 api_id = 12345678
 api_hash = "API HASH"
 
-client = TelegramClient("anon", api_id, api_hash)
 cp = CryptoPay("TOKEN")
+client = TelegramClient("anon", api_id, api_hash)
 
 
 @client.on(events.NewMessage(func=lambda e: e.is_private))
