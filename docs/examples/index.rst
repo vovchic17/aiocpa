@@ -10,5 +10,6 @@ Examples of usage with libraries are presented here.
     aiogram2
     pytba
     pytba_async
+    ptb
     pyrogram
     telethon
