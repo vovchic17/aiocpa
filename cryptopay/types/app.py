@@ -5,7 +5,7 @@ class App(CryptoPayObject):
     """
     App object.
 
-    This object represents an `Crypto Pay` app.
+    This object represents the `Crypto Pay` app.
     """
 
     app_id: int
