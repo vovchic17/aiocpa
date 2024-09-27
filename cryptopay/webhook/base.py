@@ -53,7 +53,7 @@ class RequestHandler(Generic[_APP]):
     """Updates handler."""
 
     def __init__(
-        self: "cryptopay.CryptoPay",
+        self,
         manager: WebhookManager[_APP],
     ) -> None:
         self._webhook_manager = manager
