@@ -74,6 +74,11 @@ docstring-code-line-length = "dynamic"
 module = ["*.methods.*", "*.webhook.*", "*.tools.*", "*.polling.*"]
 disable_error_code = ["misc"]
 
+[[tool.mypy.overrides]]
+module = ["*.fastapi_manager.*"]
+disable_error_code = ["import-not-found"]
+
+
 [tool.mypy]
 exclude = ["tests", "docs", "examples"]
 

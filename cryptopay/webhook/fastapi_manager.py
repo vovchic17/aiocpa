@@ -1,7 +1,5 @@
 from typing import TYPE_CHECKING
 
-from fastapi import Request
-
 from .base import WebhookManager
 
 if TYPE_CHECKING:
@@ -12,7 +10,7 @@ if TYPE_CHECKING:
 
 class FastAPIManager(WebhookManager["FastAPI"]):
     """
-    aiohttp webhook manager.
+    FastAPI webhook manager.
 
     Webhook manager based on :class:`fastapi.FastAPI`.
     """
@@ -24,6 +22,11 @@ class FastAPIManager(WebhookManager["FastAPI"]):
         handler: "Handler",
     ) -> None:
         """Register webhook handler."""
+        try:
+            from fastapi import Request
+        except ModuleNotFoundError as e:
+            msg = "fastapi is not installed"
+            raise RuntimeError(msg) from e
 
         @app.post(path)
         async def handle(request: Request) -> dict:
