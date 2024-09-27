@@ -27,3 +27,7 @@ and overriding :attr:`cryptopay.webhook.WebhookManager.register_handler`.
 .. autoclass:: cryptopay.webhook.AiohttpManager
     :show-inheritance:
     :members:
+
+.. autoclass:: cryptopay.webhook.FastAPIManager
+    :show-inheritance:
+    :members:
