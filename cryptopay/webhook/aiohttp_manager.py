@@ -1,16 +1,16 @@
 from typing import TYPE_CHECKING
 
-from aiohttp.web import Application, json_response
+from aiohttp.web import json_response
 
 from .base import WebhookManager
 
 if TYPE_CHECKING:
-    from aiohttp.web import Request, Response
+    from aiohttp.web import Application, Request, Response
 
     from .base import Handler
 
 
-class AiohttpManager(WebhookManager[Application]):
+class AiohttpManager(WebhookManager["Application"]):
     """
     aiohttp webhook manager.
 
@@ -19,7 +19,7 @@ class AiohttpManager(WebhookManager[Application]):
 
     def register_handler(
         self,
-        app: Application,
+        app: "Application",
         path: str,
         handler: "Handler",
     ) -> None:
