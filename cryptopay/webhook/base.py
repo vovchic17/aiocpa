@@ -9,13 +9,13 @@ from cryptopay import loggers
 from cryptopay.types import Update
 
 if TYPE_CHECKING:
-    from collections.abc import Awaitable, Callable
+    from collections.abc import Awaitable, Callable, Mapping
 
     import cryptopay
     from cryptopay.types import Invoice
 
     InvoiceHandler = Callable[[Invoice], Awaitable]
-    Handler = Callable[[dict[str, Any], dict[str, str]], Awaitable]
+    Handler = Callable[[dict[str, Any], Mapping[str, str]], Awaitable]
 
 _APP = TypeVar("_APP")
 

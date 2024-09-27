@@ -30,6 +30,8 @@ docs = [
     "matplotlib",
 ]
 
+fastapi = ["fastapi", "uvicorn"]
+
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.5.7"
 mypy = "^1.11.0"
