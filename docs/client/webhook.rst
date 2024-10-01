@@ -17,6 +17,10 @@ Usage example with `fastapi web server <https://fastapi.tiangolo.com/tutorial/fi
 -------------
 .. literalinclude:: ../../examples/webhook_fastapi.py
 
+Usage example with `flask web server <https://flask.palletsprojects.com/en/3.0.x/quickstart/#quickstart>`_
+-------------
+.. literalinclude:: ../../examples/webhook_flask.py
+
 **aiocpa** uses `aiohttp <https://docs.aiohttp.org/en/stable/index.html>`_ as web server by default.
 You can implement your own webhook manager by inheriting :class:`cryptopay.webhook.WebhookManager`
 and overriding :attr:`cryptopay.webhook.WebhookManager.register_handler`.

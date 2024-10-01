@@ -20,8 +20,8 @@ sphinx-autodoc-typehints = { version = "^2.3.0", optional = true }
 sphinx-copybutton = { version = "^0.5.2", optional = true }
 sphinxext-opengraph = { version = "^0.9.1", optional = true }
 matplotlib = { version = "^3.9.2", optional = true }
-fastapi = { version = "^0.115.0", optional = true }
-uvicorn = { version = "^0.31.0", optional = true }
+fastapi = { version = "^0.115.0", extras = ["standard"], optional = true }
+flask = { version = "^3.0.3", extras = ["async"], optional = true }
 
 [tool.poetry.extras]
 docs = [
@@ -32,7 +32,9 @@ docs = [
     "matplotlib",
 ]
 
-fastapi = ["fastapi", "uvicorn"]
+fastapi = ["fastapi"]
+
+flask = ["flask"]
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.5.7"
