@@ -79,9 +79,8 @@ module = ["*.methods.*", "*.webhook.*", "*.tools.*", "*.polling.*"]
 disable_error_code = ["misc"]
 
 [[tool.mypy.overrides]]
-module = ["*.fastapi_manager.*"]
-disable_error_code = ["import-not-found"]
-
+module = ["*.fastapi_manager.*", "*.flask_manager.*"]
+disable_error_code = ["misc", "import-not-found"]
 
 [tool.mypy]
 exclude = ["tests", "docs", "examples"]
