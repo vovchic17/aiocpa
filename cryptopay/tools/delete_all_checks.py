@@ -25,4 +25,4 @@ class DeleteAllChecks:
         """
         checks = await self.get_checks(status=CheckStatus.ACTIVE)
         for check in checks:
-            await self.delete_check(check.check_id)
+            await check.delete()

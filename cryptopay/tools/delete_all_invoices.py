@@ -25,4 +25,4 @@ class DeleteAllInvoices:
         """
         invoices = await self.get_invoices(status=InvoiceStatus.ACTIVE)
         for invoice in invoices:
-            await self.delete_invoice(invoice.invoice_id)
+            await invoice.delete()
