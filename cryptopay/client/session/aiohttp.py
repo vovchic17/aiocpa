@@ -1,6 +1,8 @@
+import ssl
 from typing import TYPE_CHECKING, cast
 
-from aiohttp import ClientSession
+import certifi
+from aiohttp import ClientSession, TCPConnector
 from aiohttp.http import SERVER_SOFTWARE
 
 from cryptopay.__meta__ import __version__
@@ -33,7 +35,10 @@ class AiohttpSession(BaseSession):
     ) -> "CryptoPayType":
         """Make http request."""
         if self._session is None or self._session.closed:
-            self._session = ClientSession()
+            ssl_context = ssl.create_default_context(cafile=certifi.where())
+            self._session = ClientSession(
+                connector=TCPConnector(ssl_context=ssl_context),
+            )
         async with self._session as session:
             resp = await session.post(
                 url=self.api_server.url(method),
