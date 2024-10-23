@@ -34,11 +34,12 @@ class AiohttpSession(BaseSession):
         method: "CryptoPayMethod[CryptoPayType]",
     ) -> "CryptoPayType":
         """Make http request."""
-        if self._session is None or self._session.closed:
-            ssl_context = ssl.create_default_context(cafile=certifi.where())
-            self._session = ClientSession(
-                connector=TCPConnector(ssl_context=ssl_context),
-            )
+        ssl_context = ssl.create_default_context(cafile=certifi.where())
+        self._session = ClientSession(
+            connector=TCPConnector(
+                ssl_context=ssl_context,
+            ),
+        )
         async with self._session as session:
             resp = await session.post(
                 url=self.api_server.url(method),
@@ -46,7 +47,7 @@ class AiohttpSession(BaseSession):
                 headers={
                     "Crypto-Pay-API-Token": token,
                     "Content-Type": "application/json",
-                    "User-Agent": f"{SERVER_SOFTWARE} aiocpb/{__version__}",
+                    "User-Agent": f"{SERVER_SOFTWARE} aiocpa/{__version__}",
                 },
             )
             response = self._check_response(client, method, await resp.text())

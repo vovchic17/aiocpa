@@ -52,5 +52,6 @@ class CryptoPay(Methods, Tools, RequestHandler, PollingManager):
         :param method: CryptoPayMethod object.
         :return: :class:`CryptoPayType` object.
         """
-        loggers.client.debug("Requesting: %s", method.__method__)
-        return await self._session.request(self._token, self, method)
+        async with self._session as session:
+            loggers.client.debug("Requesting: %s", method.__method__)
+            return await session.request(self._token, self, method)
