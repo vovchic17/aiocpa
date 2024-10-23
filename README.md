@@ -1,9 +1,9 @@
 # <p align="center">AsyncIOCryptoPayAPI
 
-[![Python](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/main/src/badges/python310_311_312.json)](https://www.python.org/)
+[![Python](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/main/src/badges/python310_313.json)](https://www.python.org/)
 [![Crypto Pay API](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/refs/heads/main/src/badges/cryptopayapi.json)](https://help.crypt.bot/crypto-pay-api)
 [![Pydantic v2](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/pydantic/pydantic/main/docs/badge/v2.json)](https://pydantic.dev)
-[![Aiohttp](https://img.shields.io/badge/aiohttp-v3.10.5-2c5bb4?logo=aiohttp)](https://docs.aiohttp.org/en/stable/)
+[![Aiohttp](https://img.shields.io/badge/aiohttp-v3.10.10-2c5bb4?logo=aiohttp)](https://docs.aiohttp.org/en/stable/)
 [![Code linter: ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/charliermarsh/ruff)
 [![Checked with mypy](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/main/src/badges/mypy.json)](https://mypy-lang.org/)
 
