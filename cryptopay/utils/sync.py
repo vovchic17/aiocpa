@@ -1,9 +1,14 @@
 import asyncio
 import functools
 import inspect
+from typing import TYPE_CHECKING
 
 from cryptopay.client import CryptoPay
 from cryptopay.types import CryptoPayObject
+
+if TYPE_CHECKING:
+    from collections.abc import Awaitable
+    from typing import ParamSpecArgs, ParamSpecKwargs
 
 
 def async_to_sync(obj: object, name: str) -> None:
@@ -11,8 +16,11 @@ def async_to_sync(obj: object, name: str) -> None:
     method = getattr(obj, name)
 
     @functools.wraps(method)
-    def sync_wrapper(*args, **kwargs) -> object:
-        coro = method(*args, **kwargs)
+    def sync_wrapper(
+        *args: "ParamSpecArgs",
+        **kwargs: "ParamSpecKwargs",
+    ) -> object:
+        coro: Awaitable = method(*args, **kwargs)
         try:
             loop = asyncio.get_event_loop()
         except RuntimeError:
