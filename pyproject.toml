@@ -12,8 +12,8 @@ packages = [{ include = "cryptopay", from = "." }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-pydantic = "^2.9.2"
-aiohttp = "^3.10.10"
+pydantic = "^2.4"
+aiohttp = "^3.9"
 
 furo = { version = "^2024.8.6", optional = true }
 sphinx-autodoc-typehints = { version = "^2.3.0", optional = true }
