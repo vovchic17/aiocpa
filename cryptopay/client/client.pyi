@@ -78,7 +78,7 @@ class CryptoPay:
     def get_me(self) -> App: ...
     def create_invoice(
         self,
-        amount: float,
+        amount: _float,
         asset: Asset | str | None = None,
         *,
         currency_type: CurrencyType | None = None,
@@ -99,7 +99,7 @@ class CryptoPay:
     ) -> bool: ...
     def create_check(
         self,
-        amount: float,
+        amount: _float,
         asset: Asset | str,
         pin_to_user_id: int | None = None,
         pin_to_username: str | None = None,

@@ -12,7 +12,7 @@ from cryptopay.enums import (
 from .base import CryptoPayObject
 
 if TYPE_CHECKING:
-    from typing import Any
+    from typing import ParamSpecKwargs
 
 
 class Invoice(CryptoPayObject):
@@ -100,7 +100,7 @@ class Invoice(CryptoPayObject):
         """
         return await self._client.delete_invoice(self.invoice_id)
 
-    def await_payment(self, **kwargs: "Any") -> None:  # noqa: ANN401
+    def await_payment(self, **kwargs: "ParamSpecKwargs") -> None:
         """
         Send the invoice to the polling manager.
 
