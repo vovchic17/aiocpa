@@ -1,7 +1,8 @@
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, cast
 
 from cryptopay import loggers
-from cryptopay.client import MAINNET
+from cryptopay.client import MAINNET, TESTNET
+from cryptopay.exceptions import APIError, WrongNetworkError
 from cryptopay.methods import Methods
 from cryptopay.polling import PollingConfig, PollingManager
 from cryptopay.tools import Tools
@@ -12,7 +13,7 @@ from .session import AiohttpSession
 if TYPE_CHECKING:
     from cryptopay.client import APIServer
     from cryptopay.methods import CryptoPayMethod
-    from cryptopay.types import _CryptoPayType
+    from cryptopay.types import App, _CryptoPayType
     from cryptopay.webhook import _APP, WebhookManager
 
     from .session import BaseSession
@@ -39,6 +40,7 @@ class CryptoPay(Methods, Tools, RequestHandler, PollingManager):
         self._session = session(api_server)
         RequestHandler.__init__(self, manager or AiohttpManager())
         PollingManager.__init__(self, polling_config or PollingConfig())
+        self.__auth()
 
     async def __call__(
         self,
@@ -55,3 +57,26 @@ class CryptoPay(Methods, Tools, RequestHandler, PollingManager):
         async with self._session as session:
             loggers.client.debug("Requesting: %s", method.__method__)
             return await session.request(self._token, self, method)
+
+    def __auth(self) -> None:
+        try:
+            me = cast("App", self._run_sync_async(self.get_me))
+            loggers.client.info(
+                "Authorized as '%s' id=%d on %s",
+                me.name,
+                me.app_id,
+                self._session.api_server.name,
+            )
+        except APIError:
+            current_net = self._session.api_server
+            if current_net == MAINNET:
+                self._session = self._session.__class__(TESTNET)
+            else:
+                self._session = self._session.__class__(MAINNET)
+            self._run_sync_async(self.get_me)
+            net = self._session.api_server
+            msg = (
+                "Authorization failed. Token is served by the "
+                f"{net.name}, you are using {current_net.name}"
+            )
+            raise WrongNetworkError(msg) from None

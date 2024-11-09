@@ -28,6 +28,13 @@ class APIError(CryptoPayError):
         )
 
 
+class WrongNetworkError(CryptoPayError):
+    """Exception raised when the token is served by different network."""
+
+    def __init__(self, message: str) -> None:
+        self.message = message
+
+
 class DeserializationError(CryptoPayError):
     """Exception for deserialization errors."""
 
