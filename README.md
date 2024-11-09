@@ -9,7 +9,6 @@
 
 **aiocpa** is a syncronous & asynchronous [Crypto Pay API](https://help.crypt.bot/crypto-pay-api) client.
 
-> [!NOTE]
 > ## [Official documentation](https://aiocpa.readthedocs.io/en/latest/)
 
 ## Quick start
