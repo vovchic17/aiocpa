@@ -13,7 +13,7 @@ if TYPE_CHECKING:
     import cryptopay
     from cryptopay.client import APIServer
     from cryptopay.methods import CryptoPayMethod
-    from cryptopay.types import CryptoPayType
+    from cryptopay.types import _CryptoPayType
 
 
 class AiohttpSession(BaseSession):
@@ -31,8 +31,8 @@ class AiohttpSession(BaseSession):
         self,
         token: str,
         client: "cryptopay.CryptoPay",
-        method: "CryptoPayMethod[CryptoPayType]",
-    ) -> "CryptoPayType":
+        method: "CryptoPayMethod[_CryptoPayType]",
+    ) -> "_CryptoPayType":
         """Make http request."""
         ssl_context = ssl.create_default_context(cafile=certifi.where())
         self._session = ClientSession(
@@ -51,7 +51,7 @@ class AiohttpSession(BaseSession):
                 },
             )
             response = self._check_response(client, method, await resp.text())
-        return cast("CryptoPayType", response.result)
+        return cast("_CryptoPayType", response.result)
 
     async def close(self) -> None:
         """Close http session."""

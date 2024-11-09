@@ -3,10 +3,10 @@ from typing import ClassVar, Generic
 
 from pydantic import BaseModel, ConfigDict
 
-from cryptopay.types import CryptoPayType
+from cryptopay.types import _CryptoPayType
 
 
-class CryptoPayMethod(BaseModel, Generic[CryptoPayType], ABC):
+class CryptoPayMethod(BaseModel, Generic[_CryptoPayType], ABC):
     """Base `Crypto Pay API` method class."""
 
     model_config = ConfigDict(
@@ -14,5 +14,5 @@ class CryptoPayMethod(BaseModel, Generic[CryptoPayType], ABC):
         frozen=True,
     )
 
-    __return_type__: ClassVar[type[CryptoPayType]]
+    __return_type__: ClassVar[type[_CryptoPayType]]
     __method__: ClassVar[str]

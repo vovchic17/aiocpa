@@ -9,9 +9,9 @@ from cryptopay.methods import (
     CryptoPayMethod,
 )
 from cryptopay.types import (
-    CryptoPayType,
     ItemsList,
     Response,
+    _CryptoPayType,
 )
 
 if TYPE_CHECKING:
@@ -36,8 +36,8 @@ class BaseSession(ABC):
         self,
         token: str,
         client: "cryptopay.CryptoPay",
-        method: "CryptoPayMethod[CryptoPayType]",
-    ) -> "CryptoPayType":
+        method: "CryptoPayMethod[_CryptoPayType]",
+    ) -> "_CryptoPayType":
         """Make http request."""
 
     @abstractmethod
@@ -47,9 +47,9 @@ class BaseSession(ABC):
     def _check_response(
         self,
         client: "cryptopay.CryptoPay",
-        method: CryptoPayMethod[CryptoPayType],
+        method: CryptoPayMethod[_CryptoPayType],
         content: str,
-    ) -> Response[CryptoPayType]:
+    ) -> Response[_CryptoPayType]:
         try:
             response = Response[method.__return_type__].model_validate_json(  # type: ignore[name-defined]
                 content,

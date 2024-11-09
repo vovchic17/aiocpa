@@ -9,9 +9,12 @@ from cryptopay.utils import serialize_list
 if TYPE_CHECKING:
     from cryptopay import CryptoPay
 
-CryptoPayType = TypeVar("CryptoPayType", bound="CryptoPayObject | list | bool")
-T = TypeVar("T")
-SerList = Annotated[list[T], PlainSerializer(serialize_list, str | None)]
+_CryptoPayType = TypeVar(
+    "_CryptoPayType",
+    bound="CryptoPayObject | list | bool",
+)
+_T = TypeVar("_T")
+SerList = Annotated[list[_T], PlainSerializer(serialize_list, str | None)]
 
 
 class CryptoPayObject(BaseModel, ABC):
@@ -40,19 +43,19 @@ class Error(BaseModel):
     )
 
 
-class ItemsList(BaseModel, Generic[CryptoPayType]):
+class ItemsList(BaseModel, Generic[_CryptoPayType]):
     """
     Items list.
 
     This model is used to convert a dictionary with the `items` key to a list.
     """
 
-    items: CryptoPayType
+    items: _CryptoPayType
 
 
-class Response(BaseModel, Generic[CryptoPayType]):
+class Response(BaseModel, Generic[_CryptoPayType]):
     """API response model."""
 
     ok: bool
-    result: CryptoPayType | ItemsList[CryptoPayType] | None = None
+    result: _CryptoPayType | ItemsList[_CryptoPayType] | None = None
     error: Error | None = None

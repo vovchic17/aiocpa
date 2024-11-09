@@ -12,7 +12,7 @@ from .session import AiohttpSession
 if TYPE_CHECKING:
     from cryptopay.client import APIServer
     from cryptopay.methods import CryptoPayMethod
-    from cryptopay.types import CryptoPayType
+    from cryptopay.types import _CryptoPayType
     from cryptopay.webhook import _APP, WebhookManager
 
     from .session import BaseSession
@@ -42,8 +42,8 @@ class CryptoPay(Methods, Tools, RequestHandler, PollingManager):
 
     async def __call__(
         self,
-        method: "CryptoPayMethod[CryptoPayType]",
-    ) -> "CryptoPayType":
+        method: "CryptoPayMethod[_CryptoPayType]",
+    ) -> "_CryptoPayType":
         """
         Request method.
 

@@ -3,11 +3,11 @@ from .app_stats import AppStats
 from .balance import Balance
 from .base import (
     CryptoPayObject,
-    CryptoPayType,
     Error,
     ItemsList,
     Response,
     SerList,
+    _CryptoPayType,
 )
 from .check import Check
 from .currency import Currency
@@ -22,7 +22,7 @@ __all__ = (
     "Balance",
     "Check",
     "CryptoPayObject",
-    "CryptoPayType",
+    "_CryptoPayType",
     "Currency",
     "Error",
     "ExchangeRate",
