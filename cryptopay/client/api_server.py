@@ -5,7 +5,7 @@ if TYPE_CHECKING:
     from cryptopay.methods import CryptoPayMethod
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True)
 class APIServer:
     """Configuration for endpoints."""
 
