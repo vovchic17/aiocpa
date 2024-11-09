@@ -9,6 +9,8 @@ if TYPE_CHECKING:
 class APIServer:
     """Configuration for endpoints."""
 
+    name: str
+    """Net name"""
     base: str
     """Base URL"""
 
@@ -17,5 +19,11 @@ class APIServer:
         return self.base.format(method=method.__method__)
 
 
-MAINNET = APIServer(base="https://pay.crypt.bot/api/{method}")
-TESTNET = APIServer(base="https://testnet-pay.crypt.bot/api/{method}")
+MAINNET = APIServer(
+    name="MAINNET",
+    base="https://pay.crypt.bot/api/{method}",
+)
+TESTNET = APIServer(
+    name="TESTNET",
+    base="https://testnet-pay.crypt.bot/api/{method}",
+)
