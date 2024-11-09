@@ -187,3 +187,7 @@ class CryptoPay:
         invoice: Invoice,
         data: dict[str, Any],
     ) -> None: ...
+    async def run_polling(
+        self,
+        parallel: Callable[[], Any] | None = None,
+    ) -> None: ...
