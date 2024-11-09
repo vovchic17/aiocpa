@@ -1,6 +1,6 @@
-AsyncIOCryptoPayAPI
-==================================
+.. raw:: html
 
+   <h1><span class="BB">A</span>sync<span class="BB">IOC</span>rypto<span class="BB">P</span>ay<span class="BB">A</span>PI</h1>
 
 **aiocpa** is a syncronous & asynchronous `Crypto Pay API <https://help.crypt.bot/crypto-pay-api>`_ client.
 

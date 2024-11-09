@@ -3,7 +3,7 @@ Telethon
 ========
 
 Usage example with `Telethon <https://docs.telethon.dev/en/stable/>`_
---------------------------------------------------------
+---------------------------------------------------------------------
 
 .. literalinclude:: ../../examples/telethon_example.py
 
