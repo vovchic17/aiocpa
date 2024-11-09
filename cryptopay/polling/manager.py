@@ -72,6 +72,9 @@ class PollingManager:
         """
 
         def wrapper(handler: "Handler") -> "Handler":
+            if self._handler is not None:
+                msg = "Polling handler has already been declared"
+                raise CryptoPayError(msg)
             self._handler = handler
             return handler
 
@@ -87,6 +90,9 @@ class PollingManager:
         """
 
         def wrapper(handler: "Handler") -> "Handler":
+            if self._exp_handler is not None:
+                msg = "Expired handler has already been declared"
+                raise CryptoPayError(msg)
             self._exp_handler = handler
             return handler
 
