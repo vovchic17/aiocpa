@@ -23,8 +23,8 @@ class APIError(CryptoPayError):
     def __str__(self) -> str:
         """Return a string representation of the exception."""
         return (
-            f"[{self.error.code}] /{self.method.__method__}, "
-            f"{self.error.name} {self.error.model_extra}"
+            f"[{self.error.code}] /{self.method.__method__}: "
+            f"{self.error.name} {self.error.model_extra or ''}"
         )
 
 
