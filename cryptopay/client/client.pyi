@@ -1,7 +1,7 @@
 from builtins import bool as _bool
 from builtins import float as _float
 from builtins import list as _list
-from collections.abc import Generator
+from collections.abc import Awaitable, Callable, Generator
 from datetime import datetime
 from typing import Any, TypeVar
 
@@ -162,6 +162,22 @@ class CryptoPay:
         self,
         asset: Asset | str,
     ) -> float: ...
+    def polling_handler(self) -> Callable[[Handler], Handler]: ...
+    def expired_handler(self) -> Callable[[Handler], Handler]: ...
+    def webhook_handler(
+        self,
+        app: _APP,
+        path: str,
+    ) -> Callable[
+        [Callable[[Invoice], Awaitable]],
+        Callable[[Invoice], Awaitable],
+    ]: ...
+    def feed_update(
+        self,
+        handler: Callable[[Invoice], Awaitable],
+        body: dict[str, Any],
+        headers: dict[str, str],
+    ) -> None: ...
     async def __process_invoice(
         self,
         invoice: Invoice,
