@@ -1,5 +1,4 @@
 from datetime import datetime
-from typing import ParamSpecKwargs
 
 from cryptopay.client.client import _bool, bool  # type: ignore[attr-defined]
 from cryptopay.enums import (
@@ -47,4 +46,4 @@ class Invoice(CryptoPayObject):
     paid_btn_url: str | None = None
 
     def delete(self) -> bool: ...
-    def await_payment(self, **kwargs: ParamSpecKwargs) -> None: ...
+    def await_payment(self, **kwargs: object) -> None: ...

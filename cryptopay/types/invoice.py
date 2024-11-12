@@ -1,5 +1,4 @@
 from datetime import datetime
-from typing import TYPE_CHECKING
 
 from cryptopay.enums import (
     Asset,
@@ -10,9 +9,6 @@ from cryptopay.enums import (
 )
 
 from .base import CryptoPayObject
-
-if TYPE_CHECKING:
-    from typing import ParamSpecKwargs
 
 
 class Invoice(CryptoPayObject):
@@ -100,7 +96,7 @@ class Invoice(CryptoPayObject):
         """
         return await self._client.delete_invoice(self.invoice_id)
 
-    def await_payment(self, **kwargs: "ParamSpecKwargs") -> None:
+    def await_payment(self, **kwargs: object) -> None:
         """
         Send the invoice to the polling manager.
 
