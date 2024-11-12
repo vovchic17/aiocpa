@@ -73,7 +73,11 @@ class RequestHandler(Generic[_APP]):
         :return: True if the signature is correct, False otherwise.
         """
         secret = hashlib.sha256(self._token.encode()).digest()
-        check_string = json.dumps(body, separators=(",", ":"))
+        check_string = json.dumps(
+            body,
+            separators=(",", ":"),
+            ensure_ascii=False,
+        )
         hmac = HMAC(secret, check_string.encode(), hashlib.sha256).hexdigest()
         return hmac == headers.get("Crypto-Pay-Api-Signature")
 
