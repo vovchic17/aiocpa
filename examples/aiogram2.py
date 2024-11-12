@@ -24,7 +24,7 @@ async def handle_payment(
     message: Message,
 ) -> None:
     await message.answer(
-        f"payment received: {invoice.amount} {invoice.asset}",
+        f"payment received: {invoice.amount} {invoice.asset.value}",
     )
 
 

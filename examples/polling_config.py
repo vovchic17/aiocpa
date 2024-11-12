@@ -15,7 +15,7 @@ cp = CryptoPay(
 
 @cp.polling_handler()
 async def handler(invoice: Invoice):
-    print(f"Received", invoice.amount, invoice.asset)
+    print(f"Received", invoice.amount, invoice.asset.value)
 
 
 # called after timeout (600s) or when invoice status is "expired"

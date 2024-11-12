@@ -27,7 +27,7 @@ async def handle_payment(
 ) -> None:
     await bot.send_message(
         user_id,
-        f"payment received: {invoice.amount} {invoice.asset}",
+        f"payment received: {invoice.amount} {invoice.asset.value}",
     )
 
 

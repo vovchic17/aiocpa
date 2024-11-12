@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 @cp.webhook_handler(app, "/handler")
 async def handler(invoice: Invoice) -> None:
-    print(f"Received {invoice.amount} {invoice.asset}")
+    print(f"Received {invoice.amount} {invoice.asset.value}")
 
 
 async def main() -> None:
