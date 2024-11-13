@@ -8,7 +8,6 @@ from cryptopay.types import CryptoPayObject
 
 if TYPE_CHECKING:
     from collections.abc import Awaitable
-    from typing import ParamSpecArgs, ParamSpecKwargs
 
 
 def async_to_sync(obj: object, name: str) -> None:
@@ -17,8 +16,8 @@ def async_to_sync(obj: object, name: str) -> None:
 
     @functools.wraps(method)
     def sync_wrapper(
-        *args: "ParamSpecArgs",
-        **kwargs: "ParamSpecKwargs",
+        *args: object,
+        **kwargs: object,
     ) -> object:
         coro: Awaitable = method(*args, **kwargs)
         try:
