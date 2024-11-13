@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, cast
+import threading
+from typing import TYPE_CHECKING
 
 from cryptopay import loggers
 from cryptopay.client import MAINNET, TESTNET
@@ -13,7 +14,7 @@ from .session import AiohttpSession
 if TYPE_CHECKING:
     from cryptopay.client import APIServer
     from cryptopay.methods import CryptoPayMethod
-    from cryptopay.types import App, _CryptoPayType
+    from cryptopay.types import _CryptoPayType
     from cryptopay.webhook import _APP, WebhookManager
 
     from .session import BaseSession
@@ -40,7 +41,9 @@ class CryptoPay(Methods, Tools, RequestHandler, PollingManager):
         self._session = session(api_server)
         RequestHandler.__init__(self, manager or AiohttpManager())
         PollingManager.__init__(self, polling_config or PollingConfig())
-        self.__auth()
+        thread = threading.Thread(target=self.__auth)
+        thread.start()
+        thread.join()
 
     async def __call__(
         self,
@@ -60,7 +63,7 @@ class CryptoPay(Methods, Tools, RequestHandler, PollingManager):
 
     def __auth(self) -> None:
         try:
-            me = cast("App", self._run_sync_async(self.get_me))
+            me = self.get_me()
             loggers.client.info(
                 "Authorized as '%s' id=%d on %s",
                 me.name,
@@ -73,7 +76,7 @@ class CryptoPay(Methods, Tools, RequestHandler, PollingManager):
                 self._session = self._session.__class__(TESTNET)
             else:
                 self._session = self._session.__class__(MAINNET)
-            self._run_sync_async(self.get_me)
+            self.get_me()
             net = self._session.api_server
             msg = (
                 "Authorization failed. Token is served by the "
