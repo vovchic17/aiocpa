@@ -6,13 +6,6 @@ class Asset(str, Enum):
 
     USDT = "USDT"
     TON = "TON"
-    SOL = "SOL"
-    GRAM = "GRAM"
-    NOT = "NOT"
-    HMSTR = "HMSTR"
-    CATI = "CATI"
-    MY = "MY"
-    DOGS = "DOGS"
     BTC = "BTC"
     LTC = "LTC"
     ETH = "ETH"
