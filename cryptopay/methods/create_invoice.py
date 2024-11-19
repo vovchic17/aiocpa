@@ -19,14 +19,14 @@ class CreateInvoice:
         __return_type__ = Invoice
         __method__ = "createInvoice"
 
-        currency_type: CurrencyType | None
-        asset: Asset | None
-        fiat: Fiat | None
+        currency_type: str | None
+        asset: str | None
+        fiat: str | None
         accepted_assets: SerList[Asset] | None
         amount: float
         description: str | None
         hidden_message: str | None
-        paid_btn_name: PaidBtnName | None
+        paid_btn_name: str | None
         paid_btn_url: str | None
         payload: str | None
         allow_comments: bool | None
@@ -60,10 +60,10 @@ class CreateInvoice:
     async def create_invoice(
         self: "cryptopay.CryptoPay",
         amount: float,
-        asset: Asset | str | None = None,
+        asset: Asset | None = None,
         *,
         currency_type: CurrencyType | None = None,
-        fiat: Fiat | str | None = None,
+        fiat: Fiat | None = None,
         accepted_assets: list[Asset] | None = None,
         description: str | None = None,
         hidden_message: str | None = None,

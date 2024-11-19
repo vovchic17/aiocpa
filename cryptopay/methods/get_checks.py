@@ -16,17 +16,17 @@ class GetChecks:
         __return_type__ = list[Check]
         __method__ = "getChecks"
 
-        asset: Asset | None = None
+        asset: str | None = None
         check_ids: SerList[int] | None
-        status: CheckStatus | None
+        status: str | None
         offset: int | None
         count: int | None
 
     async def get_checks(
         self: "cryptopay.CryptoPay",
-        asset: Asset | str | None = None,
+        asset: Asset | None = None,
         check_ids: list[int] | None = None,
-        status: CheckStatus | str | None = None,
+        status: CheckStatus | None = None,
         offset: int | None = None,
         count: int | None = None,
     ) -> list[Check]:

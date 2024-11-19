@@ -16,7 +16,7 @@ class CreateCheck:
         __return_type__ = Check
         __method__ = "createCheck"
 
-        asset: Asset
+        asset: str
         amount: float
         pin_to_user_id: int | None
         pin_to_username: str | None
@@ -24,7 +24,7 @@ class CreateCheck:
     async def create_check(
         self: "cryptopay.CryptoPay",
         amount: float,
-        asset: Asset | str,
+        asset: Asset,
         pin_to_user_id: int | None = None,
         pin_to_username: str | None = None,
     ) -> Check:

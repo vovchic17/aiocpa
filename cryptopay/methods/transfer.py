@@ -20,7 +20,7 @@ class Transfer:
         __method__ = "transfer"
 
         user_id: int
-        asset: Asset | str
+        asset: str
         amount: float
         spend_id: str | None
         comment: str | None
@@ -35,7 +35,7 @@ class Transfer:
     async def transfer(
         self: "cryptopay.CryptoPay",
         user_id: int,
-        asset: str,
+        asset: Asset,
         amount: float,
         spend_id: str | None = None,
         comment: str | None = None,

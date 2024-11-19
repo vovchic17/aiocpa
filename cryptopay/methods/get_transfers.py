@@ -18,7 +18,7 @@ class GetTransfers:
         __return_type__ = list[Transfer]
         __method__ = "getTransfers"
 
-        asset: Asset | str | None
+        asset: str | None
         transfer_ids: SerList[int] | None
         spend_id: str | None
         offset: int | None

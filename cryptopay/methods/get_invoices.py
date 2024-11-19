@@ -18,10 +18,10 @@ class GetInvoices:
         __return_type__ = list[Invoice]
         __method__ = "getInvoices"
 
-        asset: Asset | str | None
-        fiat: Fiat | str | None
+        asset: str | None
+        fiat: str | None
         invoice_ids: SerList[int] | None
-        status: InvoiceStatus | str | None
+        status: InvoiceStatus | None
         offset: int | None
         count: int | None
 
