@@ -21,3 +21,6 @@ class Asset(str, Enum):
     USDC = "USDC"
     JET = "JET"
     SEND = "SEND"
+    PEPE = "PEPE"
+    WIF = "WIF"
+    BONK = "BONK"
