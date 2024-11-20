@@ -1,4 +1,7 @@
-# aiocpa
+<p align="center">
+  <img src="docs/_static/logo.png" align="center"/>
+  <h1 align="center">aiocpa</h1>
+</p>
 
 [![Python](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/main/src/badges/python310_313.json)](https://www.python.org/)
 [![Crypto Pay API](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/refs/heads/main/src/badges/cryptopayapi.json)](https://help.crypt.bot/crypto-pay-api)
