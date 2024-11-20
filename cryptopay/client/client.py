@@ -1,4 +1,3 @@
-import threading
 from typing import TYPE_CHECKING
 
 from cryptopay import loggers
@@ -7,6 +6,7 @@ from cryptopay.exceptions import APIError, WrongNetworkError
 from cryptopay.methods import Methods
 from cryptopay.polling import PollingConfig, PollingManager
 from cryptopay.tools import Tools
+from cryptopay.utils import PropagatingThread
 from cryptopay.webhook import AiohttpManager, RequestHandler
 
 from .session import AiohttpSession
@@ -41,8 +41,9 @@ class CryptoPay(Methods, Tools, RequestHandler, PollingManager):
         self._session = session(api_server)
         RequestHandler.__init__(self, manager or AiohttpManager())
         PollingManager.__init__(self, polling_config or PollingConfig())
-        thread = threading.Thread(target=self.__auth)
-        thread.run()
+        thread = PropagatingThread(target=self.__auth)
+        thread.start()
+        thread.join()
 
     async def __call__(
         self,
