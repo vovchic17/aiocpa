@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import Literal
 
 
 class Asset(str, Enum):
@@ -24,3 +25,27 @@ class Asset(str, Enum):
     PEPE = "PEPE"
     WIF = "WIF"
     BONK = "BONK"
+
+
+LiteralAsset = Literal[
+    "USDT",
+    "TON",
+    "SOL",
+    "GRAM",
+    "NOT",
+    "HMSTR",
+    "CATI",
+    "MY",
+    "DOGS",
+    "BTC",
+    "LTC",
+    "ETH",
+    "BNB",
+    "TRX",
+    "USDC",
+    "JET",
+    "SEND",
+    "PEPE",
+    "WIF",
+    "BONK",
+]

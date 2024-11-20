@@ -14,6 +14,8 @@ from cryptopay.enums import (
     CurrencyType,
     Fiat,
     InvoiceStatus,
+    LiteralAsset,
+    LiteralFiat,
     PaidBtnName,
 )
 from cryptopay.methods import CryptoPayMethod
@@ -79,11 +81,11 @@ class CryptoPay:
     def create_invoice(
         self,
         amount: _float,
-        asset: Asset | str | None = None,
+        asset: Asset | LiteralAsset | str | None = None,
         *,
         currency_type: CurrencyType | None = None,
-        fiat: Fiat | str | None = None,
-        accepted_assets: _list[Asset] | None = None,
+        fiat: Fiat | LiteralFiat | str | None = None,
+        accepted_assets: _list[Asset | LiteralAsset] | None = None,
         description: str | None = None,
         hidden_message: str | None = None,
         paid_btn_name: PaidBtnName | None = None,
@@ -100,7 +102,7 @@ class CryptoPay:
     def create_check(
         self,
         amount: _float,
-        asset: Asset | str,
+        asset: Asset | LiteralAsset | str,
         pin_to_user_id: int | None = None,
         pin_to_username: str | None = None,
     ) -> Check: ...
@@ -119,8 +121,8 @@ class CryptoPay:
     ) -> Transfer: ...
     def get_invoices(
         self,
-        asset: Asset | None = None,
-        fiat: Fiat | None = None,
+        asset: Asset | LiteralAsset | None = None,
+        fiat: Fiat | LiteralFiat | None = None,
         invoice_ids: _list[int] | None = None,
         status: InvoiceStatus | None = None,
         offset: int | None = None,
@@ -128,7 +130,7 @@ class CryptoPay:
     ) -> list[Invoice]: ...
     def get_checks(
         self,
-        asset: Asset | str | None = None,
+        asset: Asset | LiteralAsset | str | None = None,
         check_ids: _list[int] | None = None,
         status: CheckStatus | str | None = None,
         offset: int | None = None,
@@ -136,7 +138,7 @@ class CryptoPay:
     ) -> list[Check]: ...
     def get_transfers(
         self,
-        asset: Asset | None = None,
+        asset: Asset | LiteralAsset | None = None,
         transfer_ids: _list[int] | None = None,
         spend_id: str | None = None,
         offset: int | None = None,
@@ -155,12 +157,12 @@ class CryptoPay:
     def exchange(
         self,
         amount: _float,
-        source: Asset | Fiat | str,
-        target: Asset | Fiat | str,
+        source: Asset | LiteralAsset | Fiat | LiteralFiat | str,
+        target: Asset | LiteralAsset | Fiat | LiteralFiat | str,
     ) -> float: ...
     def get_balance_by_asset(
         self,
-        asset: Asset | str,
+        asset: Asset | LiteralAsset | str,
     ) -> float: ...
     def polling_handler(self) -> Callable[[Handler], Handler]: ...
     def expired_handler(self) -> Callable[[Handler], Handler]: ...

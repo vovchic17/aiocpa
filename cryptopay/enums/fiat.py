@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import Literal
 
 
 class Fiat(str, Enum):
@@ -26,3 +27,29 @@ class Fiat(str, Enum):
     ILS = "ILS"
     KGS = "KGS"
     TJS = "TJS"
+
+
+LiteralFiat = Literal[
+    "USD",
+    "EUR",
+    "RUB",
+    "BYN",
+    "UAH",
+    "GBP",
+    "CNY",
+    "KZT",
+    "UZS",
+    "GEL",
+    "TRY",
+    "AMD",
+    "THB",
+    "INR",
+    "BRL",
+    "IDR",
+    "AZN",
+    "AED",
+    "PLN",
+    "ILS",
+    "KGS",
+    "TJS",
+]
