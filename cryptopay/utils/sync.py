@@ -1,6 +1,7 @@
 import asyncio
 import functools
 import inspect
+import sys
 from typing import TYPE_CHECKING
 
 from cryptopay.client import CryptoPay
@@ -40,6 +41,9 @@ def syncify(obj: object) -> None:
         ):
             async_to_sync(obj, name)
 
+
+if sys.platform == "win32":
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 for base in (*CryptoPay.__bases__, *CryptoPayObject.__subclasses__()):
     syncify(base)
