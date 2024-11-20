@@ -42,8 +42,7 @@ class CryptoPay(Methods, Tools, RequestHandler, PollingManager):
         RequestHandler.__init__(self, manager or AiohttpManager())
         PollingManager.__init__(self, polling_config or PollingConfig())
         thread = threading.Thread(target=self.__auth)
-        thread.start()
-        thread.join()
+        thread.run()
 
     async def __call__(
         self,
