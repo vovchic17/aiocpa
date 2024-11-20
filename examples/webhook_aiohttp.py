@@ -11,7 +11,7 @@ app = Application()
 
 @cp.webhook_handler(app, "/handler")
 async def handler(invoice: Invoice) -> None:
-    print(f"Received {invoice.amount} {invoice.asset.value}")
+    print(f"Received {invoice.amount} {invoice.asset}")
 
 
 async def main() -> None:

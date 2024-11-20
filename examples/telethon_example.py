@@ -28,7 +28,7 @@ async def handle_payment(
 ) -> None:
     await client.send_message(
         chat_id,
-        f"payment received: {invoice.amount} {invoice.asset.value}",
+        f"payment received: {invoice.amount} {invoice.asset}",
     )
 
 
