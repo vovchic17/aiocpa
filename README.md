@@ -11,6 +11,8 @@
 **aiocpa** is a syncronous & asynchronous [Crypto Pay API](https://help.crypt.bot/crypto-pay-api) client.
 
 > ## [Official documentation](https://aiocpa.readthedocs.io/en/latest/)
+> ## [<img src="https://raw.githubusercontent.com/vovchic17/static/2cae16d0c4289f9556dacc13322dd4a2fcca214f/src/telegram_logo.svg" width="30" align="top">  Telegram chat](https://aiocpa.t.me/)
+
 
 ## Quick start
 ```python
@@ -62,3 +64,4 @@ async def main():
 if __name__ == "__main__":
     asyncio.run(main())
 ```
+
