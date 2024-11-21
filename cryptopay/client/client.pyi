@@ -114,7 +114,7 @@ class CryptoPay:
         self,
         user_id: int,
         asset: str,
-        amount: float,
+        amount: _float,
         spend_id: str | None = None,
         comment: str | None = None,
         disable_send_notification: bool | None = None,
