@@ -2,12 +2,16 @@
 
    <h1><span class="BB">A</span>sync<span class="BB">IOC</span>rypto<span class="BB">P</span>ay<span class="BB">A</span>PI</h1>
 
+Introduction
+------------
+
 **aiocpa** is a syncronous & asynchronous `Crypto Pay API <https://help.crypt.bot/crypto-pay-api>`_ client.
 
 Features
 --------
 * provides :doc:`polling handler <client/polling>`
-* provides additional :doc:`tools <client/tools>`
+* provides :doc:`webhook handler <client/webhook>`
+* provides :doc:`additional function shortcuts <client/tools>`
 * supports sync and async usage
 
 
