@@ -3,6 +3,7 @@ from builtins import float as _float
 from builtins import list as _list
 from collections.abc import Awaitable, Callable, Generator
 from datetime import datetime
+from types import NoneType as _NoneType
 from typing import Any, TypeVar
 
 from typing_extensions import Self
@@ -56,6 +57,9 @@ class bool(_bool):  # type: ignore[misc]  # noqa: A001, N801
 class float(_float):  # noqa: A001, N801
     def __await__(self) -> Generator[None, None, Self]: ...
 
+class NoneType(_NoneType): # type: ignore[misc, valid-type]
+    def __await__(self) -> Generator[None, None, None]: ...
+
 class CryptoPay:
     _token: str
     _session: type[BaseSession]
@@ -81,11 +85,11 @@ class CryptoPay:
     def create_invoice(
         self,
         amount: _float,
-        asset: Asset | LiteralAsset | None = None,
+        asset: Asset | LiteralAsset | str | None = None,
         *,
         currency_type: CurrencyType | str | None = None,
-        fiat: Fiat | LiteralFiat | None = None,
-        accepted_assets: _list[Asset | LiteralAsset] | None = None,
+        fiat: Fiat | LiteralFiat | str | None = None,
+        accepted_assets: _list[Asset | LiteralAsset | str] | None = None,
         description: str | None = None,
         hidden_message: str | None = None,
         paid_btn_name: PaidBtnName | str | None = None,
@@ -102,7 +106,7 @@ class CryptoPay:
     def create_check(
         self,
         amount: _float,
-        asset: Asset | LiteralAsset,
+        asset: Asset | LiteralAsset | str,
         pin_to_user_id: int | None = None,
         pin_to_username: str | None = None,
     ) -> Check: ...
@@ -121,8 +125,8 @@ class CryptoPay:
     ) -> Transfer: ...
     def get_invoices(
         self,
-        asset: Asset | LiteralAsset | None = None,
-        fiat: Fiat | LiteralFiat | None = None,
+        asset: Asset | LiteralAsset | str | None = None,
+        fiat: Fiat | LiteralFiat | str | None = None,
         invoice_ids: _list[int] | None = None,
         status: InvoiceStatus | str | None = None,
         offset: int | None = None,
@@ -130,7 +134,7 @@ class CryptoPay:
     ) -> list[Invoice]: ...
     def get_checks(
         self,
-        asset: Asset | LiteralAsset | None = None,
+        asset: Asset | LiteralAsset | str | None = None,
         check_ids: _list[int] | None = None,
         status: CheckStatus | str | None = None,
         offset: int | None = None,
@@ -138,7 +142,7 @@ class CryptoPay:
     ) -> list[Check]: ...
     def get_transfers(
         self,
-        asset: Asset | LiteralAsset | None = None,
+        asset: Asset | LiteralAsset | str | None = None,
         transfer_ids: _list[int] | None = None,
         spend_id: str | None = None,
         offset: int | None = None,
@@ -152,17 +156,17 @@ class CryptoPay:
         start_at: datetime | None = None,
         end_at: datetime | None = None,
     ) -> AppStats: ...
-    def delete_all_checks(self) -> None: ...
-    def delete_all_invoices(self) -> None: ...
+    def delete_all_checks(self) -> NoneType: ...
+    def delete_all_invoices(self) -> NoneType: ...
     def exchange(
         self,
         amount: _float,
-        source: Asset | LiteralAsset | Fiat | LiteralFiat,
-        target: Asset | LiteralAsset | Fiat | LiteralFiat,
+        source: Asset | LiteralAsset | Fiat | LiteralFiat | str,
+        target: Asset | LiteralAsset | Fiat | LiteralFiat | str,
     ) -> float: ...
     def get_balance_by_asset(
         self,
-        asset: Asset | LiteralAsset,
+        asset: Asset | LiteralAsset | str,
     ) -> float: ...
     def polling_handler(self) -> Callable[[Handler], Handler]: ...
     def expired_handler(self) -> Callable[[Handler], Handler]: ...
@@ -179,17 +183,17 @@ class CryptoPay:
         handler: Callable[[Invoice], Awaitable],
         body: dict[str, Any],
         headers: dict[str, str],
-    ) -> None: ...
+    ) -> NoneType: ...
     async def __process_invoice(
         self,
         invoice: Invoice,
-    ) -> None: ...
+    ) -> NoneType: ...
     def _add_invoice(
         self,
         invoice: Invoice,
         data: dict[str, Any],
-    ) -> None: ...
+    ) -> NoneType: ...
     async def run_polling(
         self,
         parallel: Callable[[], Any] | None = None,
-    ) -> None: ...
+    ) -> NoneType: ...
