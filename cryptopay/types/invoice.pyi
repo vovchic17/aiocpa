@@ -1,6 +1,9 @@
 from datetime import datetime
 
-from cryptopay.client.client import _bool, bool  # type: ignore[attr-defined]
+from cryptopay.client.client import (  # type: ignore[attr-defined]
+    _bool,
+    bool,  # noqa: A004
+)
 from cryptopay.enums import (
     Asset,
     CurrencyType,

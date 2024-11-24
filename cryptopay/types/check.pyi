@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from cryptopay.client.client import bool
+from cryptopay.client.client import bool  # noqa: A004
 from cryptopay.enums import Asset, CheckStatus
 
 from .base import CryptoPayObject

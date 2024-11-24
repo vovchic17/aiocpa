@@ -48,8 +48,6 @@ target-version = "py310"
 
 [tool.ruff.lint]
 ignore = [
-    "ANN101", # missing-type-self
-    "ANN102", # missing-type-cls
     "D100",   # undocumented-public-module
     "D104",   # undocumented-public-package
     "D106",   # undocumented-public-nested-class

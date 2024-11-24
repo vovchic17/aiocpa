@@ -6,8 +6,8 @@ from .session.base import BaseSession
 __all__ = (
     "MAINNET",
     "TESTNET",
-    "AiohttpSession",
     "APIServer",
+    "AiohttpSession",
     "BaseSession",
     "CryptoPay",
 )

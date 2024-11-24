@@ -22,7 +22,6 @@ __all__ = (
     "Balance",
     "Check",
     "CryptoPayObject",
-    "_CryptoPayType",
     "Currency",
     "Error",
     "ExchangeRate",
@@ -32,4 +31,5 @@ __all__ = (
     "SerList",
     "Transfer",
     "Update",
+    "_CryptoPayType",
 )

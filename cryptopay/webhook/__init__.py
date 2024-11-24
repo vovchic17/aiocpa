@@ -6,8 +6,8 @@ from .flask_manager import FlaskManager
 __all__ = (
     "_APP",
     "AiohttpManager",
-    "RequestHandler",
-    "WebhookManager",
     "FastAPIManager",
     "FlaskManager",
+    "RequestHandler",
+    "WebhookManager",
 )
