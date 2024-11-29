@@ -20,7 +20,7 @@
 ## Quick start
 ```python
 import asyncio
-from cryptopay import CryptoPay
+from aiocpa import CryptoPay
 
 
 async def main():
@@ -38,7 +38,7 @@ if __name__ == "__main__":
 ```python
 import asyncio
 from aiogram import Bot, Dispatcher
-from cryptopay import CryptoPay
+from aiocpa import CryptoPay
 
 cp = CryptoPay("TOKEN")
 bot = Bot("TOKEN")
