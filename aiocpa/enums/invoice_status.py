@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import Literal
 
 
 class InvoiceStatus(str, Enum):
@@ -7,3 +8,10 @@ class InvoiceStatus(str, Enum):
     ACTIVE = "active"
     PAID = "paid"
     EXPIRED = "expired"
+
+
+LiteralInvoiceStatus = Literal[
+    "active",
+    "paid",
+    "expired",
+]

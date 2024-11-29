@@ -16,7 +16,11 @@ from aiocpa.enums import (
     Fiat,
     InvoiceStatus,
     LiteralAsset,
+    LiteralCheckStatus,
+    LiteralCurrencyType,
     LiteralFiat,
+    LiteralInvoiceStatus,
+    LiteralPaidBtnName,
     PaidBtnName,
 )
 from aiocpa.methods import CryptoPayMethod
@@ -57,7 +61,7 @@ class bool(_bool):  # type: ignore[misc]  # noqa: A001, N801
 class float(_float):  # noqa: A001, N801
     def __await__(self) -> Generator[None, None, Self]: ...
 
-class NoneType(_NoneType): # type: ignore[misc, valid-type]
+class NoneType(_NoneType):  # type: ignore[misc, valid-type]
     def __await__(self) -> Generator[None, None, None]: ...
 
 class CryptoPay:
@@ -87,12 +91,12 @@ class CryptoPay:
         amount: _float,
         asset: Asset | LiteralAsset | str | None = None,
         *,
-        currency_type: CurrencyType | str | None = None,
+        currency_type: CurrencyType | LiteralCurrencyType | str | None = None,
         fiat: Fiat | LiteralFiat | str | None = None,
         accepted_assets: _list[Asset | LiteralAsset | str] | None = None,
         description: str | None = None,
         hidden_message: str | None = None,
-        paid_btn_name: PaidBtnName | str | None = None,
+        paid_btn_name: PaidBtnName | LiteralPaidBtnName | str | None = None,
         paid_btn_url: str | None = None,
         payload: str | None = None,
         allow_comments: bool | None = None,
@@ -128,7 +132,7 @@ class CryptoPay:
         asset: Asset | LiteralAsset | str | None = None,
         fiat: Fiat | LiteralFiat | str | None = None,
         invoice_ids: _list[int] | None = None,
-        status: InvoiceStatus | str | None = None,
+        status: InvoiceStatus | LiteralInvoiceStatus | str | None = None,
         offset: int | None = None,
         count: int | None = None,
     ) -> list[Invoice]: ...
@@ -136,7 +140,7 @@ class CryptoPay:
         self,
         asset: Asset | LiteralAsset | str | None = None,
         check_ids: _list[int] | None = None,
-        status: CheckStatus | str | None = None,
+        status: CheckStatus | LiteralCheckStatus | str | None = None,
         offset: int | None = None,
         count: int | None = None,
     ) -> list[Check]: ...

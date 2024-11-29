@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import Literal
 
 
 class CheckStatus(str, Enum):
@@ -6,3 +7,9 @@ class CheckStatus(str, Enum):
 
     ACTIVE = "active"
     ACTIVATED = "activated"
+
+
+LiteralCheckStatus = Literal[
+    "active",
+    "activated",
+]

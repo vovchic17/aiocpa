@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import Literal
 
 
 class PaidBtnName(str, Enum):
@@ -13,3 +14,11 @@ class PaidBtnName(str, Enum):
     OPENCHANNEL = "openChannel"
     OPENBOT = "openBot"
     CALLBACK = "callback"
+
+
+LiteralPaidBtnName = Literal[
+    "viewItem",
+    "openChannel",
+    "openBot",
+    "callback",
+]

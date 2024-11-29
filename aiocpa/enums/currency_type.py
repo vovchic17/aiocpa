@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import Literal
 
 
 class CurrencyType(str, Enum):
@@ -6,3 +7,9 @@ class CurrencyType(str, Enum):
 
     CRYPTO = "crypto"
     FIAT = "fiat"
+
+
+LiteralCurrencyType = Literal[
+    "crypto",
+    "fiat",
+]
