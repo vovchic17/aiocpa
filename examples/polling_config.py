@@ -1,8 +1,8 @@
 import asyncio
 
-from cryptopay import CryptoPay
-from cryptopay.polling import PollingConfig
-from cryptopay.types import Invoice
+from aiocpa import CryptoPay
+from aiocpa.polling import PollingConfig
+from aiocpa.types import Invoice
 
 cp = CryptoPay(
     "TOKEN",
@@ -15,7 +15,7 @@ cp = CryptoPay(
 
 @cp.polling_handler()
 async def handler(invoice: Invoice):
-    print(f"Received", invoice.amount, invoice.asset.value)
+    print(f"Received", invoice.amount, invoice.asset)
 
 
 # called after timeout (600s) or when invoice status is "expired"

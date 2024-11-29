@@ -8,7 +8,6 @@ readme = "README.md"
 repository = "https://github.com/vovchic17/aiocpa"
 documentation = "https://aiocpa.readthedocs.io/en/latest/"
 keywords = ["crypto pay", "CryptoBot", "Crypto Pay API"]
-packages = [{ include = "cryptopay", from = "." }]
 
 [tool.poetry.dependencies]
 python = "^3.10"

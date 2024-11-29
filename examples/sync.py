@@ -1,4 +1,4 @@
-from cryptopay import CryptoPay
+from aiocpa import CryptoPay
 
 cp = CryptoPay("TOKEN")
 app = cp.get_me()

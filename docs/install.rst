@@ -4,11 +4,11 @@ Installation
 
 Via pip
 -------
-* From PyPI
+.. * From PyPI
 
-.. code-block:: bash
+.. .. code-block:: bash
 
-    pip install -U aiocpa
+..     pip install -U aiocpa
 
 * From GitHub
 

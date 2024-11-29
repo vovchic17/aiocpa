@@ -1,4 +1,4 @@
-from cryptopay import __version__
+from aiocpa import __version__
 
 project = "aiocpa"
 copyright = "2024, VoVcHiC"

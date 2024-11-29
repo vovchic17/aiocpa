@@ -3,8 +3,8 @@ import asyncio
 from telebot.async_telebot import AsyncTeleBot
 from telebot.types import Message
 
-from cryptopay import CryptoPay
-from cryptopay.types import Invoice
+from aiocpa import CryptoPay
+from aiocpa.types import Invoice
 
 cp = CryptoPay("TOKEN")
 bot = AsyncTeleBot("TOKEN")

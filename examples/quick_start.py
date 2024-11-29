@@ -1,6 +1,6 @@
 import asyncio
 
-from cryptopay import CryptoPay
+from aiocpa import CryptoPay
 
 
 async def main() -> None:

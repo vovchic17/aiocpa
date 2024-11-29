@@ -3,9 +3,9 @@ import asyncio
 from fastapi import FastAPI
 import uvicorn
 
-from cryptopay import CryptoPay
-from cryptopay.webhook import FastAPIManager
-from cryptopay.types import Invoice
+from aiocpa import CryptoPay
+from aiocpa.webhook import FastAPIManager
+from aiocpa.types import Invoice
 
 cp = CryptoPay("TOKEN", manager=FastAPIManager())
 app = FastAPI()

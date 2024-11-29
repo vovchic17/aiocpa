@@ -1,8 +1,8 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from cryptopay import CryptoPay
-from cryptopay.types import Invoice
+from aiocpa import CryptoPay
+from aiocpa.types import Invoice
 
 app = Client("my_account")
 cp = CryptoPay("TOKEN")

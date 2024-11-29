@@ -1,4 +1,4 @@
-from cryptopay import MAINNET, TESTNET, CryptoPay
+from aiocpa import MAINNET, TESTNET, CryptoPay
 
 main_client = CryptoPay(
     "TOKEN",

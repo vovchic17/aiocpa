@@ -7,7 +7,7 @@ Webhook
 
     🏝 Crypto Pay -> My Apps -> YOUR APP -> Webhooks -> 🌕 Enable webhooks.
 
-.. automethod:: cryptopay.CryptoPay.webhook_handler
+.. automethod:: aiocpa.CryptoPay.webhook_handler
 
 Usage example with `aiohttp web server <https://docs.aiohttp.org/en/stable/web_quickstart.html>`_
 -------------------------------------------------------------------------------------------------
@@ -37,19 +37,19 @@ Usage example with `flask web server <https://flask.palletsprojects.com/en/3.0.x
 
 **aiocpa** uses `aiohttp <https://docs.aiohttp.org/en/stable/index.html>`_ as web server by default.
 You can implement your own webhook manager by inheriting :class:`cryptopay.webhook.WebhookManager`
-and overriding :attr:`cryptopay.webhook.WebhookManager.register_handler`.
+and overriding :attr:`aiocpa.webhook.WebhookManager.register_handler`.
 
-.. autoclass:: cryptopay.webhook.WebhookManager
+.. autoclass:: aiocpa.webhook.WebhookManager
     :members:
 
-.. autoclass:: cryptopay.webhook.AiohttpManager
+.. autoclass:: aiocpa.webhook.AiohttpManager
     :show-inheritance:
     :members:
 
-.. autoclass:: cryptopay.webhook.FastAPIManager
+.. autoclass:: aiocpa.webhook.FastAPIManager
     :show-inheritance:
     :members:
 
-.. autoclass:: cryptopay.webhook.FlaskManager
+.. autoclass:: aiocpa.webhook.FlaskManager
     :show-inheritance:
     :members:

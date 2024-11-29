@@ -2,6 +2,6 @@
 Errors
 ======
 
-.. automodule:: cryptopay.exceptions
+.. automodule:: aiocpa.exceptions
     :members:
     :show-inheritance:

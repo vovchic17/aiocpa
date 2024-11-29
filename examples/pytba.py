@@ -1,8 +1,8 @@
 from telebot import TeleBot
 from telebot.types import Message
 
-from cryptopay import CryptoPay
-from cryptopay.types import Invoice
+from aiocpa import CryptoPay
+from aiocpa.types import Invoice
 
 cp = CryptoPay("TOKEN")
 bot = TeleBot("TOKEN")
