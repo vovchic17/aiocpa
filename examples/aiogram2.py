@@ -29,7 +29,7 @@ async def handle_payment(
 
 
 async def on_startup(_) -> None:
-    asyncio.create_task(cp.run_polling())
+    asyncio.create_task(cp.start_polling())
 
 
 if __name__ == "__main__":

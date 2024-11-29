@@ -33,4 +33,4 @@ async def handle_payment(
 
 
 client.start()
-cp.run_polling()
+cp.start_polling()

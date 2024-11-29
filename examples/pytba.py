@@ -30,4 +30,4 @@ def handle_payment(
 
 
 if __name__ == "__main__":
-    cp.run_polling(bot.infinity_polling)
+    cp.start_polling(bot.infinity_polling)

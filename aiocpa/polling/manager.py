@@ -167,7 +167,7 @@ class PollingManager:
         ):
             del self._tasks[invoice.invoice_id]
 
-    async def run_polling(
+    async def start_polling(
         self: "aiocpa.CryptoPay",
         parallel: "Callable[[], Any] | None" = None,
     ) -> None:

@@ -20,7 +20,7 @@ async def main() -> None:
     invoice = await cp.create_invoice(1, "USDT")
     print("invoice link:", invoice.bot_invoice_url)
     invoice.await_payment(payload="payload")
-    await cp.run_polling()
+    await cp.start_polling()
 
 
 if __name__ == "__main__":

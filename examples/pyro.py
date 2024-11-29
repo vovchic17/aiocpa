@@ -27,4 +27,4 @@ async def handle_payment(
     )
 
 
-cp.run_polling(app.start)
+cp.start_polling(app.start)

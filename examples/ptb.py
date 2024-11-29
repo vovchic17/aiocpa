@@ -40,7 +40,7 @@ async def main() -> None:
     await app.start()
     await asyncio.gather(
         app.updater.start_polling(allowed_updates=Update.ALL_TYPES),
-        cp.run_polling(),
+        cp.start_polling(),
     )
 
 

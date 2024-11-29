@@ -60,7 +60,7 @@ async def handle_payment(invoice, message):
 async def main():
     await asyncio.gather(
         dp.start_polling(bot),
-        cp.run_polling(),
+        cp.start_polling(),
     )
 
 

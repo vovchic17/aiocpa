@@ -31,7 +31,7 @@ async def handle_payment(
 async def main() -> None:
     await asyncio.gather(
         dp.start_polling(bot),
-        cp.run_polling(),
+        cp.start_polling(),
     )
 
 
