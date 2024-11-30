@@ -16,5 +16,11 @@ Usage example
 
 .. literalinclude:: ../../examples/get_balance_by_asset.py
 
+.. automethod:: aiocpa.CryptoPay.get_invoice
+
+Usage example
+
+.. literalinclude:: ../../examples/get_invoice.py
+
 .. automethod:: aiocpa.CryptoPay.delete_all_checks
 .. automethod:: aiocpa.CryptoPay.delete_all_invoices
