@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from aiocpa.client.client import (  # type: ignore[attr-defined]
+    NoneType,
     _bool,
     bool,  # noqa: A004
 )
@@ -49,4 +50,5 @@ class Invoice(CryptoPayObject):
     paid_btn_url: str | None = None
 
     def delete(self) -> bool: ...
+    def update(self) -> NoneType: ...
     def await_payment(self, **kwargs: object) -> None: ...

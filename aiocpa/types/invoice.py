@@ -97,6 +97,19 @@ class Invoice(CryptoPayObject):
         """
         return await self._client.delete_invoice(self.invoice_id)
 
+    async def update(self) -> None:
+        """
+        Shortcut for method :class:`aiocpa.CryptoPay.get_invoices`.
+
+        Use this method to update invoice object.
+
+        Source: https://help.crypt.bot/crypto-pay-api#getInvoices
+
+        :return:
+        """
+        invoice = cast(Invoice, await self._client.get_invoice(self))
+        self.__dict__ = invoice.__dict__
+
     def await_payment(self, **kwargs: object) -> None:
         """
         Send the invoice to the polling manager.
