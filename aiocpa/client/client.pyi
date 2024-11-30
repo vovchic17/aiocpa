@@ -201,3 +201,7 @@ class CryptoPay:
         self,
         parallel: Callable[[], Any] | None = None,
     ) -> NoneType: ...
+    def get_invoice(
+        self,
+        invoice: int | Invoice,
+    ) -> Invoice | NoneType: ...
