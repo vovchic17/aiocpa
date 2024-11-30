@@ -31,7 +31,7 @@ class Check(CryptoPayObject):
 
     async def delete(self) -> bool:
         """
-        Shortcut for method :class:`cryptopay.CryptoPay.delete_check`.
+        Shortcut for method :class:`aiocpa.CryptoPay.delete_check`.
 
         Use this method to delete check created by your app.
         Returns :code:`True` on success.

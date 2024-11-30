@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import cast
 
 from aiocpa.enums import (
     Asset,
@@ -85,7 +86,7 @@ class Invoice(CryptoPayObject):
 
     async def delete(self) -> bool:
         """
-        Shortcut for method :class:`cryptopay.CryptoPay.delete_invoice`.
+        Shortcut for method :class:`aiocpa.CryptoPay.delete_invoice`.
 
         Use this method to delete invoice created by your app.
         Returns :code:`True` on success.
