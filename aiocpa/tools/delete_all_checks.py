@@ -15,8 +15,8 @@ class DeleteAllChecks:
         """
         Delete all checks.
 
-        Wrapper for :class:`cryptopay.CryptoPay.get_checks`
-        and :class:`cryptopay.CryptoPay.delete_check`
+        Wrapper for :class:`aiocpa.CryptoPay.get_checks`
+        and :class:`aiocpa.CryptoPay.delete_check`
 
         Use this method to delete all existing
         checks created by your app.

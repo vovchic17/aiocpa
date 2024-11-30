@@ -15,8 +15,8 @@ class DeleteAllInvoices:
         """
         Delete all invoices.
 
-        Wrapper for :class:`cryptopay.CryptoPay.get_invoices`
-        and :class:`cryptopay.CryptoPay.delete_invoice`
+        Wrapper for :class:`aiocpa.CryptoPay.get_invoices`
+        and :class:`aiocpa.CryptoPay.delete_invoice`
 
         Use this method to delete all existing
         invoices created by your app.

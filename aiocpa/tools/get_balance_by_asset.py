@@ -17,7 +17,7 @@ class GetBalanceByAsset:
         """
         Get the balance of a specific asset.
 
-        Wrapper for :class:`cryptopay.CryptoPay.get_balance`.
+        Wrapper for :class:`aiocpa.CryptoPay.get_balance`.
 
         Use this method to get total avaliable
         amount in float of a specific asset.

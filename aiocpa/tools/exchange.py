@@ -19,7 +19,7 @@ class Exchange:
         """
         Exchange currency.
 
-        Wrapper for :class:`cryptopay.CryptoPay.get_exchange_rates`.
+        Wrapper for :class:`aiocpa.CryptoPay.get_exchange_rates`.
 
         Use this method to get the equivalent amount in
         the target currency for the source currency.
