@@ -1,5 +1,5 @@
 import logging
 
-webhook = logging.getLogger("cryptopay.webhook")
-polling = logging.getLogger("cryptopay.polling")
-client = logging.getLogger("cryptopay.client")
+webhook = logging.getLogger("aiocpa.webhook")
+polling = logging.getLogger("aiocpa.polling")
+client = logging.getLogger("aiocpa.client")
