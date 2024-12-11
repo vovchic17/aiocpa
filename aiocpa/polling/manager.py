@@ -183,7 +183,7 @@ class PollingManager:
         if self._handler is None:
             msg = (
                 "Polling handler hasn't been declared, example:\n"
-                "from cryptopay import CryptoPay\n"
+                "from aiocpa import CryptoPay\n"
                 'cp = CryptoPay("TOKEN")\n'
                 "@cp.polling_handler()\n"
                 "async def handler(invoice): ..."
