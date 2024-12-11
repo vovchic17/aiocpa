@@ -66,12 +66,13 @@ class NoneType(_NoneType):  # type: ignore[misc, valid-type]
 
 class CryptoPay:
     _token: str
-    session: type[BaseSession]
+    session: BaseSession
     _timeout: int
     _delay: int
     _tasks: dict[int, PollingTask]
     _handler: Handler | None
     _exp_handler: Handler | None
+    _webhook_manager: WebhookManager
 
     def __init__(
         self,
