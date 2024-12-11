@@ -66,7 +66,7 @@ class NoneType(_NoneType):  # type: ignore[misc, valid-type]
 
 class CryptoPay:
     _token: str
-    _session: type[BaseSession]
+    session: type[BaseSession]
     _timeout: int
     _delay: int
     _tasks: dict[int, PollingTask]

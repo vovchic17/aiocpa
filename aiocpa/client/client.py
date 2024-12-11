@@ -38,7 +38,7 @@ class CryptoPay(Methods, Tools, RequestHandler, PollingManager):
         polling_config: "PollingConfig | None" = None,
     ) -> None:
         self._token = token
-        self._session = session(api_server)
+        self.session = session(api_server)
         RequestHandler.__init__(self, manager or AiohttpManager())
         PollingManager.__init__(self, polling_config or PollingConfig())
         thread = PropagatingThread(target=self.__auth)
@@ -57,7 +57,7 @@ class CryptoPay(Methods, Tools, RequestHandler, PollingManager):
         :param method: CryptoPayMethod object.
         :return: :class:`CryptoPayType` object.
         """
-        async with self._session as session:
+        async with self.session as session:
             loggers.client.debug("Requesting: %s", method.__method__)
             return await session.request(self._token, self, method)
 
@@ -68,16 +68,16 @@ class CryptoPay(Methods, Tools, RequestHandler, PollingManager):
                 "Authorized as '%s' id=%d on %s",
                 me.name,
                 me.app_id,
-                self._session.api_server.name,
+                self.session.api_server.name,
             )
         except APIError:
-            current_net = self._session.api_server
+            current_net = self.session.api_server
             if current_net == MAINNET:
-                self._session = self._session.__class__(TESTNET)
+                self.session = self.session.__class__(TESTNET)
             else:
-                self._session = self._session.__class__(MAINNET)
+                self.session = self.session.__class__(MAINNET)
             self.get_me()
-            net = self._session.api_server
+            net = self.session.api_server
             msg = (
                 "Authorization failed. Token is served by the "
                 f"{net.name}, you are using {current_net.name}"
