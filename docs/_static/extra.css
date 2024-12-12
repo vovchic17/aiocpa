@@ -29,7 +29,8 @@
 
 .n,
 .nn,
-.nd {
+.nd,
+.vm {
     color: var(--code_color2) !important;
     text-decoration: none !important;
     font-weight: normal !important;
