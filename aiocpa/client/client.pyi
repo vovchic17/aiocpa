@@ -59,7 +59,7 @@ class list(_list[_T]):  # noqa: A001, N801
 class bool(_bool):  # type: ignore[misc]  # noqa: A001, N801
     def __await__(self) -> Generator[None, None, Self]: ...
 
-class str(_str):  # noqa: A001, N801, SLOT000
+class str(_str):  # noqa: A001, N801
     def __await__(self) -> Generator[None, None, Self]: ...
 
 class float(_float):  # noqa: A001, N801
