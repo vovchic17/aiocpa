@@ -122,3 +122,12 @@ class Invoice(CryptoPayObject):
         :return:
         """
         self._client._add_invoice(self, kwargs)  # noqa: SLF001
+
+    @property
+    def qr(self) -> str:
+        """
+        Get invoice qr code.
+
+        :return: invoice qr code.
+        """
+        return self._client.session.api_server.get_qr(self.bot_invoice_url)

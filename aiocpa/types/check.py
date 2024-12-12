@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from aiocpa.enums import Asset, CheckStatus
+from aiocpa.enums import Asset, CheckStatus, LiteralFiat
 
 from .base import CryptoPayObject
 
@@ -41,3 +41,31 @@ class Check(CryptoPayObject):
         :return: :code:`True` on success.
         """
         return await self._client.delete_check(self.check_id)
+
+    @property
+    def qr(self) -> str:
+        """
+        Get check qr code.
+
+        :return: check qr code.
+        """
+        return self._client.session.api_server.get_qr(self.bot_check_url)
+
+    async def get_image(self, fiat: LiteralFiat | str) -> str:
+        """
+        Get check preview image.
+
+        :return: check image.
+        """
+        fiat_amount = await self._client.exchange(
+            self.amount,
+            self.asset,
+            fiat,
+        )
+        return self._client.session.api_server.get_image(
+            asset=self.asset,
+            asset_amount=self.amount,
+            fiat=fiat,
+            fiat_amount=fiat_amount,
+            main="asset",
+        )
