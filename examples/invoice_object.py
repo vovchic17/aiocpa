@@ -7,6 +7,7 @@ async def main() -> None:
     cp = CryptoPay("TOKEN")
 
     invoice = cp.create_invoice(1, "USDT")
+    
     print(invoice.status)  # active
     await asyncio.sleep(10)  # payment
     await invoice.update()
