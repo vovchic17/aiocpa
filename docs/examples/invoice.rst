@@ -5,4 +5,4 @@ Invoice
 Invoice shortcut methods
 ------------------------
 
-.. literalinclude:: ../../examples/invoice.py
+.. literalinclude:: ../../examples/invoice_object.py

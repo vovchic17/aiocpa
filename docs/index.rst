@@ -44,4 +44,5 @@ Contents
    enums
    api/index
    errors
+   examples/index
    integration_examples/index
