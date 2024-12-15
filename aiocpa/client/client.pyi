@@ -126,7 +126,7 @@ class CryptoPay:
     def transfer(
         self,
         user_id: int,
-        asset: _str,
+        asset: Asset | LiteralAsset | _str,
         amount: _float,
         spend_id: _str | None = None,
         comment: _str | None = None,
