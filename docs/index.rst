@@ -5,7 +5,7 @@
 Introduction
 ------------
 
-**aiosend** is a synchronous & asynchronous `Crypto Pay API <https://help.crypt.bot/crypto-pay-api>`_ client.
+**aiosend** is a synchronous & asynchronous `Crypto Pay API <https://help.send.tg/en/articles/10279948-crypto-pay-api>`_ client.
 
 .. seealso::
    |telegram| **aiosend** has `community chat on Telegram <https://aiosend.t.me>`_
