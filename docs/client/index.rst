@@ -2,7 +2,7 @@
 Client
 ======
 
-aiosend is |python| python implementation for `Crypto Pay API <https://help.crypt.bot/crypto-pay-api>`_.
+aiosend is |python| python implementation for `Crypto Pay API <https://help.send.tg/en/articles/10279948-crypto-pay-api>`_.
 
 * **Tools** - additional functionality.
 * **Shortcut methods** - shortcut type methods.
