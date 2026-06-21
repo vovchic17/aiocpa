@@ -10,7 +10,7 @@ Introduction
 .. seealso::
    |telegram| **aiosend** has `community chat on Telegram <https://aiosend.t.me>`_
 
-.. |telegram| image:: https://raw.githubusercontent.com/vovchic17/static/2cae16d0c4289f9556dacc13322dd4a2fcca214f/src/telegram_logo.svg
+.. |telegram| image:: https://raw.githubusercontent.com/vovchic17/static/main/src/telegram_logo.svg
    :width: 24px
    :alt: python
 
