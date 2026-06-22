@@ -31,6 +31,11 @@ Quick start
 
 .. literalinclude:: ../examples/quick_start.py
 
+Synchronous usage
+~~~~~~~~~~~~~~~~~
+
+.. literalinclude:: ../examples/sync.py
+
 Contents
 --------
 .. toctree::

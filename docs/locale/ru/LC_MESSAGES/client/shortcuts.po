@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiosend \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-16 22:54+0300\n"
+"POT-Creation-Date: 2026-06-21 18:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -17,7 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../../client/shortcuts.rst:5
 msgid "Shortcut methods"
@@ -30,8 +30,8 @@ msgid ""
 "objects."
 msgstr ""
 "Эти методы упрощают использование стандартных :ref:`методов Crypto Pay "
-"API <MethodsAnchor>`, а также предоставляют дополнительный функционал для"
-" объектов."
+"API <MethodsAnchor>`, а также предоставляют дополнительный функционал для "
+"объектов."
 
 #: ../../client/shortcuts.rst:11
 msgid "Updating objects"
@@ -46,12 +46,16 @@ msgid "Use this method to update balance object."
 msgstr "Используйте этот метод для обновления объекта баланса."
 
 #: aiosend.types.balance.Balance.update:5 of
-msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getBalance"
-msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#getBalance"
+msgid ""
+"Source: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_86005049de"
+msgstr ""
+"Источник: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_86005049de"
 
 #: ../../client/shortcuts.rst
 msgid "Return type"
-msgstr ""
+msgstr "Возвращаемый тип"
 
 #: aiosend.types.balance.Balance.update:7 aiosend.types.check.Check.poll:9
 #: aiosend.types.check.Check.update:7
@@ -59,7 +63,7 @@ msgstr ""
 #: aiosend.types.invoice.Invoice.poll:9 aiosend.types.invoice.Invoice.update:7
 #: of
 msgid ":sphinx_autodoc_typehints_type:`\\:py\\:obj\\:\\`None\\``"
-msgstr ""
+msgstr ":sphinx_autodoc_typehints_type:`\\:py\\:obj\\:\\`None\\``"
 
 #: aiosend.types.check.Check.update:1 of
 msgid "Shortcut for method :meth:`aiosend.CryptoPay.get_checks`."
@@ -70,8 +74,12 @@ msgid "Use this method to update check object."
 msgstr "Используйте этот метод для обновления объекта чека."
 
 #: aiosend.types.check.Check.update:5 of
-msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getChecks"
-msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#getChecks"
+msgid ""
+"Source: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_d23dda1828"
+msgstr ""
+"Источник: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_d23dda1828"
 
 #: aiosend.types.exchange_rate.ExchangeRate.update:1 of
 msgid "Shortcut for method :meth:`aiosend.CryptoPay.get_exchange_rates`."
@@ -79,11 +87,15 @@ msgstr "Сокращение для метода :meth:`aiosend.CryptoPay.get_ex
 
 #: aiosend.types.exchange_rate.ExchangeRate.update:3 of
 msgid "Use this method to update ExchangeRate object."
-msgstr "Используйте этот метод для обновления объекта ExchangeRate"
+msgstr "Используйте этот метод для обновления объекта ExchangeRate."
 
 #: aiosend.types.exchange_rate.ExchangeRate.update:5 of
-msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getExchangeRates"
-msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#getExchangeRates"
+msgid ""
+"Source: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_bc0e2dee1c"
+msgstr ""
+"Источник: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_bc0e2dee1c"
 
 #: aiosend.types.invoice.Invoice.update:1 of
 msgid "Shortcut for method :meth:`aiosend.CryptoPay.get_invoices`."
@@ -94,8 +106,12 @@ msgid "Use this method to update invoice object."
 msgstr "Используйте этот метод для обновления объекта счёта."
 
 #: aiosend.types.invoice.Invoice.update:5 of
-msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getInvoices"
-msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#getInvoices"
+msgid ""
+"Source: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_e4c2ccb208"
+msgstr ""
+"Источник: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_e4c2ccb208"
 
 #: ../../client/shortcuts.rst:19
 msgid "Deleting objects"
@@ -114,12 +130,16 @@ msgstr ""
 "Возвращает :code:`True` в случае успеха."
 
 #: aiosend.types.check.Check.delete:6 of
-msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#deleteCheck"
-msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#deleteCheck"
+msgid ""
+"Source: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_b27428d56a"
+msgstr ""
+"Источник: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_b27428d56a"
 
 #: aiosend.types.check.Check.delete:8 aiosend.types.invoice.Invoice.delete:8 of
 msgid ":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`bool\\``"
-msgstr ""
+msgstr ":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`bool\\``"
 
 #: aiosend.types.invoice.Invoice.delete:1 of
 msgid "Shortcut for method :meth:`aiosend.CryptoPay.delete_invoice`."
@@ -134,24 +154,28 @@ msgstr ""
 "Возвращает :code:`True` в случае успеха."
 
 #: aiosend.types.invoice.Invoice.delete:6 of
-msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#hwjK"
-msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#hwjK"
+msgid ""
+"Source: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_da2ea9f39c"
+msgstr ""
+"Источник: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_da2ea9f39c"
 
 #: ../../client/shortcuts.rst:25
 msgid "QR code of object"
-msgstr "QR код объекта"
+msgstr "QR-код объекта"
 
 #: aiosend.types.Check.qr:1 of
 msgid "Get check qr code."
-msgstr "Получить qr код чека."
+msgstr "Получить QR-код чека."
 
 #: aiosend.types.Invoice.qr:1 of
 msgid "Get invoice qr code."
-msgstr "Получить qr код счёта."
+msgstr "Получить QR-код счёта."
 
 #: ../../client/shortcuts.rst:31
 msgid "Check image"
-msgstr "URL изображения чека."
+msgstr "Изображение чека"
 
 #: aiosend.types.check.Check.get_image:1 of
 msgid "Get check preview image."
@@ -159,7 +183,7 @@ msgstr "Получить изображение предпросмотра че�
 
 #: aiosend.types.check.Check.get_image:3 of
 msgid ":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`str\\``"
-msgstr ""
+msgstr ":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`str\\``"
 
 #: ../../client/shortcuts.rst:36
 msgid "Poll objects"
@@ -179,11 +203,11 @@ msgstr ""
 
 #: ../../client/shortcuts.rst
 msgid "Parameters"
-msgstr ""
+msgstr "Параметры"
 
 #: aiosend.types.check.Check.poll:7 aiosend.types.invoice.Invoice.poll:7 of
 msgid "additional payload for the handler."
-msgstr "Дополнительная полезная нагрузка для функции-обработчика"
+msgstr "Дополнительная полезная нагрузка для функции-обработчика."
 
 #: aiosend.types.invoice.Invoice.poll:1 of
 msgid "Send the invoice to the polling manager."

@@ -5,7 +5,7 @@
 
 [![Python](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/main/src/badges/python310_314.json)](https://www.python.org/)
 [![aiosend](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/main/src/badges/aiosend307.json)](https://pypi.org/project/aiosend/)
-[![Crypto Pay API](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/refs/heads/main/src/badges/cryptopayapi1.5.1.json)](https://help.crypt.bot/crypto-pay-api)
+[![Crypto Pay API](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/refs/heads/main/src/badges/cryptopayapi1.5.1.json)](https://help.send.tg/en/articles/10279948-crypto-pay-api)
 [![Documentation Status](https://readthedocs.org/projects/aiosend/badge/?version=latest)](https://aiosend.readthedocs.io/en/latest/?badge=latest)
 [![Pydantic v2](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/pydantic/pydantic/main/docs/badge/v2.json)](https://pydantic.dev)
 [![Aiohttp](https://img.shields.io/badge/aiohttp-v3-2c5bb4?logo=aiohttp)](https://docs.aiohttp.org/en/stable/)
@@ -13,9 +13,9 @@
 [![Code linter: ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/charliermarsh/ruff)
 [![Checked with mypy](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/main/src/badges/mypy.json)](https://mypy-lang.org/)
 
-**aiosend** is a synchronous & asynchronous [Crypto Pay API](https://help.crypt.bot/crypto-pay-api) client.
+**aiosend** is a synchronous & asynchronous [Crypto Pay API](https://help.send.tg/en/articles/10279948-crypto-pay-api) client.
 
-> ## [Official documentation](https://help.send.tg/en/articles/10279948-crypto-pay-api)
+> ## [Official documentation](https://aiosend.readthedocs.io/en/latest/)
 >
 > ## [<img src="https://raw.githubusercontent.com/vovchic17/static/refs/heads/main/src/telegram_logo.svg" width="30" align="top">  Telegram chat](https://aiosend.t.me/)
 

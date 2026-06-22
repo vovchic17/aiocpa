@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiosend \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-16 22:54+0300\n"
+"POT-Creation-Date: 2026-06-21 18:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk_UA\n"
@@ -17,7 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../../client/shortcuts.rst:5
 msgid "Shortcut methods"
@@ -29,7 +29,7 @@ msgid ""
 "<MethodsAnchor>` and also provide additional functionality to the "
 "objects."
 msgstr ""
-"Ці методи спрощують використання стандартних :ref:`методів Crypto PayAPI "
+"Ці методи спрощують використання стандартних :ref:`методів Crypto Pay API "
 "<MethodsAnchor>`, а також надають додатковий функціонал для об'єктів."
 
 #: ../../client/shortcuts.rst:11
@@ -45,8 +45,12 @@ msgid "Use this method to update balance object."
 msgstr "Використовуйте цей метод для оновлення об'єкта балансу."
 
 #: aiosend.types.balance.Balance.update:5 of
-msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getBalance"
-msgstr "Джерело: https://help.send.tg/en/articles/10279948-crypto-pay-api#getBalance"
+msgid ""
+"Source: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_86005049de"
+msgstr ""
+"Джерело: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_86005049de"
 
 #: ../../client/shortcuts.rst
 msgid "Return type"
@@ -69,20 +73,26 @@ msgid "Use this method to update check object."
 msgstr "Використовуйте цей метод для оновлення об'єкта чека."
 
 #: aiosend.types.check.Check.update:5 of
-msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getChecks"
-msgstr "Джерело: https://help.send.tg/en/articles/10279948-crypto-pay-api#getChecks"
+msgid ""
+"Source: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_d23dda1828"
+msgstr "Джерело: https://help.send.tg/en/articles/10279948-crypto-pay-api#h_d23dda1828"
 
 #: aiosend.types.exchange_rate.ExchangeRate.update:1 of
 msgid "Shortcut for method :meth:`aiosend.CryptoPay.get_exchange_rates`."
-msgstr "Скорочення методу :meth:`aiosend.CryptoPay.getExchangeRates`."
+msgstr "Скорочення методу :meth:`aiosend.CryptoPay.get_exchange_rates`."
 
 #: aiosend.types.exchange_rate.ExchangeRate.update:3 of
 msgid "Use this method to update ExchangeRate object."
 msgstr "Використовуйте цей метод для оновлення об'єкта ExchangeRate"
 
 #: aiosend.types.exchange_rate.ExchangeRate.update:5 of
-msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getExchangeRates"
-msgstr "Джерело: https://help.send.tg/en/articles/10279948-crypto-pay-api#getExchangeRates"
+msgid ""
+"Source: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_bc0e2dee1c"
+msgstr ""
+"Джерело: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_bc0e2dee1c"
 
 #: aiosend.types.invoice.Invoice.update:1 of
 msgid "Shortcut for method :meth:`aiosend.CryptoPay.get_invoices`."
@@ -93,8 +103,12 @@ msgid "Use this method to update invoice object."
 msgstr "Використовуйте цей метод для оновлення об'єкта рахунку."
 
 #: aiosend.types.invoice.Invoice.update:5 of
-msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getInvoices"
-msgstr "Джерело: https://help.send.tg/en/articles/10279948-crypto-pay-api#getInvoices"
+msgid ""
+"Source: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_e4c2ccb208"
+msgstr ""
+"Джерело: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_e4c2ccb208"
 
 #: ../../client/shortcuts.rst:19
 msgid "Deleting objects"
@@ -113,8 +127,12 @@ msgstr ""
 "програмою.Повертає :code:`True` у разі успіху."
 
 #: aiosend.types.check.Check.delete:6 of
-msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#deleteCheck"
-msgstr "Джерело: https://help.send.tg/en/articles/10279948-crypto-pay-api#deleteCheck"
+msgid ""
+"Source: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_b27428d56a"
+msgstr ""
+"Джерело: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_b27428d56a"
 
 #: aiosend.types.check.Check.delete:8 aiosend.types.invoice.Invoice.delete:8 of
 msgid ":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`bool\\``"
@@ -133,8 +151,12 @@ msgstr ""
 "програмою.Повертає :code:`True` у разі успіху."
 
 #: aiosend.types.invoice.Invoice.delete:6 of
-msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#hwjK"
-msgstr "Джерело: https://help.send.tg/en/articles/10279948-crypto-pay-api#hwjK"
+msgid ""
+"Source: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_da2ea9f39c"
+msgstr ""
+"Джерело: https://help.send.tg/en/articles/10279948-crypto-pay-"
+"api#h_da2ea9f39c"
 
 #: ../../client/shortcuts.rst:25
 msgid "QR code of object"

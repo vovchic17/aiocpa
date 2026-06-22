@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiosend \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-31 09:34+0300\n"
+"POT-Creation-Date: 2026-06-22 05:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk_UA\n"
@@ -17,7 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../../index.rst:6
 msgid "Introduction"
@@ -40,18 +40,18 @@ msgstr ""
 "<https://aiosend.t.me>`_"
 
 #: ../../index.rst:13
-msgid "python"
+msgid "telegram"
 msgstr ""
 
-#: ../../index.rst:18
+#: ../../index.rst:19
 msgid "Features"
 msgstr "Особливості"
 
-#: ../../index.rst:19
+#: ../../index.rst:20
 msgid "supports both synchronous and asynchronous use"
 msgstr "підтримує як синхронне, так і асинхронне використання"
 
-#: ../../index.rst:20
+#: ../../index.rst:21
 msgid ""
 "provides :doc:`invoice polling <events/invoice_polling>` and :doc:`check "
 "polling <events/check_polling>`"
@@ -59,19 +59,19 @@ msgstr ""
 "надає :doc:`поллінг рахунків <events/invoice_polling>` i :doc:`полінг "
 "чеків <events/check_polling>`"
 
-#: ../../index.rst:21
+#: ../../index.rst:22
 msgid "provides :doc:`webhook handling <events/webhook>`"
 msgstr "надає :doc:`обробку вебхуків <events/webhook>`"
 
-#: ../../index.rst:22
+#: ../../index.rst:23
 msgid ""
 "fully typed, has :doc:`literal type hints and warnings "
 "<client/hints_warns>`"
 msgstr ""
-"повністю типізований, має :doc:`literal підказки та "
-"попередження <client/hints_warns>`"
+"повністю типізований, має :doc:`literal підказки та попередження "
+"<client/hints_warns>`"
 
-#: ../../index.rst:23
+#: ../../index.rst:24
 msgid ""
 "uses powerful `magic filters from aiogram 3.x "
 "<https://docs.aiogram.dev/en/latest/dispatcher/filters/magic_filters.html"
@@ -81,23 +81,30 @@ msgstr ""
 "<https://docs.aiogram.dev/en/latest/dispatcher/filters/magic_filters.html"
 "#magic-filters>`_"
 
-#: ../../index.rst:24
+#: ../../index.rst:25
 msgid "provides :doc:`dependency injection <client/di>`"
 msgstr "надає :doc:`впровадження залежностей`"
 
-#: ../../index.rst:25
+#: ../../index.rst:26
 msgid "provides :doc:`additional tool methods <client/tools>`"
 msgstr "надає :doc:`додаткові функції <client/tools>`"
 
-#: ../../index.rst:26
+#: ../../index.rst:27
 msgid "provides :doc:`shortcut methods for types <client/shortcuts>`"
 msgstr "надає :doc:`скорочені методи для типів <client/shortcuts>`"
 
-#: ../../index.rst:29
+#: ../../index.rst:30
 msgid "Quick start"
 msgstr "Швидкий старт"
 
-#: ../../index.rst:34
+#: ../../index.rst:35
+msgid "Synchronous usage"
+msgstr ""
+
+#: ../../index.rst:40
 msgid "Contents"
 msgstr "Зміст"
+
+#~ msgid "python"
+#~ msgstr ""
 

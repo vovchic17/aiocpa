@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiosend \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-31 09:34+0300\n"
+"POT-Creation-Date: 2026-06-22 05:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk_UA\n"
@@ -17,49 +17,39 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../../install.rst:3
 msgid "Installation"
 msgstr "Установка"
 
-#: ../../install.rst:6
-msgid "via `pip <https://pip.pypa.io/>`_"
-msgstr "за допомогою `pip <https://pip.pypa.io/>`_"
+#~ msgid "via `pip <https://pip.pypa.io/>`_"
+#~ msgstr "за допомогою `pip <https://pip.pypa.io/>`_"
 
-#: ../../install.rst:7
-msgid "from `PyPI <https://pypi.org/p/aiosend/>`_"
-msgstr "з `PyPI <https://pypi.org/p/aiosend/>`_"
+#~ msgid "from `PyPI <https://pypi.org/p/aiosend/>`_"
+#~ msgstr "з `PyPI <https://pypi.org/p/aiosend/>`_"
 
-#: ../../install.rst:13
-msgid "from `GitHub <https://github.com/vovchic17/aiosend>`_"
-msgstr "з `GitHub <https://github.com/vovchic17/aiosend>`_"
+#~ msgid "from `GitHub <https://github.com/vovchic17/aiosend>`_"
+#~ msgstr "з `GitHub <https://github.com/vovchic17/aiosend>`_"
 
-#: ../../install.rst:20
-msgid "via `uv <https://docs.astral.sh/uv/>`_"
-msgstr "за допомогою `uv <https://docs.astral.sh/uv/>`_"
+#~ msgid "via `uv <https://docs.astral.sh/uv/>`_"
+#~ msgstr "за допомогою `uv <https://docs.astral.sh/uv/>`_"
 
-#: ../../install.rst:26
-msgid "via `Poetry <https://python-poetry.org/>`_"
-msgstr "за допомогою `Poetry <https://python-poetry.org/>`_"
+#~ msgid "via `Poetry <https://python-poetry.org/>`_"
+#~ msgstr "за допомогою `Poetry <https://python-poetry.org/>`_"
 
-#: ../../install.rst:32
-msgid "via `PDM <https://pdm-project.org/>`_"
-msgstr "за допомогою `PDM <https://pdm-project.org/>`_"
+#~ msgid "via `PDM <https://pdm-project.org/>`_"
+#~ msgstr "за допомогою `PDM <https://pdm-project.org/>`_"
 
-#: ../../install.rst:38
-msgid "via `pipx <https://pipx.pypa.io/>`_"
-msgstr "за допомогою `pipx <https://pipx.pypa.io/>`_"
+#~ msgid "via `pipx <https://pipx.pypa.io/>`_"
+#~ msgstr "за допомогою `pipx <https://pipx.pypa.io/>`_"
 
-#: ../../install.rst:44
-msgid "via `Rye <https://rye.astral.sh/>`_"
-msgstr "за допомогою `Rye <https://rye.astral.sh/>`_"
+#~ msgid "via `Rye <https://rye.astral.sh/>`_"
+#~ msgstr "за допомогою `Rye <https://rye.astral.sh/>`_"
 
-#: ../../install.rst:50
-msgid "via `Conda <https://docs.conda.io/>`_"
-msgstr "за допомогою `Conda <https://docs.conda.io/>`_"
+#~ msgid "via `Conda <https://docs.conda.io/>`_"
+#~ msgstr "за допомогою `Conda <https://docs.conda.io/>`_"
 
-#: ../../install.rst:56
-msgid "via `Pipenv <https://pipenv.pypa.io/>`_"
-msgstr "за допомогою `Pipenv <https://pipenv.pypa.io/>`_"
+#~ msgid "via `Pipenv <https://pipenv.pypa.io/>`_"
+#~ msgstr "за допомогою `Pipenv <https://pipenv.pypa.io/>`_"
 

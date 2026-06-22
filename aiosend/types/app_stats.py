@@ -7,7 +7,7 @@ class AppStats(CryptoPayObject):
     """
     AppStats object.
 
-    Source: http://help.crypt.bot/crypto-pay-api#wnPA
+    Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#h_9446aa26c6
     """
 
     volume: float

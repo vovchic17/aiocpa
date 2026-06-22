@@ -28,8 +28,8 @@ msgid ""
 "aiosend is |python| python implementation for `Crypto Pay API "
 "<https://help.send.tg/en/articles/10279948-crypto-pay-api>`_."
 msgstr ""
-"aiosend це обгортка для `Crypto Pay API <https://help.crypt.bot/crypto-"
-"pay-api>`_ на | python | python"
+"aiosend це обгортка для `Crypto Pay API <https://help.send.tg/en"
+"/articles/10279948-crypto-pay-api>`_ на | python | python"
 
 #: ../../client/index.rst:11
 msgid "python"
