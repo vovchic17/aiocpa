@@ -1,0 +1,23 @@
+import asyncio
+
+from aiosend import CryptoPay
+from aiosend.types import Invoice
+
+cp = CryptoPay("TOKEN")
+
+
+@cp.invoice_paid()
+async def payment_handler(invoice: Invoice, payload: str) -> None:
+    print("Received", invoice.amount, invoice.asset, payload)
+
+
+async def main() -> None:
+    invoice = await cp.create_invoice(1, "USDT")
+    print("invoice link:", invoice.bot_invoice_url)
+    invoice.poll(payload="payload")
+    await cp.start_polling()
+
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
