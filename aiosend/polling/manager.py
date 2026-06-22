@@ -1,4 +1,6 @@
 import asyncio
+import signal
+import sys
 import warnings
 from typing import TYPE_CHECKING
 
@@ -31,6 +33,12 @@ class PollingManager(InvoicePollingManager, CheckPollingManager):
         CheckPollingManager.__init__(self)
         self._timeout = config.timeout
         self._delay = config.delay
+        self._init_polling()
+
+    def stop_polling(self) -> None:
+        """Stop polling."""
+        loggers.polling.info("Stop polling")
+        self._stop_event.set()
 
     async def start_polling(
         self: "ClientWebhookManagerProtocol",
@@ -52,8 +60,16 @@ class PollingManager(InvoicePollingManager, CheckPollingManager):
         if parallel is not None:
             loop = asyncio.get_event_loop()
             loop.run_in_executor(None, parallel)
+        if sys.platform != "win32":
+            loop = asyncio.get_running_loop()
+            for sig in (signal.SIGINT, signal.SIGTERM):
+                loop.add_signal_handler(sig, self.stop_polling)
         loggers.polling.info("Start polling")
-        await asyncio.gather(
-            self._start_invoice_polling(),
-            self._start_check_polling(),
-        )
+        try:
+            await asyncio.gather(
+                self._start_invoice_polling(),
+                self._start_check_polling(),
+            )
+        except asyncio.CancelledError:
+            self.stop_polling()
+            loggers.polling.info("Polling stopped")
