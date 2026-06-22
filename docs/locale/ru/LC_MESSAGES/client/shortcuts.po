@@ -46,8 +46,8 @@ msgid "Use this method to update balance object."
 msgstr "Используйте этот метод для обновления объекта баланса."
 
 #: aiosend.types.balance.Balance.update:5 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#getBalance"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#getBalance"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getBalance"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#getBalance"
 
 #: ../../client/shortcuts.rst
 msgid "Return type"
@@ -70,8 +70,8 @@ msgid "Use this method to update check object."
 msgstr "Используйте этот метод для обновления объекта чека."
 
 #: aiosend.types.check.Check.update:5 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#getChecks"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#getChecks"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getChecks"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#getChecks"
 
 #: aiosend.types.exchange_rate.ExchangeRate.update:1 of
 msgid "Shortcut for method :meth:`aiosend.CryptoPay.get_exchange_rates`."
@@ -82,8 +82,8 @@ msgid "Use this method to update ExchangeRate object."
 msgstr "Используйте этот метод для обновления объекта ExchangeRate"
 
 #: aiosend.types.exchange_rate.ExchangeRate.update:5 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#getExchangeRates"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#getExchangeRates"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getExchangeRates"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#getExchangeRates"
 
 #: aiosend.types.invoice.Invoice.update:1 of
 msgid "Shortcut for method :meth:`aiosend.CryptoPay.get_invoices`."
@@ -94,8 +94,8 @@ msgid "Use this method to update invoice object."
 msgstr "Используйте этот метод для обновления объекта счёта."
 
 #: aiosend.types.invoice.Invoice.update:5 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#getInvoices"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#getInvoices"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getInvoices"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#getInvoices"
 
 #: ../../client/shortcuts.rst:19
 msgid "Deleting objects"
@@ -114,8 +114,8 @@ msgstr ""
 "Возвращает :code:`True` в случае успеха."
 
 #: aiosend.types.check.Check.delete:6 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#deleteCheck"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#deleteCheck"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#deleteCheck"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#deleteCheck"
 
 #: aiosend.types.check.Check.delete:8 aiosend.types.invoice.Invoice.delete:8 of
 msgid ":sphinx_autodoc_typehints_type:`\\:py\\:class\\:\\`bool\\``"
@@ -134,8 +134,8 @@ msgstr ""
 "Возвращает :code:`True` в случае успеха."
 
 #: aiosend.types.invoice.Invoice.delete:6 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#hwjK"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#hwjK"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#hwjK"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#hwjK"
 
 #: ../../client/shortcuts.rst:25
 msgid "QR code of object"

@@ -26,7 +26,7 @@ msgstr "Клиент"
 #: ../../client/index.rst:5
 msgid ""
 "aiosend is |python| python implementation for `Crypto Pay API "
-"<https://help.crypt.bot/crypto-pay-api>`_."
+"<https://help.send.tg/en/articles/10279948-crypto-pay-api>`_."
 msgstr ""
 "aiosend это обёртка для `Crypto Pay API <https://help.crypt.bot/crypto-"
 "pay-api>`_ на |python| python."

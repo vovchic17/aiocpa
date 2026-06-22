@@ -1,6 +1,6 @@
 .. raw:: html
 
-   <h1 class="BB">aiosend</h1>
+   <h1 class="main-title">aiosend</h1>
 
 Introduction
 ------------
@@ -12,7 +12,8 @@ Introduction
 
 .. |telegram| image:: https://raw.githubusercontent.com/vovchic17/static/main/src/telegram_logo.svg
    :width: 24px
-   :alt: python
+   :alt: telegram
+   :class: icon-telegram
 
 Features
 --------

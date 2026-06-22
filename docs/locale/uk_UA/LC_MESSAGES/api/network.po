@@ -31,9 +31,9 @@ msgstr "Клас Network дозволяє створювати URL для дос
 
 #: ../../api/network.rst:7
 msgid ""
-"`Crypto Pay API <https://help.crypt.bot/crypto-pay-api>`_ has two "
+"`Crypto Pay API <https://help.send.tg/en/articles/10279948-crypto-pay-api>`_ has two "
 "networks:"
-msgstr "`Crypto Pay API <https://help.crypt.bot/crypto-pay-api>`_ має дві мережі:"
+msgstr "`Crypto Pay API <https://help.send.tg/en/articles/10279948-crypto-pay-api>`_ має дві мережі:"
 
 #: ../../api/network.rst:11
 msgid "The main network for transactions with real cryptocurrency."

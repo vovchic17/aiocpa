@@ -25,7 +25,7 @@ msgstr "Методы"
 
 #: ../../api/methods.rst:7
 msgid ""
-"`Crypto Pay API <https://help.crypt.bot/crypto-pay-api>`_ methods "
+"`Crypto Pay API <https://help.send.tg/en/articles/10279948-crypto-pay-api>`_ methods "
 "implementation."
 msgstr ""
 "Реализации методов `Crypto Pay API <https://help.crypt.bot/crypto-pay-"
@@ -45,8 +45,8 @@ msgstr ""
 "информацию о вашем приложении."
 
 #: aiosend._methods.get_me.GetMe.get_me:7 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#getMe"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#getMe"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getMe"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#getMe"
 
 #: ../../api/methods.rst
 msgid "Return type"
@@ -69,8 +69,8 @@ msgstr ""
 "возвращает объект созданного :class:`aiosend.types.Invoice`."
 
 #: aiosend._methods.create_invoice.CreateInvoice.create_invoice:6 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#createInvoice"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#createInvoice"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#createInvoice"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#createInvoice"
 
 #: ../../api/methods.rst
 msgid "Parameters"
@@ -219,8 +219,8 @@ msgstr ""
 "Возвращает :code:`True` в случае успеха."
 
 #: aiosend._methods.delete_invoice.DeleteInvoice.delete_invoice:6 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#hwjK"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#hwjK"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#hwjK"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#hwjK"
 
 #: aiosend._methods.delete_invoice.DeleteInvoice.delete_invoice:9 of
 msgid "Invoice ID to be deleted."
@@ -259,8 +259,8 @@ msgstr ""
 "возвращает объект созданного :class:`aiosend.types.Check`."
 
 #: aiosend._methods.create_check.CreateCheck.create_check:6 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#createCheck"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#createCheck"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#createCheck"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#createCheck"
 
 #: aiosend._methods.create_check.CreateCheck.create_check:9 of
 msgid "Amount of the check in float. For example: `125.50`"
@@ -306,8 +306,8 @@ msgstr ""
 "Возвращает :code:`True` в случае успеха."
 
 #: aiosend._methods.delete_check.DeleteCheck.delete_check:6 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#deleteCheck"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#deleteCheck"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#deleteCheck"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#deleteCheck"
 
 #: aiosend._methods.delete_check.DeleteCheck.delete_check:9 of
 msgid "Check ID to be deleted."
@@ -343,8 +343,8 @@ msgstr ""
 "приложения."
 
 #: aiosend._methods.transfer.Transfer.transfer:7 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#transfer"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#transfer"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#transfer"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#transfer"
 
 #: aiosend._methods.transfer.Transfer.transfer:10 of
 msgid ""
@@ -410,8 +410,8 @@ msgstr ""
 ":class:`aiosend.types.Invoice`."
 
 #: aiosend._methods.get_invoices.GetInvoices.get_invoices:6 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#getInvoices"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#getInvoices"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getInvoices"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#getInvoices"
 
 #: aiosend._methods.get_checks.GetChecks.get_checks:9
 #: aiosend._methods.get_invoices.GetInvoices.get_invoices:9
@@ -484,8 +484,8 @@ msgstr ""
 "В случае успеха возвращает массив объектов :class:`aiosend.types.Check`."
 
 #: aiosend._methods.get_checks.GetChecks.get_checks:6 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#getChecks"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#getChecks"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getChecks"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#getChecks"
 
 #: aiosend._methods.get_checks.GetChecks.get_checks:11 of
 msgid "*Optional*. List of check IDs separated by comma."
@@ -535,8 +535,8 @@ msgstr ""
 ":class:`aiosend.types.Transfer`."
 
 #: aiosend._methods.get_transfers.GetTransfers.get_transfers:6 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#getTransfers"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#getTransfers"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getTransfers"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#getTransfers"
 
 #: aiosend._methods.get_transfers.GetTransfers.get_transfers:11 of
 msgid "*Optional*. List of transfer IDs separated by comma."
@@ -582,8 +582,8 @@ msgstr ""
 ":class:`aiosend.types.Balance`."
 
 #: aiosend._methods.get_balance.GetBalance.get_balance:7 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#getBalance"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#getBalance"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getBalance"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#getBalance"
 
 #: aiosend._methods.get_balance.GetBalance.get_balance:9 of
 msgid ""
@@ -605,8 +605,8 @@ msgstr ""
 ":class:`aiosend.types.ExchangeRate`."
 
 #: aiosend._methods.get_exchange_rates.GetExchangeRates.get_exchange_rates:7 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#getExchangeRates"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#getExchangeRates"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getExchangeRates"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#getExchangeRates"
 
 #: aiosend._methods.get_exchange_rates.GetExchangeRates.get_exchange_rates:9 of
 msgid ""
@@ -628,8 +628,8 @@ msgstr ""
 "криптовалюты."
 
 #: aiosend._methods.get_currencies.GetCurrencies.get_currencies:7 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#getCurrencies"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#getCurrencies"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#getCurrencies"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#getCurrencies"
 
 #: aiosend._methods.get_currencies.GetCurrencies.get_currencies:9 of
 msgid ""
@@ -650,8 +650,8 @@ msgstr ""
 "успеха возвращает объект :class:`aiosend.types.AppStats`."
 
 #: aiosend._methods.get_stats.GetStats.get_stats:6 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#jvP3"
-msgstr "Источник: https://help.crypt.bot/crypto-pay-api#jvP3"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#jvP3"
+msgstr "Источник: https://help.send.tg/en/articles/10279948-crypto-pay-api#jvP3"
 
 #: aiosend._methods.get_stats.GetStats.get_stats:9 of
 msgid ""

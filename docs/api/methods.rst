@@ -4,7 +4,7 @@
 Methods
 =======
 
-`Crypto Pay API <https://help.crypt.bot/crypto-pay-api>`_ methods implementation.
+`Crypto Pay API <https://help.send.tg/en/articles/10279948-crypto-pay-api>`_ methods implementation.
 
 .. automethod:: aiosend.CryptoPay.get_me
 .. automethod:: aiosend.CryptoPay.create_invoice

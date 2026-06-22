@@ -4,7 +4,7 @@ Network
 
 Network is a class allows you to build a URL to the API endpoints for specific network.
 
-`Crypto Pay API <https://help.crypt.bot/crypto-pay-api>`_ has two networks:
+`Crypto Pay API <https://help.send.tg/en/articles/10279948-crypto-pay-api>`_ has two networks:
 
 * .. autoclass:: aiosend.MAINNET
 

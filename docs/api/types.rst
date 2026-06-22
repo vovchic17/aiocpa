@@ -2,7 +2,7 @@
 Types
 =====
 
-`Crypto Pay API <https://help.crypt.bot/crypto-pay-api>`_ types implementation.
+`Crypto Pay API <https://help.send.tg/en/articles/10279948-crypto-pay-api>`_ types implementation.
 
 .. automodule:: aiosend.types
     :members:

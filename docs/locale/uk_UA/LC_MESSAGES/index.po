@@ -26,10 +26,10 @@ msgstr "Введення"
 #: ../../index.rst:8
 msgid ""
 "**aiosend** is a synchronous & asynchronous `Crypto Pay API "
-"<https://help.crypt.bot/crypto-pay-api>`_ client."
+"<https://help.send.tg/en/articles/10279948-crypto-pay-api>`_ client."
 msgstr ""
 "**aiosend** це синхронний і асинхронний `Crypto Pay API "
-"<https://help.crypt.bot/crypto-pay-api>`_ клієнт."
+"<https://help.send.tg/en/articles/10279948-crypto-pay-api>`_ клієнт."
 
 #: ../../index.rst:11
 msgid ""

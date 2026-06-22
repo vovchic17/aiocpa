@@ -25,9 +25,9 @@ msgstr "Типи"
 
 #: ../../api/types.rst:5
 msgid ""
-"`Crypto Pay API <https://help.crypt.bot/crypto-pay-api>`_ types "
+"`Crypto Pay API <https://help.send.tg/en/articles/10279948-crypto-pay-api>`_ types "
 "implementation."
-msgstr "Реалізація типів `Crypto Pay API <https://help.crypt.bot/crypto-pay-api>`_"
+msgstr "Реалізація типів `Crypto Pay API <https://help.send.tg/en/articles/10279948-crypto-pay-api>`_"
 
 #: aiosend.types.app.App:1 of
 msgid "App object."
@@ -92,8 +92,8 @@ msgid "Balance object."
 msgstr "Об'єкт Balance."
 
 #: aiosend.types.balance.Balance:3 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#Balance"
-msgstr "Джерело: https://help.crypt.bot/crypto-pay-api#Balance"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#Balance"
+msgstr "Джерело: https://help.send.tg/en/articles/10279948-crypto-pay-api#Balance"
 
 #: ../../docstring aiosend.types.Balance.available:1 of
 msgid "Total available amount in float."
@@ -117,8 +117,8 @@ msgid "Check object."
 msgstr "Об'єкт Check."
 
 #: aiosend.types.check.Check:3 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#Check"
-msgstr "Джерело: https://help.crypt.bot/crypto-pay-api#Check"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#Check"
+msgstr "Джерело: https://help.send.tg/en/articles/10279948-crypto-pay-api#Check"
 
 #: ../../docstring aiosend.types.Check.activated_at:1 of
 msgid "Date the check was activated in ISO 8601 format."
@@ -197,8 +197,8 @@ msgid "ExchangeRate object."
 msgstr "Об'єкт ExchangeRate."
 
 #: aiosend.types.exchange_rate.ExchangeRate:3 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#ExchangeRate"
-msgstr "Джерело: https://help.crypt.bot/crypto-pay-api#ExchangeRate"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#ExchangeRate"
+msgstr "Джерело: https://help.send.tg/en/articles/10279948-crypto-pay-api#ExchangeRate"
 
 #: ../../docstring aiosend.types.ExchangeRate.is_crypto:1 of
 msgid "True, if the source is the cryptocurrency."
@@ -239,8 +239,8 @@ msgid "Invoice object."
 msgstr "Об'єкт Invoice."
 
 #: aiosend.types.invoice.Invoice:3 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#Invoice"
-msgstr "Джерело: https://help.crypt.bot/crypto-pay-api#Invoice"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#Invoice"
+msgstr "Джерело: https://help.send.tg/en/articles/10279948-crypto-pay-api#Invoice"
 
 #: ../../docstring aiosend.types.Invoice.accepted_assets:1 of
 msgid ""
@@ -527,8 +527,8 @@ msgid "Transfer object."
 msgstr "Об'єкт Transfer."
 
 #: aiosend.types.transfer.Transfer:3 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#Transfer"
-msgstr "Джерело: https://help.crypt.bot/crypto-pay-api#Transfer"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#Transfer"
+msgstr "Джерело: https://help.send.tg/en/articles/10279948-crypto-pay-api#Transfer"
 
 #: ../../docstring aiosend.types.Transfer.amount:1 of
 msgid "Amount of the transfer in float."
@@ -563,8 +563,8 @@ msgid "Update object."
 msgstr "Об'єкт Update."
 
 #: aiosend.types.update.Update:3 of
-msgid "Source: https://help.crypt.bot/crypto-pay-api#webhook-updates"
-msgstr "Джерело: https://help.crypt.bot/crypto-pay-api#webhook-updates"
+msgid "Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#webhook-updates"
+msgstr "Джерело: https://help.send.tg/en/articles/10279948-crypto-pay-api#webhook-updates"
 
 #: ../../docstring aiosend.types.Update.payload:1 of
 msgid "Payload contains the class Invoice."

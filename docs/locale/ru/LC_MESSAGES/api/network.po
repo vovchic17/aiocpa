@@ -31,9 +31,9 @@ msgstr "Класс Network позволяет формировать URL для 
 
 #: ../../api/network.rst:7
 msgid ""
-"`Crypto Pay API <https://help.crypt.bot/crypto-pay-api>`_ has two "
+"`Crypto Pay API <https://help.send.tg/en/articles/10279948-crypto-pay-api>`_ has two "
 "networks:"
-msgstr "`Crypto Pay API <https://help.crypt.bot/crypto-pay-api>`_ имеет две сети:"
+msgstr "`Crypto Pay API <https://help.send.tg/en/articles/10279948-crypto-pay-api>`_ имеет две сети:"
 
 #: ../../api/network.rst:11
 msgid "The main network for transactions with real cryptocurrency."

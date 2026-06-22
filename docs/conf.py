@@ -2,8 +2,7 @@ from aiosend import __version__
 from datetime import datetime, UTC
 
 project = "aiosend"
-copyright = f"{datetime.now(UTC).year}, VoVcHiC"
-author = "VoVcHiC"
+copyright = f"{datetime.now(UTC).year}\n"
 release = __version__
 
 extensions = [
@@ -34,21 +33,32 @@ ogp_description_length = 0
 ogp_social_cards = {"image_mini": "_static/rtd.ico"}
 
 html_css_files = ["extra.css", "snow.css"]
-html_js_files = ["flakes.js"]
+html_js_files = ["flakes.js", "footer.js"]
+
+common_css_variables = {
+    "color-header-text": "#3fa3dd",
+    "color-brand-primary": "#3fa3dd",
+    "color-brand-content": "#3fa3dd",
+    "color-api-name": "#3fa3dd",
+    "color-api-pre-name": "#148DFF",
+    "color-link--visited": "#148DFF",
+    "font-stack": "'Helvetica Neue', sans-serif",
+    "font-stack--headings": "'Helvetica Neue', sans-serif",
+    "icon-search": 'url("search.svg")',
+    "icon-info": 'url("info.svg")',
+    "color-admonition-title--seealso": "#148DFF",
+    "color-content-foreground": "var(--code_color5)",
+}
 
 html_theme_options = {
     "light_css_variables": {
-        "color-header-text": "#3fa3dd",
-        "color-brand-primary": "#3fa3dd",
-        "color-brand-content": "#3fa3dd",
-        "color-api-name": "#3fa3dd",
-        "color-api-pre-name": "#3fa3dd",
-        "color-link--visited": "#3fa3dd",
+        **common_css_variables,
+        "color-foreground-border": "black",
+        "color-foreground-muted": "black",
         "color-highlight-on-target": "#aaddff",
-        "font-stack": "Inter, sans-serif",
-        "font-stack--headings": "Inter, sans-serif",
     },
     "dark_css_variables": {
+        **common_css_variables,
         "color-highlight-on-target": "#223355",
     },
     "footer_icons": [

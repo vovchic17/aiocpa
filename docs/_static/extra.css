@@ -1,68 +1,178 @@
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-5');
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 :root {
-    --code_color1: #3fa3dd;
-    --code_color2: #dddddd;
-    --code_color3: #00ffff;
-    --text_color: #33bbff;
+    --code_color1: #148DFF;
+    --code_color2: #73C2FF;
+    --code_color3: #0A63B8;
+    --code_color4: #4582B1;
+    --code_color5: #cfd0d0;
+    --code_color6: #81888F;
+    --code_color7: #4DB2FF;
     --snow-color: white;
 }
 
 [data-theme="light"] {
-    --code_color1: #3fa3dd;
-    --code_color2: #000000;
-    --code_color3: #0033aa;
-    --text_color: #005599;
+    --code_color5: #03101E;
     --snow-color: skyblue;
 }
 
 @media (prefers-color-scheme: light) {
     body:not([data-theme="dark"]) {
-        --code_color1: #3fa3dd;
-        --code_color2: #000000;
-        --code_color3: #0033aa;
-        --text_color: #005599;
+        --code_color5: #03101E;
+        --snow-color: skyblue;
     }
+}
+
+html {
+    font-size: 100%;
+}
+
+.sidebar-brand-text {
+    font-weight: 500;
+}
+
+.sidebar-search-container:before {
+    -webkit-mask-image: var(--icon-search);
+    mask-image: var(--icon-search);
+}
+
+.theme-toggle svg use {
+    display: none;
+}
+
+.theme-toggle svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: currentColor;
+}
+
+.theme-toggle .theme-icon-when-auto-light {
+    mask-image: url("sun-moon.svg");
+    -webkit-mask-image: url("sun-moon.svg");
+}
+
+.theme-toggle .theme-icon-when-auto-dark {
+    mask-image: url("moon-sun.svg");
+    -webkit-mask-image: url("moon-sun.svg");
+}
+
+.theme-toggle .theme-icon-when-dark {
+    mask-image: url("moon.svg");
+    -webkit-mask-image: url("moon.svg");
+}
+
+.theme-toggle .theme-icon-when-light {
+    mask-image: url("sun.svg");
+    -webkit-mask-image: url("sun.svg");
+}
+
+.left-details {
+    font-size: 0 !important;
+}
+
+.left-details .copyright {
+    font-size: initial;
 }
 
 .k,
 .kn,
+.kr,
 .kc,
-.nb,
-.ow {
+.ow,
+.p {
     color: var(--code_color1) !important;
+    font-weight: 400 !important;
+}
+
+.nd,
+.nb,
+.nf,
+.bp,
+.kt {
+    color: var(--code_color2) !important;
+}
+
+.nc,
+.nn {
+    color: var(--code_color5) !important;
+    text-decoration: none !important;
+}
+
+.s,
+.s1,
+.s2,
+.sd,
+.sa,
+.si,
+.se,
+.sh {
+    color: var(--code_color4) !important;
 }
 
 .n,
-.nn,
-.nd,
-.vm {
-    color: var(--code_color2) !important;
-    text-decoration: none !important;
-    font-weight: normal !important;
+.na,
+.nv,
+.vm,
+.o {
+    color: var(--code_color5) !important;
 }
 
-.s2 {
-    color: var(--text_color) !important;
+.c,
+.c1,
+.cm,
+.cp,
+.cs {
+    color: var(--code_color6) !important;
 }
 
-.o,
-.sa,
-.si {
-    color: var(--code_color3) !important;
+.m,
+.mi,
+.mf,
+.mh,
+.il,
+.vc,
+.vg,
+.vi {
+    color: var(--code_color7) !important;
+}
+
+.seealso .admonition-title {
+    background-color: rgba(20, 141, 255, 0.20) !important;
 }
 
 .reference.external:not(dl .reference.external),
-.BB {
-    background: linear-gradient(150deg, #2d30bd -45%, #3fa3dd 100%) !important;
-    color: transparent !important;
-    background-clip: text !important;
+.main-title {
+    color: #148dff !important;
     font-weight: bold;
 }
 
-.BB {
-    font-size: 3em;
+h1 {
+    font-size: 2.4rem;
+}
+
+.main-title {
+    font-size: 4rem;
+}
+
+.highlight {
+    border-radius: 12px;
+    padding: 16px 24px;
+    background-color: rgba(11, 31, 51, 0.05);
 }
 
 .highlight pre {
-    line-height: 1.2 !important;
-    font-size: 1.2rem;
+    font-family: "Azeret Mono", monospace;
+    font-size: 1rem;
+    padding: 0;
+}
+
+.icon-telegram {
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.related-pages a svg.furo-related-icon {
+    height: 1.5rem !important;
+    width: 1.5rem !important;
 }

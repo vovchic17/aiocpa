@@ -1,10 +1,10 @@
 <p align="center"> <!-- markdownlint-disable MD033 MD041 MD045 MD013-->
-  <img src="https://raw.githubusercontent.com/vovchic17/static/refs/heads/main/src/aiosend.png" align="center"/>
+  <img src="https://raw.githubusercontent.com/vovchic17/static/main/src/aiosend.png" align="center"/>
   <h1 align="center">aiosend</h1>
 </p>
 
 [![Python](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/main/src/badges/python310_314.json)](https://www.python.org/)
-[![aiosend](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/main/src/badges/aiosend306.json)](https://pypi.org/project/aiosend/)
+[![aiosend](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/main/src/badges/aiosend307.json)](https://pypi.org/project/aiosend/)
 [![Crypto Pay API](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/refs/heads/main/src/badges/cryptopayapi1.5.1.json)](https://help.crypt.bot/crypto-pay-api)
 [![Documentation Status](https://readthedocs.org/projects/aiosend/badge/?version=latest)](https://aiosend.readthedocs.io/en/latest/?badge=latest)
 [![Pydantic v2](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/pydantic/pydantic/main/docs/badge/v2.json)](https://pydantic.dev)
