@@ -229,6 +229,7 @@ class CryptoPay:
         self,
         parallel: Callable[[], Any] | None = None,
     ) -> NoneType: ...
+    def stop_polling(self) -> None: ...
     def get_invoice(
         self,
         invoice: int | Invoice,
