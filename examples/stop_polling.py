@@ -9,7 +9,7 @@ cp = CryptoPay("TOKEN")
 @cp.invoice_paid()
 async def payment_handler(invoice: Invoice, payload: str) -> None:
     print("Received", invoice.amount, invoice.asset, payload)
-
+    cp.stop_polling()
 
 async def main() -> None:
     invoice = await cp.create_invoice(1, "USDT")
