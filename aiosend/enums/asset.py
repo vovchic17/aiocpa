@@ -8,12 +8,6 @@ class Asset(str, Enum):
     USDT = "USDT"
     TON = "TON"
     SOL = "SOL"
-    GRAM = "GRAM"
-    NOT = "NOT"
-    HMSTR = "HMSTR"
-    CATI = "CATI"
-    MY = "MY"
-    DOGS = "DOGS"
     BTC = "BTC"
     LTC = "LTC"
     ETH = "ETH"
@@ -22,13 +16,6 @@ class Asset(str, Enum):
     USDC = "USDC"
     JET = "JET"
     SEND = "SEND"
-    PEPE = "PEPE"
-    WIF = "WIF"
-    BONK = "BONK"
-    MAJOR = "MAJOR"
-    TRUMP = "TRUMP"
-    MELANIA = "MELANIA"
-    MEMHASH = "MEMHASH"
     XAUT = "XAUT"
 
 
@@ -36,12 +23,6 @@ LiteralAsset = Literal[
     "USDT",
     "TON",
     "SOL",
-    "GRAM",
-    "NOT",
-    "HMSTR",
-    "CATI",
-    "MY",
-    "DOGS",
     "BTC",
     "LTC",
     "ETH",
@@ -50,12 +31,5 @@ LiteralAsset = Literal[
     "USDC",
     "JET",
     "SEND",
-    "PEPE",
-    "WIF",
-    "BONK",
-    "MAJOR",
-    "TRUMP",
-    "MELANIA",
-    "MEMHASH",
     "XAUT",
 ]
