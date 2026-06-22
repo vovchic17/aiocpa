@@ -46,6 +46,10 @@ class BasePollingManager(ABC):
     _delay: int
     _kwargs: dict[str, "Any"]
 
+    def _init_polling(self) -> None:
+        """Initialize polling state."""
+        self._stop_event = asyncio.Event()
+
     async def _start_polling(
         self,
         get_updates: "Callable[..., Awaitable[list[Any]]]",
@@ -54,25 +58,34 @@ class BasePollingManager(ABC):
         updater_key: str,
     ) -> None:
         """Start polling."""
-        while True:
-            await asyncio.sleep(self._delay)
-            if not tasks:
-                continue
+        while not self._stop_event.is_set():
             try:
-                updates = await get_updates(**{updater_key: list(tasks)})
-            except Exception:  # noqa: BLE001 logger catches exception
-                loggers.polling.exception("Error while getting updates:\n")
-                continue
-            for update in updates:
+                await asyncio.wait_for(
+                    self._stop_event.wait(),
+                    timeout=self._delay,
+                )
+            except asyncio.TimeoutError:  # noqa: PERF203
+                if not tasks:
+                    continue
                 try:
-                    await handle_update(update)
-                except Exception:  # noqa: BLE001, PERF203
+                    updates = await get_updates(
+                        **{updater_key: list(tasks)},
+                    )
+                except Exception:  # noqa: BLE001
                     loggers.polling.exception(
-                        "Error while handling update:\n",
+                        "Error while getting updates:\n",
                     )
                     continue
-            loggers.polling.debug(
-                "Tasks left: %s Waiting %d seconds...",
-                len(tasks),
-                self._delay,
-            )
+                for update in updates:
+                    try:
+                        await handle_update(update)
+                    except Exception:  # noqa: BLE001, PERF203
+                        loggers.polling.exception(
+                            "Error while handling update:\n",
+                        )
+                        continue
+                loggers.polling.debug(
+                    "Tasks left: %s Waiting %d seconds...",
+                    len(tasks),
+                    self._delay,
+                )
