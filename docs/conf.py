@@ -36,10 +36,10 @@ html_css_files = ["extra.css", "snow.css"]
 html_js_files = ["flakes.js", "footer.js"]
 
 common_css_variables = {
-    "color-header-text": "#3fa3dd",
-    "color-brand-primary": "#3fa3dd",
-    "color-brand-content": "#3fa3dd",
-    "color-api-name": "#3fa3dd",
+    "color-header-text": "#148DFF",
+    "color-brand-primary": "#148DFF",
+    "color-brand-content": "#148DFF",
+    "color-api-name": "#148DFF",
     "color-api-pre-name": "#148DFF",
     "color-link--visited": "#148DFF",
     "font-stack": "'Helvetica Neue', sans-serif",
