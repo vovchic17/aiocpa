@@ -24,11 +24,12 @@ class StarletteManager(WebhookManager["Starlette | Router"]):
         try:
             from starlette.exceptions import HTTPException  # noqa: PLC0415
             from starlette.requests import Request  # noqa: PLC0415
+            from starlette.responses import JSONResponse  # noqa: PLC0415
         except ModuleNotFoundError as e:
             msg = "fastapi is not installed"
             raise RuntimeError(msg) from e
 
-        async def handle(request: Request) -> dict:
+        async def handle(request: Request) -> "JSONResponse":
             status = await feed_update(
                 (await request.body()).decode(),
                 dict(request.headers),
@@ -36,6 +37,7 @@ class StarletteManager(WebhookManager["Starlette | Router"]):
             resp = {"ok": status}
             if not status:
                 raise HTTPException(500, str(resp))
-            return resp
+
+            return JSONResponse(resp)
 
         self._app.add_route(self._path, handle, methods=["POST"])
