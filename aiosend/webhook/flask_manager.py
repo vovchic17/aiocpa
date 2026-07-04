@@ -12,7 +12,7 @@ class FlaskManager(WebhookManager["Flask"]):
     """
     Flask webhook manager.
 
-    Webhook manager based on :class:`flask.Flask`.
+    Webhook manager based on `Flask <https://flask.palletsprojects.com/en/stable/api#application-object>`_.
     """
 
     def register_handler(
