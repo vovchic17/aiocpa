@@ -12,8 +12,7 @@ if TYPE_CHECKING:
 
 
 @dataclass(slots=True)
-class PollingConfig:  # type: ignore[misc]
-    # https://github.com/python/mypy/issues/17121
+class PollingConfig:
     """Polling configuration."""
 
     timeout: int = 300
@@ -23,8 +22,7 @@ class PollingConfig:  # type: ignore[misc]
 
 
 @dataclass(slots=True)
-class PollingTask(Generic[_CryptoPayType]):  # type: ignore[misc]
-    # https://github.com/python/mypy/issues/17121
+class PollingTask(Generic[_CryptoPayType]):
     """
     Wrapper for an Invoice.
 
@@ -32,7 +30,7 @@ class PollingTask(Generic[_CryptoPayType]):  # type: ignore[misc]
     """
 
     obj: _CryptoPayType
-    """Invoice object."""
+    """`Invoice` or `Check` object."""
     timeout: int
     """Remaining time for checking the invoice status."""
     data: dict[str, "Any"]
