@@ -1,21 +1,38 @@
 from typing import TYPE_CHECKING
 
-from aiosend.webhook.starlette_manager import StarletteManager
+from .base import WebhookManager
 
 if TYPE_CHECKING:
-    from fastapi import FastAPI
+    from fastapi import APIRouter, FastAPI  # noqa: F401
+
+    from .base import WebServerHandler
 
 
-class FastAPIManager(StarletteManager):
+class FastAPIManager(WebhookManager["FastAPI | APIRouter"]):
     """
     FastAPI webhook manager.
 
-    Webhook manager based on :class:`fastapi.FastAPI` (kinda lie here for now)
+    Webhook manager based on :class:`fastapi.FastAPI`.
     """
 
-    def __init__(
+    def register_handler(
         self,
-        app: "FastAPI",
-        path: str,
+        feed_update: "WebServerHandler",
     ) -> None:
-        super().__init__(app, path)
+        """Register webhook handler."""
+        try:
+            from fastapi import HTTPException, Request  # noqa: PLC0415
+        except ModuleNotFoundError as e:
+            msg = "fastapi is not installed"
+            raise RuntimeError(msg) from e
+
+        @self._app.post(self._path)
+        async def handle(request: Request) -> dict:
+            status = await feed_update(
+                (await request.body()).decode(),
+                dict(request.headers),
+            )
+            resp = {"ok": status}
+            if not status:
+                raise HTTPException(500, resp)
+            return resp

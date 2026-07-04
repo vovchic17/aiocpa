@@ -1,12 +1,12 @@
 from typing import TYPE_CHECKING
 
-from .base import WebhookManager
+from aiosend.webhook.base import WebhookManager
 
 if TYPE_CHECKING:
     from starlette.applications import Starlette  # noqa: F401
     from starlette.routing import Router  # noqa: F401
 
-    from .base import WebServerHandler
+    from aiosend.webhook.base import WebServerHandler
 
 
 class StarletteManager(WebhookManager["Starlette | Router"]):
@@ -22,12 +22,12 @@ class StarletteManager(WebhookManager["Starlette | Router"]):
     ) -> None:
         """Register webhook handler."""
         try:
-            from fastapi import HTTPException, Request  # noqa: PLC0415
+            from starlette.exceptions import HTTPException  # noqa: PLC0415
+            from starlette.requests import Request  # noqa: PLC0415
         except ModuleNotFoundError as e:
             msg = "fastapi is not installed"
             raise RuntimeError(msg) from e
 
-        @self._app.post(self._path)
         async def handle(request: Request) -> dict:
             status = await feed_update(
                 (await request.body()).decode(),
@@ -35,5 +35,7 @@ class StarletteManager(WebhookManager["Starlette | Router"]):
             )
             resp = {"ok": status}
             if not status:
-                raise HTTPException(500, resp)
+                raise HTTPException(500, str(resp))
             return resp
+
+        self._app.add_route(self._path, handle, methods=["POST"])
