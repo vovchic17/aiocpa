@@ -1,9 +1,9 @@
 from datetime import datetime
 
-from aiosend.client.client import (  # type: ignore[attr-defined]  # type: ignore[attr-defined]
+from aiosend.client.client import (  # type: ignore[attr-defined]
     NoneType,
     _str,
-    bool,  # noqa: A004  # noqa: A004
+    bool,  # noqa: A004
     str,  # noqa: A004
 )
 from aiosend.enums import Asset, CheckStatus, LiteralFiat
