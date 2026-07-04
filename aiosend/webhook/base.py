@@ -2,7 +2,7 @@ import hashlib
 import re
 from abc import ABC, abstractmethod
 from hmac import HMAC
-from typing import TYPE_CHECKING, Any, Generic, TypeVar
+from typing import TYPE_CHECKING, Any, Concatenate, Generic, ParamSpec, TypeVar
 
 from aiosend import loggers
 from aiosend.types import Update
@@ -12,8 +12,10 @@ from .router import WebhookRouter
 if TYPE_CHECKING:
     from collections.abc import Awaitable, Callable, Mapping
 
+    P = ParamSpec("P")
+
     WebServerHandler = Callable[
-        [str, Mapping[str, str]],
+        Concatenate[str, Mapping[str, str], P],
         Awaitable[bool],
     ]
 
@@ -101,6 +103,7 @@ class WebhookHandler(WebhookRouter):
         self,
         body: str,
         headers: "Mapping[str, str]",
+        **kwargs: object,
     ) -> bool:
         """
         Feed an update to the invoice handler.
@@ -129,7 +132,7 @@ class WebhookHandler(WebhookRouter):
             if await self.propagate_event(
                 update.payload,
                 update.update_type,
-                **self._kwargs,
+                **self._kwargs | kwargs,
             ):
                 loggers.webhook.info(
                     "Webhook Update id=%d is handled.",
