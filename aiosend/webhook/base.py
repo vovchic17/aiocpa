@@ -97,10 +97,12 @@ class WebhookHandler(WebhookRouter):
             raise ValueError(msg)
         return int(update_id)
 
+    # here **kwargs and use them as context
     async def feed_update(
         self,
         body: str,
         headers: "Mapping[str, str]",
+        **kwargs: Any,  # noqa: ANN401
     ) -> bool:
         """
         Feed an update to the invoice handler.
@@ -129,7 +131,7 @@ class WebhookHandler(WebhookRouter):
             if await self.propagate_event(
                 update.payload,
                 update.update_type,
-                **self._kwargs,
+                **{**self._kwargs, **kwargs},
             ):
                 loggers.webhook.info(
                     "Webhook Update id=%d is handled.",

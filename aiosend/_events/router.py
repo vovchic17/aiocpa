@@ -19,9 +19,7 @@ class BaseRouter:
     def include_router(self, router: "Self") -> None:
         """Include another router to this one."""
         if not isinstance(self, type(router)):
-            msg = (
-                f"Router {router} is not a {type(self).__name__!r} instance"
-            )
+            msg = f"Router {router} is not a {type(self).__name__!r} instance"
             raise TypeError(msg)
 
         if router is self:
