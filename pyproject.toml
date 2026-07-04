@@ -5,33 +5,33 @@ authors = [{ name = "VoVcHiC", email = "tsvetkovvova17@gmail.com" }]
 license = "MIT"
 requires-python = ">=3.10"
 classifiers = [
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
-    "Programming Language :: Python :: 3.14",
-    "Programming Language :: Python :: 3 :: Only",
-    "Topic :: Software Development :: Quality Assurance",
-    "Topic :: Software Development :: Libraries",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Software Development :: Quality Assurance",
+  "Topic :: Software Development :: Libraries",
 ]
 keywords = [
-    "crypto pay",
-    "CryptoBot",
-    "Crypto Bot",
-    "Crypto Pay API",
-    "cryptopayapi",
-    "cryptobot",
-    "CryptoPayAPI",
-    "crypto pay api",
+  "crypto pay",
+  "CryptoBot",
+  "Crypto Bot",
+  "Crypto Pay API",
+  "cryptopayapi",
+  "cryptobot",
+  "CryptoPayAPI",
+  "crypto pay api",
 ]
 readme = "README.md"
 dependencies = [
-    "aiohttp>=3.9.0",
-    "certifi>=2023.7.22",
-    "magic-filter>=1.0.12",
-    "pydantic>=2.4.1,<2.13",
+  "aiohttp>=3.9.0",
+  "certifi>=2023.7.22",
+  "magic-filter>=1.0.12",
+  "pydantic>=2.4.1,<2.13",
 ]
 dynamic = ["version"]
 
@@ -40,14 +40,15 @@ path = "aiosend/__meta__.py"
 
 [project.optional-dependencies]
 docs = [
-    "furo",
-    "sphinx-intl",
-    "sphinx-autodoc-typehints",
-    "sphinx_copybutton",
-    "sphinxext-opengraph",
-    "matplotlib",
+  "furo",
+  "sphinx-intl",
+  "sphinx-autodoc-typehints",
+  "sphinx_copybutton",
+  "sphinxext-opengraph",
+  "matplotlib",
 ]
-fastapi = ["fastapi[standard]"]
+fastapi = ["fastapi"]
+starlette = ["starlette"]
 flask = ["flask"]
 test = ["pytest", "pytest-asyncio"]
 
@@ -62,14 +63,14 @@ target-version = "py310"
 
 [tool.ruff.lint]
 ignore = [
-    "D100", # undocumented-public-module
-    "D104", # undocumented-public-package
-    "D105", # undocumented-magic-method
-    "D106", # undocumented-public-nested-class
-    "D107", # undocumented-public-init
-    "D203", # one-blank-line-before-class
-    "D212", # multi-line-summary-first-line
-    "D403", # first-word-uncapitalized
+  "D100", # undocumented-public-module
+  "D104", # undocumented-public-package
+  "D105", # undocumented-magic-method
+  "D106", # undocumented-public-nested-class
+  "D107", # undocumented-public-init
+  "D203", # one-blank-line-before-class
+  "D212", # multi-line-summary-first-line
+  "D403", # first-word-uncapitalized
 ]
 select = ["ALL"]
 fixable = ["ALL"]
@@ -88,7 +89,7 @@ indent-style = "space"
 docstring-code-line-length = "dynamic"
 
 [[tool.mypy.overrides]]
-module = ["*.fastapi_manager.*", "*.flask_manager.*"]
+module = ["*.starlette_manager.*", "*.fastapi_manager.*", "*.flask_manager.*"]
 disable_error_code = ["misc", "import-not-found"]
 
 [tool.mypy]
@@ -98,3 +99,7 @@ python_version = "3.10"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
