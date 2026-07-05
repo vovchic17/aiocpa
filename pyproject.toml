@@ -47,6 +47,7 @@ docs = [
     "sphinxext-opengraph",
     "matplotlib",
 ]
+starlette = ["starlette"]
 fastapi = ["fastapi"]
 flask = ["flask"]
 test = ["pytest", "pytest-asyncio"]
