@@ -11,7 +11,18 @@ Usage example with `aiohttp web server <https://docs.aiohttp.org/en/stable/web_q
 -------------------------------------------------------------------------------------------------
 .. literalinclude:: ../../examples/webhook_aiohttp.py
 
-Usage example with `fastapi web server <https://fastapi.tiangolo.com/tutorial/first-steps/>`_
+Usage example with `Starlette web server <https://starlette.dev/#example>`_
+---------------------------------------------------------------------------
+.. tip::
+    In order to use aiosend with fastapi you need to install extra package
+
+.. code-block:: bash
+
+    pip install aiosend[starlette]
+
+.. literalinclude:: ../../examples/webhook_starlette.py
+
+Usage example with `FastAPI web server <https://fastapi.tiangolo.com/tutorial/first-steps/>`_
 ---------------------------------------------------------------------------------------------
 .. tip::
     In order to use aiosend with fastapi you need to install extra package
@@ -22,7 +33,7 @@ Usage example with `fastapi web server <https://fastapi.tiangolo.com/tutorial/fi
 
 .. literalinclude:: ../../examples/webhook_fastapi.py
 
-Usage example with `flask web server <https://flask.palletsprojects.com/en/3.0.x/quickstart/#quickstart>`_
+Usage example with `Flask web server <https://flask.palletsprojects.com/en/3.0.x/quickstart/#quickstart>`_
 ----------------------------------------------------------------------------------------------------------
 .. tip::
     In order to use aiosend with flask you need to install extra package
@@ -44,9 +55,13 @@ and overriding :attr:`aiosend.webhook.WebhookManager.register_handler`.
     :show-inheritance:
     :members:
 
-.. autoclass:: aiosend.webhook.FastAPIManager
+.. autoclass:: aiosend.webhook.StarletteManager
     :show-inheritance:
     :members:
+
+.. tip::
+    ``StarletteManager`` also has a ``FastAPIManager`` alias.
+    You can import it under a more familiar name when working with FastAPI applications:
 
 .. autoclass:: aiosend.webhook.FlaskManager
     :show-inheritance:

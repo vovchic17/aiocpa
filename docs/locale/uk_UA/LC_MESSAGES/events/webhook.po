@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: aiosend \n"
+"Project-Id-Version:  aiosend\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-06 02:33+0300\n"
+"POT-Creation-Date: 2026-07-05 03:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk_UA\n"
@@ -17,63 +17,72 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../../events/webhook.rst:3
 msgid "Webhook"
-msgstr "Вебхукі"
+msgstr "Вебхуки"
 
 #: ../../events/webhook.rst:6
 msgid ""
 "To use webhooks you need to enable them in the `@CryptoBot "
 "<https://send.t.me>`_ settings as follows:"
 msgstr ""
-"Для використання веб-хуків вам потрібно включити їх у "
-"налаштуваннях`@CryptoBot <https://send.t.me>`_ наступним чином:"
+"Щоб використовувати вебхуки, необхідно ввімкнути їх у налаштуваннях "
+"`@CryptoBot <https://send.t.me>`_ таким чином:"
 
 #: ../../events/webhook.rst:8
 msgid "🏝 Crypto Pay -> My Apps -> YOUR APP -> Webhooks -> 🌕 Enable webhooks."
 msgstr ""
-"🏝 Crypto Pay -> Мої додатки -> <Ваш додаток> -> Вебхукі -> 🌕 Включити "
-"вебхуки."
+"🏝 Crypto Pay -> Мої застосунки -> ВАШ ЗАСТОСУНОК -> Webhooks -> 🌕 Enable "
+"webhooks."
 
 #: ../../events/webhook.rst:11
 msgid ""
 "Usage example with `aiohttp web server "
 "<https://docs.aiohttp.org/en/stable/web_quickstart.html>`_"
 msgstr ""
-"Приклад використання з `aiohttp "
-"веб-сервером<https://docs.aiohttp.org/en/stable/web_quickstart.html>`_"
+"Приклад використання з `вебсервером aiohttp "
+"<https://docs.aiohttp.org/en/stable/web_quickstart.html>`_"
 
 #: ../../events/webhook.rst:15
 msgid ""
-"Usage example with `fastapi web server "
-"<https://fastapi.tiangolo.com/tutorial/first-steps/>`_"
+"Usage example with `Starlette web server "
+"<https://starlette.dev/#example>`_"
 msgstr ""
-"Приклад використання з `fastapi "
-"веб-сервером<https://fastapi.tiangolo.com/tutorial/first-steps/>`_"
+"Приклад використання з `вебсервером Starlette "
+"<https://starlette.dev/#example>`_"
 
-#: ../../events/webhook.rst:17
+#: ../../events/webhook.rst:17 ../../events/webhook.rst:28
 msgid "In order to use aiosend with fastapi you need to install extra package"
 msgstr ""
-"Щоб використовувати aiosend з fastapi, вам потрібно встановити екстра "
-"залежність"
+"Щоб використовувати aiosend із FastAPI, необхідно встановити додатковий "
+"пакет."
 
 #: ../../events/webhook.rst:26
 msgid ""
-"Usage example with `flask web server "
+"Usage example with `FastAPI web server "
+"<https://fastapi.tiangolo.com/tutorial/first-steps/>`_"
+msgstr ""
+"Приклад використання з `вебсервером FastAPI "
+"<https://fastapi.tiangolo.com/tutorial/first-steps/>`_"
+
+
+#: ../../events/webhook.rst:37
+msgid ""
+"Usage example with `Flask web server "
 "<https://flask.palletsprojects.com/en/3.0.x/quickstart/#quickstart>`_"
 msgstr ""
-"Приклад використання з `flask "
-"веб-сервером<https://flask.palletsprojects.com/en/3.0.x/quickstart/#quickstart>`_"
+"Приклад використання з `вебсервером Flask "
+"<https://flask.palletsprojects.com/en/3.0.x/quickstart/#quickstart>`_"
 
-#: ../../events/webhook.rst:28
+#: ../../events/webhook.rst:39
 msgid "In order to use aiosend with flask you need to install extra package"
 msgstr ""
-"Щоб використовувати aiosend з flask, вам потрібно встановити екстра "
-"залежність"
+"Щоб використовувати aiosend із Flask, необхідно встановити додатковий "
+"пакет."
 
-#: ../../events/webhook.rst:36
+#: ../../events/webhook.rst:47
 msgid ""
 "**aiosend** uses `aiohttp "
 "<https://docs.aiohttp.org/en/stable/index.html>`_ as web server by "
@@ -81,11 +90,11 @@ msgid ""
 ":class:`aiosend.webhook.WebhookManager` and overriding "
 ":attr:`aiosend.webhook.WebhookManager.register_handler`."
 msgstr ""
-"**aiosend** використовує "
-"`aiohttp<https://docs.aiohttp.org/en/stable/index.html>`_ як веб-сервер "
-"за замовчанням.Ви можете додати свій власний менеджер веб-хуків, "
-"наслідуючи :class:`aiosend.webhook.WebhookManager` і "
-"перевизначаючи:attr:`aiosend.webhook.WebhookManager.register_handler`."
+"**aiosend** за замовчуванням використовує `aiohttp "
+"<https://docs.aiohttp.org/en/stable/index.html>`_ як вебсервер. Ви можете"
+" реалізувати власний менеджер вебхуків, успадкувавшись від "
+":class:`aiosend.webhook.WebhookManager` та перевизначивши "
+":attr:`aiosend.webhook.WebhookManager.register_handler`."
 
 #: aiosend.webhook.base.WebhookManager:1 of
 msgid "Webhook manager."
@@ -96,81 +105,113 @@ msgid ""
 "If you want to implement your own webhook manager, you must inherit from "
 "this class."
 msgstr ""
-"Якщо ви хочете створити свій власний менеджер вебхуків, ви "
-"повинні успадковуватись від цього класу"
+"Якщо ви хочете реалізувати власний менеджер вебхуків, необхідно "
+"успадкуватися від цього класу."
 
 #: aiosend.webhook.aiohttp_manager.AiohttpManager.register_handler:1
 #: aiosend.webhook.base.WebhookManager.register_handler:1
-#: aiosend.webhook.fastapi_manager.FastAPIManager.register_handler:1
-#: aiosend.webhook.flask_manager.FlaskManager.register_handler:1 of
+#: aiosend.webhook.flask_manager.FlaskManager.register_handler:1
+#: aiosend.webhook.starlette_fastapi_manager.StarletteManager.register_handler:1
+#: of
 msgid "Register webhook handler."
-msgstr "Реєстрація обробника вебхуків."
+msgstr "Зареєструвати обробник вебхуків."
 
 #: aiosend.webhook.base.WebhookManager.register_handler:3 of
 msgid ""
 "Override this method in your own webhook manager class. This method is "
 "used for registering webhook handler in your app."
 msgstr ""
-"Перевизначте цей метод у класі вашого менеджера веб-хуків. Цей метод "
-"використовується для реєстрації обробника веб-хуків у вашому додатку."
+"Перевизначте цей метод у власному класі менеджера вебхуків. Він "
+"використовується для реєстрації обробника вебхуків у вашому застосунку."
 
 #: ../../events/webhook.rst
 msgid "Parameters"
-msgstr ""
+msgstr "Параметри"
 
 #: aiosend.webhook.base.WebhookManager.register_handler:6 of
 msgid "Web server handler object."
-msgstr "Об'єкт обробника веб-сервера."
+msgstr "Об'єкт обробника вебсервера."
 
 #: ../../events/webhook.rst
 msgid "Return type"
-msgstr ""
+msgstr "Тип поверненого значення"
 
 #: aiosend.webhook.aiohttp_manager.AiohttpManager.register_handler:4
 #: aiosend.webhook.base.WebhookManager.register_handler:7
-#: aiosend.webhook.fastapi_manager.FastAPIManager.register_handler:4
-#: aiosend.webhook.flask_manager.FlaskManager.register_handler:4 of
+#: aiosend.webhook.flask_manager.FlaskManager.register_handler:4
+#: aiosend.webhook.starlette_fastapi_manager.StarletteManager.register_handler:4
+#: of
 msgid ":sphinx_autodoc_typehints_type:`\\:py\\:obj\\:\\`None\\``"
-msgstr ""
+msgstr ":sphinx_autodoc_typehints_type:`\\:py\\:obj\\:\\`None\\``"
 
 #: aiosend.webhook.aiohttp_manager.AiohttpManager:1 of
 msgid ""
 "Bases: :py:class:`~aiosend.webhook.base.WebhookManager`\\ "
 "[:py:class:`Application`]"
 msgstr ""
+"Базовий клас: :py:class:`~aiosend.webhook.base.WebhookManager`\\ "
+"[:py:class:`Application`]"
 
 #: aiosend.webhook.aiohttp_manager.AiohttpManager:1 of
 msgid "aiohttp webhook manager."
-msgstr "Менеджер вебхуків на aiohttp."
+msgstr "Менеджер вебхуків для aiohttp."
 
 #: aiosend.webhook.aiohttp_manager.AiohttpManager:3 of
-msgid "Webhook manager based on :class:`aiohttp.web.Application`."
-msgstr "Менеджер веб-хуків, що базується на :class:`aiohttp.web.Application`."
+msgid ""
+"Webhook manager based on `Aiohttp "
+"<https://docs.aiohttp.org/en/stable/web_reference.html#aiohttp.web.Application>`_."
+msgstr ""
+"Менеджер вебхуків, що базується на `Aiohttp "
+"<https://docs.aiohttp.org/en/stable/web_reference.html#aiohttp.web.Application>`_."
 
-#: aiosend.webhook.fastapi_manager.FastAPIManager:1 of
+#: aiosend.webhook.starlette_fastapi_manager.StarletteManager:1 of
 msgid ""
 "Bases: :py:class:`~aiosend.webhook.base.WebhookManager`\\ "
-"[:py:class:`FastAPI | APIRouter`]"
+"[:py:class:`FastAPI | APIRouter | Starlette | Router`]"
 msgstr ""
+"Базовий клас: :py:class:`~aiosend.webhook.base.WebhookManager`\\ "
+"[:py:class:`FastAPI | APIRouter | Starlette | Router`]"
 
-#: aiosend.webhook.fastapi_manager.FastAPIManager:1 of
-msgid "FastAPI webhook manager."
-msgstr "Менеджер вебхуків на FastAPI."
+#: aiosend.webhook.starlette_fastapi_manager.StarletteManager:1 of
+msgid "Starlette & FastAPI webhook manager."
+msgstr "Менеджер вебхуків для Starlette та FastAPI."
 
-#: aiosend.webhook.fastapi_manager.FastAPIManager:3 of
-msgid "Webhook manager based on :class:`fastapi.FastAPI`."
-msgstr "Менеджер вебхуків, що базується на :class:`fastapi.FastAPI`."
+#: aiosend.webhook.starlette_fastapi_manager.StarletteManager:3 of
+msgid ""
+"Webhook manager based on `Starlette "
+"<https://www.starlette.io/applications/>`_ and `FastAPI "
+"<https://fastapi.tiangolo.com/reference/fastapi/>`_."
+msgstr ""
+"Менеджер вебхуків, що базується на `Starlette "
+"<https://www.starlette.io/applications/>`_ та `FastAPI "
+"<https://fastapi.tiangolo.com/reference/fastapi/>`_."
+
+#: ../../events/webhook.rst:63
+msgid ""
+"``StarletteManager`` also has a ``FastAPIManager`` alias. You can import "
+"it under a more familiar name when working with FastAPI applications:"
+msgstr ""
+"``StarletteManager`` також має псевдонім ``FastAPIManager``. Ви можете "
+"імпортувати його під більш звичною назвою під час роботи із застосунками "
+"FastAPI:"
 
 #: aiosend.webhook.flask_manager.FlaskManager:1 of
 msgid ""
 "Bases: :py:class:`~aiosend.webhook.base.WebhookManager`\\ "
 "[:py:class:`Flask`]"
 msgstr ""
+"Базовий клас: :py:class:`~aiosend.webhook.base.WebhookManager`\\ "
+"[:py:class:`Flask`]"
 
 #: aiosend.webhook.flask_manager.FlaskManager:1 of
 msgid "Flask webhook manager."
-msgstr "Менеджер вебхуків на Flask."
+msgstr "Менеджер вебхуків для Flask."
 
 #: aiosend.webhook.flask_manager.FlaskManager:3 of
-msgid "Webhook manager based on :class:`flask.Flask`."
-msgstr "Менеджер вебхуків, що базується на :class:`flask.Flask`."
+msgid ""
+"Webhook manager based on `Flask "
+"<https://flask.palletsprojects.com/en/stable/api#application-object>`_."
+msgstr ""
+"Менеджер вебхуків, що базується на `Flask "
+"<https://flask.palletsprojects.com/en/stable/api#application-object>`_."
+

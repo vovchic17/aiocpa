@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiosend \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-06 02:33+0300\n"
+"POT-Creation-Date: 2026-07-05 03:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -17,7 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../../events/webhook.rst:3
 msgid "Webhook"
@@ -28,13 +28,13 @@ msgid ""
 "To use webhooks you need to enable them in the `@CryptoBot "
 "<https://send.t.me>`_ settings as follows:"
 msgstr ""
-"Для использования вебхуков вам нужно включить их в настройках `@CryptoBot"
-" <https://send.t.me>`_ следующим образом:"
+"Для использования вебхуков необходимо включить их в настройках "
+"`@CryptoBot <https://send.t.me>`_ следующим образом:"
 
 #: ../../events/webhook.rst:8
 msgid "🏝 Crypto Pay -> My Apps -> YOUR APP -> Webhooks -> 🌕 Enable webhooks."
 msgstr ""
-"🏝 Crypto Pay -> Мои приложения -> <Ваше приложение> -> Вебхуки -> 🌕 "
+"🏝 Crypto Pay -> Мои приложения -> ВАШЕ ПРИЛОЖЕНИЕ -> Вебхуки -> 🌕 "
 "Включить вебхуки."
 
 #: ../../events/webhook.rst:11
@@ -42,38 +42,46 @@ msgid ""
 "Usage example with `aiohttp web server "
 "<https://docs.aiohttp.org/en/stable/web_quickstart.html>`_"
 msgstr ""
-"Пример использования с `aiohttp веб-сервером "
+"Пример использования с `веб-сервером aiohttp "
 "<https://docs.aiohttp.org/en/stable/web_quickstart.html>`_"
 
 #: ../../events/webhook.rst:15
 msgid ""
-"Usage example with `fastapi web server "
-"<https://fastapi.tiangolo.com/tutorial/first-steps/>`_"
+"Usage example with `Starlette web server "
+"<https://starlette.dev/#example>`_"
 msgstr ""
-"Пример использования с `fastapi веб-сервером "
-"<https://fastapi.tiangolo.com/tutorial/first-steps/>`_"
+"Пример использования с `веб-сервером Starlette "
+"<https://starlette.dev/#example>`_"
 
-#: ../../events/webhook.rst:17
+#: ../../events/webhook.rst:17 ../../events/webhook.rst:28
 msgid "In order to use aiosend with fastapi you need to install extra package"
 msgstr ""
-"Чтобы использовать aiosend с fastapi, вам нужно установить экстра "
-"зависимость"
+"Чтобы использовать aiosend с FastAPI, необходимо установить "
+"дополнительный пакет."
 
 #: ../../events/webhook.rst:26
 msgid ""
-"Usage example with `flask web server "
+"Usage example with `FastAPI web server "
+"<https://fastapi.tiangolo.com/tutorial/first-steps/>`_"
+msgstr ""
+"Пример использования с `веб-сервером FastAPI "
+"<https://fastapi.tiangolo.com/tutorial/first-steps/>`_"
+
+#: ../../events/webhook.rst:37
+msgid ""
+"Usage example with `Flask web server "
 "<https://flask.palletsprojects.com/en/3.0.x/quickstart/#quickstart>`_"
 msgstr ""
-"Пример использования с `flask веб-сервером "
+"Пример использования с `веб-сервером Flask "
 "<https://flask.palletsprojects.com/en/3.0.x/quickstart/#quickstart>`_"
 
-#: ../../events/webhook.rst:28
+#: ../../events/webhook.rst:39
 msgid "In order to use aiosend with flask you need to install extra package"
 msgstr ""
-"Чтобы использовать aiosend с flask, вам нужно установить экстра "
-"зависимость"
+"Чтобы использовать aiosend с Flask, необходимо установить дополнительный "
+"пакет."
 
-#: ../../events/webhook.rst:36
+#: ../../events/webhook.rst:47
 msgid ""
 "**aiosend** uses `aiohttp "
 "<https://docs.aiohttp.org/en/stable/index.html>`_ as web server by "
@@ -81,10 +89,10 @@ msgid ""
 ":class:`aiosend.webhook.WebhookManager` and overriding "
 ":attr:`aiosend.webhook.WebhookManager.register_handler`."
 msgstr ""
-"**aiosend** использует `aiohttp "
-"<https://docs.aiohttp.org/en/stable/index.html>`_ как веб-сервер по "
-"умолчанию. Вы можете добавить свой собственный менеджер вебхуков, "
-"наследуя :class:`aiosend.webhook.WebhookManager` и переопределяя "
+"**aiosend** по умолчанию использует `aiohttp "
+"<https://docs.aiohttp.org/en/stable/index.html>`_ как веб-сервер. Вы "
+"можете реализовать собственный менеджер вебхуков, унаследовавшись от "
+":class:`aiosend.webhook.WebhookManager` и переопределив "
 ":attr:`aiosend.webhook.WebhookManager.register_handler`."
 
 #: aiosend.webhook.base.WebhookManager:1 of
@@ -96,27 +104,28 @@ msgid ""
 "If you want to implement your own webhook manager, you must inherit from "
 "this class."
 msgstr ""
-"Если вы хотите создать свой собственный менеджер вебхуков, вы должны "
-"наследоваться от этого класса."
+"Если вы хотите реализовать собственный менеджер вебхуков, необходимо "
+"унаследоваться от этого класса."
 
 #: aiosend.webhook.aiohttp_manager.AiohttpManager.register_handler:1
 #: aiosend.webhook.base.WebhookManager.register_handler:1
-#: aiosend.webhook.fastapi_manager.FastAPIManager.register_handler:1
-#: aiosend.webhook.flask_manager.FlaskManager.register_handler:1 of
+#: aiosend.webhook.flask_manager.FlaskManager.register_handler:1
+#: aiosend.webhook.starlette_fastapi_manager.StarletteManager.register_handler:1
+#: of
 msgid "Register webhook handler."
-msgstr "Регистрация обработчика вебхуков."
+msgstr "Зарегистрировать обработчик вебхуков."
 
 #: aiosend.webhook.base.WebhookManager.register_handler:3 of
 msgid ""
 "Override this method in your own webhook manager class. This method is "
 "used for registering webhook handler in your app."
 msgstr ""
-"Переопределите этот метод в классе вашего менеджера вебхуков. Этот метод "
+"Переопределите этот метод в собственном классе менеджера вебхуков. Он "
 "используется для регистрации обработчика вебхуков в вашем приложении."
 
 #: ../../events/webhook.rst
 msgid "Parameters"
-msgstr ""
+msgstr "Параметры"
 
 #: aiosend.webhook.base.WebhookManager.register_handler:6 of
 msgid "Web server handler object."
@@ -124,54 +133,84 @@ msgstr "Объект обработчика веб-сервера."
 
 #: ../../events/webhook.rst
 msgid "Return type"
-msgstr ""
+msgstr "Тип возвращаемого значения"
 
 #: aiosend.webhook.aiohttp_manager.AiohttpManager.register_handler:4
 #: aiosend.webhook.base.WebhookManager.register_handler:7
-#: aiosend.webhook.fastapi_manager.FastAPIManager.register_handler:4
-#: aiosend.webhook.flask_manager.FlaskManager.register_handler:4 of
+#: aiosend.webhook.flask_manager.FlaskManager.register_handler:4
+#: aiosend.webhook.starlette_fastapi_manager.StarletteManager.register_handler:4
+#: of
 msgid ":sphinx_autodoc_typehints_type:`\\:py\\:obj\\:\\`None\\``"
-msgstr ""
+msgstr ":sphinx_autodoc_typehints_type:`\\:py\\:obj\\:\\`None\\``"
 
 #: aiosend.webhook.aiohttp_manager.AiohttpManager:1 of
 msgid ""
 "Bases: :py:class:`~aiosend.webhook.base.WebhookManager`\\ "
 "[:py:class:`Application`]"
 msgstr ""
+"Базовые классы: :py:class:`~aiosend.webhook.base.WebhookManager`\\ "
+"[:py:class:`Application`]"
 
 #: aiosend.webhook.aiohttp_manager.AiohttpManager:1 of
 msgid "aiohttp webhook manager."
-msgstr "Менеджер вебхуков на aiohttp."
+msgstr "Менеджер вебхуков для aiohttp."
 
 #: aiosend.webhook.aiohttp_manager.AiohttpManager:3 of
-msgid "Webhook manager based on :class:`aiohttp.web.Application`."
-msgstr "Менеджер вебхуков, базирующийся на :class:`aiohttp.web.Application`."
+msgid ""
+"Webhook manager based on `Aiohttp "
+"<https://docs.aiohttp.org/en/stable/web_reference.html#aiohttp.web.Application>`_."
+msgstr ""
+"Менеджер вебхуков, основанный на `aiohttp "
+"<https://docs.aiohttp.org/en/stable/web_reference.html#aiohttp.web.Application>`_."
 
-#: aiosend.webhook.fastapi_manager.FastAPIManager:1 of
+#: aiosend.webhook.starlette_fastapi_manager.StarletteManager:1 of
 msgid ""
 "Bases: :py:class:`~aiosend.webhook.base.WebhookManager`\\ "
-"[:py:class:`FastAPI | APIRouter`]"
+"[:py:class:`FastAPI | APIRouter | Starlette | Router`]"
 msgstr ""
+"Базовые классы: :py:class:`~aiosend.webhook.base.WebhookManager`\\ "
+"[:py:class:`FastAPI | APIRouter | Starlette | Router`]"
 
-#: aiosend.webhook.fastapi_manager.FastAPIManager:1 of
-msgid "FastAPI webhook manager."
-msgstr "Менеджер вебхуков на FastAPI."
+#: aiosend.webhook.starlette_fastapi_manager.StarletteManager:1 of
+msgid "Starlette & FastAPI webhook manager."
+msgstr "Менеджер вебхуков для Starlette и FastAPI."
 
-#: aiosend.webhook.fastapi_manager.FastAPIManager:3 of
-msgid "Webhook manager based on :class:`fastapi.FastAPI`."
-msgstr "Менеджер вебхуков, базирующийся на :class:`fastapi.FastAPI`."
+#: aiosend.webhook.starlette_fastapi_manager.StarletteManager:3 of
+msgid ""
+"Webhook manager based on `Starlette "
+"<https://www.starlette.io/applications/>`_ and `FastAPI "
+"<https://fastapi.tiangolo.com/reference/fastapi/>`_."
+msgstr ""
+"Менеджер вебхуков, основанный на `Starlette "
+"<https://www.starlette.io/applications/>`_ и `FastAPI "
+"<https://fastapi.tiangolo.com/reference/fastapi/>`_."
+
+#: ../../events/webhook.rst:63
+msgid ""
+"``StarletteManager`` also has a ``FastAPIManager`` alias. You can import "
+"it under a more familiar name when working with FastAPI applications:"
+msgstr ""
+"``StarletteManager`` также имеет псевдоним ``FastAPIManager``. Вы можете "
+"импортировать его под более привычным именем при работе с приложениями "
+"FastAPI:"
 
 #: aiosend.webhook.flask_manager.FlaskManager:1 of
 msgid ""
 "Bases: :py:class:`~aiosend.webhook.base.WebhookManager`\\ "
 "[:py:class:`Flask`]"
 msgstr ""
+"Базовые классы: :py:class:`~aiosend.webhook.base.WebhookManager`\\ "
+"[:py:class:`Flask`]"
 
 #: aiosend.webhook.flask_manager.FlaskManager:1 of
 msgid "Flask webhook manager."
-msgstr "Менеджер вебхуков на Flask."
+msgstr "Менеджер вебхуков для Flask."
 
 #: aiosend.webhook.flask_manager.FlaskManager:3 of
-msgid "Webhook manager based on :class:`flask.Flask`."
-msgstr "Менеджер вебхуков, базирующийся на :class:`flask.Flask`."
+msgid ""
+"Webhook manager based on `Flask "
+"<https://flask.palletsprojects.com/en/stable/api#application-object>`_."
+msgstr ""
+"Менеджер вебхуков, основанный на `Flask "
+"<https://flask.palletsprojects.com/en/stable/api#application-object>`_."
 
