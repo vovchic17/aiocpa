@@ -15,7 +15,7 @@ class AiohttpManager(WebhookManager["Application"]):
     """
     aiohttp webhook manager.
 
-    Webhook manager based on `Aiohttp <https://docs.aiohttp.org/en/stable/web_reference.html#aiohttp.web.Application>`_.
+    Webhook manager based on `aiohttp <https://docs.aiohttp.org/en/stable/web_reference.html#aiohttp.web.Application>`_.
     """
 
     def register_handler(
