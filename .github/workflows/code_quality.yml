@@ -1,35 +1,44 @@
 name: code quality
 
-on: [push]
+on:
+  push:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
         python-version: ["3.13"]
-        node-version: ["23"]
+        node-version: ["24"]
+
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Set up NodeJS ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install . ruff mypy
-        npm install -g markdownlint-cli
-    - name: ruff check
-      run: |
-        ruff check
-    - name: mypy check
-      run: |
-        mypy .
-    - name: markdownlint check
-      run: |
-        markdownlint .
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ matrix.node-version }}
+          package-manager-cache: false
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install . ruff mypy
+          npm install --global markdownlint-cli
+
+      - name: Ruff check
+        run: ruff check .
+
+      - name: Mypy check
+        run: mypy .
+
+      - name: Markdownlint check
+        run: markdownlint .
