@@ -29,6 +29,7 @@ class InvoicePollingManager(BasePollingManager, PollingRouter, ABC):
         invoice_ids: list[int] | None = None,
         status: """Literal[InvoiceStatus.ACTIVE,
         InvoiceStatus.PAID] | None""" = None,
+        *,
         offset: int | None = None,
         count: int | None = None,
     ) -> list["Invoice"]:

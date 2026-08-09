@@ -9,7 +9,6 @@ from .session_network import SessionNetworkProtocol
 __all__ = (
     "ClientProtocol",
     "ClientWebhookManagerProtocol",
-    "ClientWebhookManagerProtocol",
     "GetBalanceProtocol",
     "GetChecksProtocol",
     "GetExchangeRatesProtocol",
