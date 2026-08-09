@@ -7,6 +7,7 @@ if TYPE_CHECKING:
 
     from aiosend._events.handler import CallbackType
     from aiosend.types import CryptoPayObject
+    from aiosend.webhook.base import FastAPIResolver
 
 
 class EventObserver:
@@ -36,12 +37,16 @@ class EventObserver:
     async def trigger(
         self,
         event: "CryptoPayObject",
+        *,
+        fastapi_resolver: "FastAPIResolver | None" = None,
         **kwargs: object,
     ) -> bool:
         """Trigger event observer."""
         for handler in self.handlers:
             result, data = await handler.check(event)
             if result:
+                if fastapi_resolver is not None:
+                    data |= await fastapi_resolver(handler.handler)
                 await handler.call(event, data | kwargs)
                 return True
         return False

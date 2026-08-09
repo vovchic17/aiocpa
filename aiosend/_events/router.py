@@ -5,6 +5,7 @@ if TYPE_CHECKING:
 
     from aiosend._events.observer import EventObserver
     from aiosend.types import CryptoPayObject
+    from aiosend.webhook.base import FastAPIResolver
 
 
 class BaseRouter:
@@ -19,9 +20,7 @@ class BaseRouter:
     def include_router(self, router: "Self") -> None:
         """Include another router to this one."""
         if not isinstance(self, type(router)):
-            msg = (
-                f"Router {router} is not a {type(self).__name__!r} instance"
-            )
+            msg = f"Router {router} is not a {type(self).__name__!r} instance"
             raise TypeError(msg)
 
         if router is self:
@@ -50,18 +49,25 @@ class BaseRouter:
         self,
         event: "CryptoPayObject",
         event_type: str,
+        *,
+        fastapi_resolver: "FastAPIResolver | None" = None,
         **kwargs: object,
     ) -> bool:
         is_handled = False
 
         observer = self.observers.get(event_type)
         if observer is not None:
-            is_handled = await observer.trigger(event, **kwargs)
+            is_handled = await observer.trigger(
+                event,
+                fastapi_resolver=fastapi_resolver,
+                **kwargs,
+            )
 
         for router in self.sub_routers:
             is_handled = await router.propagate_event(
                 event,
                 event_type,
+                fastapi_resolver=fastapi_resolver,
                 **kwargs,
             )
             if is_handled:

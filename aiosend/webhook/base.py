@@ -14,6 +14,11 @@ if TYPE_CHECKING:
 
     P = ParamSpec("P")
 
+    FastAPIResolver = Callable[
+        [Callable[..., Any]],
+        Awaitable[dict[str, Any]],
+    ]
+
     WebServerHandler = Callable[
         Concatenate[str, Mapping[str, str], P],
         Awaitable[bool],
@@ -103,6 +108,7 @@ class WebhookHandler(WebhookRouter):
         self,
         body: str,
         headers: "Mapping[str, str]",
+        fastapi_resolver: "FastAPIResolver | None" = None,
         **kwargs: object,
     ) -> bool:
         """
@@ -110,6 +116,7 @@ class WebhookHandler(WebhookRouter):
 
         :param body: parsed json body.
         :param headers: request headers.
+        :param fastapi_resolver: FastAPI dependency resolver.
 
         :return: :code:`True` on success.
         """
@@ -132,6 +139,7 @@ class WebhookHandler(WebhookRouter):
             if await self.propagate_event(
                 update.payload,
                 update.update_type,
+                fastapi_resolver=fastapi_resolver,
                 **self._kwargs | kwargs,
             ):
                 loggers.webhook.info(
@@ -144,7 +152,7 @@ class WebhookHandler(WebhookRouter):
                     "No suitable handlers.",
                     update.update_id,
                 )
-        except Exception:  # noqa: BLE001 logger catches exception
+        except Exception:  # noqa: BLE001
             loggers.webhook.exception("Error while handling update:\n")
             return False
         return True
