@@ -4,6 +4,7 @@ from fractions import Fraction
 from types import NoneType, UnionType
 from typing import (
     TYPE_CHECKING,
+    Any,
     ClassVar,
     Union,
     cast,
@@ -160,7 +161,7 @@ class PayloadDataFilter:
     async def __call__(
         self,
         invoice: Invoice,
-    ) -> bool | dict[str, object]:
+    ) -> bool | dict[str, Any]:
         if not isinstance(invoice, Invoice) or not invoice.payload:
             return False
         try:

@@ -16,9 +16,9 @@ class HandlerObject:
     handler: CallbackType
     filters: tuple[MagicFilter | CallbackType, ...]
 
-    async def check(self, obj: object) -> tuple[bool, dict[str, object]]:
+    async def check(self, obj: object) -> tuple[bool, dict[str, Any]]:
         """Check if the handler is suitable for the update."""
-        data: dict[str, object] = {}
+        data: dict[str, Any] = {}
         for f in self.filters:
             check = False
             if isinstance(f, MagicFilter):
@@ -40,7 +40,7 @@ class HandlerObject:
     async def call(
         self,
         obj: object,
-        data: dict[str, object] | None = None,
+        data: dict[str, Any] | None = None,
     ) -> None:
         """Call handler."""
         if data is None:
