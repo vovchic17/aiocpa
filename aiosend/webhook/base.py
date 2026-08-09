@@ -45,7 +45,7 @@ class WebhookManager(ABC, Generic[_APP]):
         Override this method in your own webhook manager class.
         This method is used for registering webhook handler in your app.
 
-        :param handler: Web server handler object.
+        :param feed_update: Web server handler object.
         :return:
         """
 
