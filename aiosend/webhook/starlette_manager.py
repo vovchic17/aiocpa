@@ -4,8 +4,6 @@ from typing import TYPE_CHECKING
 from aiosend.webhook.base import _APP, WebhookManager
 
 if TYPE_CHECKING:
-    from fastapi import APIRouter, FastAPI  # noqa: F401
-    from fastapi.params import Depends
     from starlette.applications import Starlette  # noqa: F401
     from starlette.routing import Router  # noqa: F401
 
@@ -13,22 +11,19 @@ if TYPE_CHECKING:
 
 
 class StarletteManager(
-    WebhookManager["FastAPI | APIRouter | Starlette | Router"],
+    WebhookManager["Starlette | Router"],
 ):
     """
-    Starlette & FastAPI webhook manager.
+    Starlette webhook manager.
 
-    Webhook manager based on `Starlette <https://www.starlette.io/applications/>`_
-    and `FastAPI <https://fastapi.tiangolo.com/reference/fastapi/>`_.
+    Webhook manager based on `Starlette <https://www.starlette.io/applications/>`_.
     """
 
     def __init__(
         self,
         app: _APP,
         path: str,
-        dependencies: list["Depends"] | None = None,
     ) -> None:
-        self._dependencies = dependencies or []
         super().__init__(app, path)
 
     def register_handler(
@@ -60,27 +55,8 @@ class StarletteManager(
 
             return JSONResponse(resp)
 
-        try:
-            from fastapi import APIRouter, FastAPI  # noqa: PLC0415
-        except ModuleNotFoundError:
-            self._dependencies = []
-        else:
-            if isinstance(self._app, APIRouter | FastAPI):
-                self._app.add_api_route(
-                    self._path,
-                    handle,
-                    methods=["POST"],
-                    dependencies=self._dependencies,
-                )
-                return
-
-            self._dependencies = []
-
         self._app.add_route(
             self._path,
             handle,
             methods=["POST"],
         )
-
-
-FastAPIManager = StarletteManager
