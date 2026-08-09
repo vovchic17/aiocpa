@@ -63,14 +63,15 @@ target-version = "py310"
 
 [tool.ruff.lint]
 ignore = [
-    "D100", # undocumented-public-module
-    "D104", # undocumented-public-package
-    "D105", # undocumented-magic-method
-    "D106", # undocumented-public-nested-class
-    "D107", # undocumented-public-init
-    "D203", # one-blank-line-before-class
-    "D212", # multi-line-summary-first-line
-    "D403", # first-word-uncapitalized
+    "D100",   # undocumented-public-module
+    "D104",   # undocumented-public-package
+    "D105",   # undocumented-magic-method
+    "D106",   # undocumented-public-nested-class
+    "D107",   # undocumented-public-init
+    "D203",   # one-blank-line-before-class
+    "D212",   # multi-line-summary-first-line
+    "D403",   # first-word-uncapitalized
+    "CPY001", #missing-copyright-notice
 ]
 select = ["ALL"]
 fixable = ["ALL"]
