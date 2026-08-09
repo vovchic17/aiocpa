@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from typing import TYPE_CHECKING
 
 from .base import WebhookManager
@@ -32,4 +33,6 @@ class FlaskManager(WebhookManager["Flask"]):
                 request.get_data(as_text=True),
                 dict(request.headers),
             )
-            return {"ok": status}, 200 if status else 500
+            return {
+                "ok": status,
+            }, HTTPStatus.OK if status else HTTPStatus.INTERNAL_SERVER_ERROR

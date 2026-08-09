@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from typing import TYPE_CHECKING
 
 from aiosend.webhook.base import _APP, WebhookManager
@@ -52,7 +53,10 @@ class StarletteManager(
             resp = {"ok": status}
 
             if not status:
-                raise HTTPException(status_code=500, detail=str(resp))
+                raise HTTPException(
+                    status_code=HTTPStatus.INTERNAL_SERVER_ERROR,
+                    detail=str(resp),
+                )
 
             return JSONResponse(resp)
 
