@@ -50,6 +50,7 @@ docs = [
 starlette = ["starlette"]
 fastapi = ["fastapi"]
 flask = ["flask"]
+litestar = ["litestar"]
 test = ["pytest", "pytest-asyncio"]
 
 [project.urls]
