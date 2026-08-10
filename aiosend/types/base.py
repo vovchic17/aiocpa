@@ -1,4 +1,3 @@
-from abc import ABC
 from typing import TYPE_CHECKING, Annotated, Generic, TypeVar
 
 from pydantic import BaseModel, ConfigDict, PrivateAttr
@@ -17,7 +16,7 @@ _T = TypeVar("_T")
 SerList = Annotated[list[_T], PlainSerializer(serialize_list, str | None)]
 
 
-class CryptoPayObject(BaseModel, ABC):
+class CryptoPayObject(BaseModel):
     """Base object class for types."""
 
     _client: "CryptoPay" = PrivateAttr()

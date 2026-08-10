@@ -1,5 +1,4 @@
 import asyncio
-from abc import ABC
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Generic
 
@@ -37,7 +36,7 @@ class PollingTask(Generic[_CryptoPayType]):
     """Additional payload"""
 
 
-class BasePollingManager(ABC):
+class BasePollingManager:
     """Base polling manager."""
 
     _timeout: int

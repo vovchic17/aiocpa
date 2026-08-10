@@ -1,4 +1,3 @@
-from abc import ABC
 from collections.abc import Generator
 from typing import Generic, TypeAlias, TypeVar
 
@@ -10,7 +9,7 @@ from aiosend import CryptoPay
 _T = TypeVar("_T")
 SerList: TypeAlias = list[_T]
 
-class CryptoPayObject(BaseModel, ABC):
+class CryptoPayObject(BaseModel):
     _client: CryptoPay
     def __await__(self) -> Generator[None, None, Self]: ...
 
