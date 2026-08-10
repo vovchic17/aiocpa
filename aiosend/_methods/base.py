@@ -13,5 +13,5 @@ class CryptoPayMethod(BaseModel, Generic[_CryptoPayType]):
         frozen=True,
     )
 
-    __return_type__: ClassVar[type]
+    __return_type__: ClassVar[type[_CryptoPayType]]
     __method__: ClassVar[str]
