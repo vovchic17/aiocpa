@@ -91,7 +91,13 @@ indent-style = "space"
 docstring-code-line-length = "dynamic"
 
 [[tool.mypy.overrides]]
-module = ["*.starlette_fastapi_manager.*", "*.flask_manager.*"]
+module = [
+    "*.fastapi_manager.*",
+    "*.flask_manager.*",
+    "*.litestar_manager.*",
+    "*.starlette_manager.*",
+    "*.fastapi_dependencies.*"
+]
 disable_error_code = ["misc", "import-not-found"]
 
 [tool.mypy]
