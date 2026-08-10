@@ -26,7 +26,7 @@ class AiohttpManager(WebhookManager["Application"]):
 
         async def handle(request: "Request") -> "Response":
             status = await feed_update(
-                await request.text(),
+                await request.read(),
                 dict(request.headers),
             )
             return json_response(

@@ -41,7 +41,7 @@ class StarletteManager(
 
         async def handle(request: Request) -> JSONResponse:
             status = await feed_update(
-                (await request.body()).decode(),
+                await request.body(),
                 dict(request.headers),
             )
 

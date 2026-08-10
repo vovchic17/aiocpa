@@ -1,7 +1,7 @@
 import hashlib
 import re
 from abc import ABC, abstractmethod
-from hmac import HMAC
+from hmac import HMAC, compare_digest
 from typing import TYPE_CHECKING, Any, Concatenate, Generic, ParamSpec, TypeVar
 
 from aiosend import loggers
@@ -20,7 +20,7 @@ if TYPE_CHECKING:
     ]
 
     WebServerHandler = Callable[
-        Concatenate[str, Mapping[str, str], P],
+        Concatenate[bytes, Mapping[str, str], P],
         Awaitable[bool],
     ]
 
@@ -71,7 +71,7 @@ class WebhookHandler(WebhookRouter):
 
     def _check_signature(
         self,
-        body: str,
+        body: bytes,
         headers: "Mapping[str, str]",
     ) -> bool:
         """
@@ -79,34 +79,34 @@ class WebhookHandler(WebhookRouter):
 
         Source: https://help.send.tg/en/articles/10279948-crypto-pay-api#h_f0180ed474
 
-        :param body: unparsed JSON string.
+        :param body: raw request body.
         :param headers: request headers.
         :return: True if the signature is correct, False otherwise.
         """
         secret = hashlib.sha256(self._token.encode()).digest()
-        hmac = HMAC(secret, body.encode(), hashlib.sha256).hexdigest()
+        hmac = HMAC(secret, body, hashlib.sha256).hexdigest()
         signature = headers.get(
             "Crypto-Pay-Api-Signature",
         ) or headers.get(
             "crypto-pay-api-signature",
         )
-        return hmac == signature
+        if signature is None:
+            return False
+        return compare_digest(hmac, signature)
 
     @staticmethod
-    def _extract_update_id(body: str) -> int:
-        mtch = re.match(r'"update_id"\s*:\s*(\d+)', body)
+    def _extract_update_id(body: bytes) -> int:
+        mtch = re.match(rb'"update_id"\s*:\s*(\d+)', body)
+
         if mtch is None:
             msg = "Can't extract update_id from request body"
             raise ValueError(msg)
-        update_id = mtch.group(1)
-        if not update_id.isdigit():
-            msg = "Invalid update_id"
-            raise ValueError(msg)
-        return int(update_id)
+
+        return int(mtch.group(1))
 
     async def feed_update(
         self,
-        body: str,
+        body: bytes,
         headers: "Mapping[str, str]",
         fastapi_resolver: "FastAPIResolver | None" = None,
         **kwargs: object,
@@ -114,7 +114,7 @@ class WebhookHandler(WebhookRouter):
         """
         Feed an update to the invoice handler.
 
-        :param body: parsed json body.
+        :param body: raw request body.
         :param headers: request headers.
         :param fastapi_resolver: FastAPI dependency resolver.
 
@@ -131,7 +131,8 @@ class WebhookHandler(WebhookRouter):
                     )
                 except ValueError as e:
                     loggers.webhook.warning(
-                        "Webhook Update is not handled. %s",
+                        "Webhook Update is not handled. "
+                        "Signature is invalid. %s",
                         e,
                     )
                 return False

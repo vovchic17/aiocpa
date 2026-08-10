@@ -51,9 +51,8 @@ class FastAPIManager(
                 resolve_fastapi_dependencies,
                 request,
             )
-
             status = await feed_update(
-                (await request.body()).decode(),
+                await request.body(),
                 dict(request.headers),
                 fastapi_resolver=dependency_resolver,
             )
