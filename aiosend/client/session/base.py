@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from http import HTTPStatus
 from typing import TYPE_CHECKING, cast
 
 from pydantic import ValidationError
@@ -6,7 +7,7 @@ from pydantic import ValidationError
 from aiosend._methods import (
     CryptoPayMethod,
 )
-from aiosend.exceptions import APIError, DeserializationError
+from aiosend.exceptions import APIError, DeserializationError, HTTPError
 from aiosend.types import (
     ItemsList,
     Response,
@@ -44,8 +45,13 @@ class BaseSession(ABC):
         self,
         client: "aiosend.CryptoPay",
         method: CryptoPayMethod[_CryptoPayType],
+        status_code: int,
         content: str,
     ) -> Response[_CryptoPayType]:
+
+        if status_code != HTTPStatus.OK:
+            raise HTTPError(method, status_code, content)
+
         try:
             response = Response[method.__return_type__].model_validate_json(  # type: ignore[name-defined]
                 content,

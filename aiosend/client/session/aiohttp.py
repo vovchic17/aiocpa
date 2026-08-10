@@ -54,5 +54,10 @@ class AiohttpSession(BaseSession):
                 )
             except TimeoutError as e:
                 raise APITimeoutError(method, self.timeout) from e
-            response = self._check_response(client, method, await resp.text())
+            response = self._check_response(
+                client,
+                method,
+                resp.status,
+                await resp.text(),
+            )
         return cast("_CryptoPayType", response.result)

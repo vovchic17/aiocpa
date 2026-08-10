@@ -28,6 +28,27 @@ class APIError(CryptoPayError):
         )
 
 
+class HTTPError(CryptoPayError):
+    """Exception raised for unexpected HTTP responses."""
+
+    def __init__(
+        self,
+        method: "CryptoPayMethod",
+        status_code: int,
+        content: str,
+    ) -> None:
+        self.method = method
+        self.status_code = status_code
+        self.content = content
+
+    def __str__(self) -> str:
+        """Return a string representation of the exception."""
+        return (
+            f"Request to /{self.method.__method__} returned "
+            f"HTTP {self.status_code}: {self.content}"
+        )
+
+
 class WrongNetworkError(CryptoPayError):
     """Exception raised when the token is served by different network."""
 
