@@ -47,7 +47,7 @@ of invoices and poll them like that
     if __name__ == "__main__":
         asyncio.run(main())
 
-Magic filter
+`MagicFilter <https://docs.aiogram.dev/en/latest/dispatcher/filters/magic_filters.html#magic-filters>`_
 ------------
 
 .. code-block:: python
