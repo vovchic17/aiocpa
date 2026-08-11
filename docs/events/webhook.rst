@@ -11,17 +11,6 @@ Usage example with `aiohttp web server <https://docs.aiohttp.org/en/stable/web_q
 -------------------------------------------------------------------------------------------------
 .. literalinclude:: ../../examples/webhook_aiohttp.py
 
-Usage example with `Starlette web server <https://starlette.dev/#example>`_
----------------------------------------------------------------------------
-.. tip::
-    In order to use aiosend with fastapi you need to install extra package
-
-.. code-block:: bash
-
-    pip install aiosend[starlette]
-
-.. literalinclude:: ../../examples/webhook_starlette.py
-
 Usage example with `FastAPI web server <https://fastapi.tiangolo.com/tutorial/first-steps/>`_
 ---------------------------------------------------------------------------------------------
 .. tip::
@@ -44,6 +33,28 @@ Usage example with `Flask web server <https://flask.palletsprojects.com/en/3.0.x
 
 .. literalinclude:: ../../examples/webhook_flask.py
 
+Usage example with `Litestar web server <https://litestar.dev/>`_
+------------------------------------------------------------------
+.. tip::
+    In order to use aiosend with Litestar you need to install extra package
+
+.. code-block:: bash
+
+    pip install aiosend[litestar]
+
+.. literalinclude:: ../../examples/webhook_litestar.py
+
+Usage example with `Starlette web server <https://starlette.dev/#example>`_
+---------------------------------------------------------------------------
+.. tip::
+    In order to use aiosend with fastapi you need to install extra package
+
+.. code-block:: bash
+
+    pip install aiosend[starlette]
+
+.. literalinclude:: ../../examples/webhook_starlette.py
+
 **aiosend** uses `aiohttp <https://docs.aiohttp.org/en/stable/index.html>`_ as web server by default.
 You can implement your own webhook manager by inheriting :class:`aiosend.webhook.WebhookManager`
 and overriding :attr:`aiosend.webhook.WebhookManager.register_handler`.
@@ -55,14 +66,18 @@ and overriding :attr:`aiosend.webhook.WebhookManager.register_handler`.
     :show-inheritance:
     :members:
 
-.. autoclass:: aiosend.webhook.StarletteManager
+.. autoclass:: aiosend.webhook.FastAPIManager
     :show-inheritance:
     :members:
 
-.. tip::
-    ``StarletteManager`` also has a ``FastAPIManager`` alias.
-    You can import it under a more familiar name when working with FastAPI applications:
-
 .. autoclass:: aiosend.webhook.FlaskManager
+    :show-inheritance:
+    :members:
+
+.. autoclass:: aiosend.webhook.LitestarManager
+    :show-inheritance:
+    :members:
+
+.. autoclass:: aiosend.webhook.StarletteManager
     :show-inheritance:
     :members:

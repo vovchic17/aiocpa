@@ -1,17 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
+
 # Copyright (C) 2025, VoVcHiC
+
 # This file is distributed under the same license as the aiosend package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+
+# FIRST AUTHOR [EMAIL@ADDRESS](mailto:EMAIL@ADDRESS), 2025.
+
 #
+
 msgid ""
 msgstr ""
 "Project-Id-Version: aiosend \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-06 18:09+0300\n"
+"POT-Creation-Date: 2026-08-11 02:53+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: FULL NAME [EMAIL@ADDRESS](mailto:EMAIL@ADDRESS)\n"
 "Language: uk_UA\n"
-"Language-Team: uk_UA <LL@li.org>\n"
+"Language-Team: uk_UA [LL@li.org](mailto:LL@li.org)\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
@@ -24,37 +29,40 @@ msgid "Errors"
 msgstr "Винятки"
 
 #: aiosend.exceptions.APIError:1 aiosend.exceptions.APITimeoutError:1
-#: aiosend.exceptions.DeserializationError:1
+#: aiosend.exceptions.DeserializationError:1 aiosend.exceptions.HTTPError:1
 #: aiosend.exceptions.MethodValuesError:1
 #: aiosend.exceptions.WrongNetworkError:1 of
 msgid "Bases: :py:class:`~aiosend.exceptions.CryptoPayError`"
-msgstr ""
+msgstr "Базовий клас: :py:class:`~aiosend.exceptions.CryptoPayError`"
 
 #: aiosend.exceptions.APIError:1 of
 msgid "Exception for API errors."
-msgstr "Виняток для помилок API."
+msgstr "Виняток, що виникає при помилках API."
 
 #: aiosend.exceptions.APITimeoutError:1 of
 msgid "Exception raised when the API request times out."
-msgstr "Виняток, що викликається при закінченні часу очікування запиту API."
+msgstr "Виняток, що виникає при перевищенні часу очікування запиту до API."
 
 #: aiosend.exceptions.CryptoPayError:1 of
 msgid "Bases: :py:class:`Exception`"
-msgstr ""
+msgstr "Базовий клас: :py:class:`Exception`"
 
 #: aiosend.exceptions.CryptoPayError:1 of
 msgid "Base class for exceptions in this module."
-msgstr "Базовий клас усіх винятків цього модуля."
+msgstr "Базовий клас для винятків цього модуля."
 
 #: aiosend.exceptions.DeserializationError:1 of
 msgid "Exception for deserialization errors."
-msgstr "Виняток для помилок десеріалізації."
+msgstr "Виняток, що виникає при помилках десеріалізації."
+
+#: aiosend.exceptions.HTTPError:1 of
+msgid "Exception raised for unexpected HTTP responses."
+msgstr "Виняток, що виникає при отриманні неочікуваної HTTP-відповіді."
 
 #: aiosend.exceptions.MethodValuesError:1 of
 msgid "Exception raised when method values are invalid."
-msgstr "Виняток, що викликається при невірному наборі значень методу."
+msgstr "Виняток, що виникає при передаванні недопустимих значень методу."
 
 #: aiosend.exceptions.WrongNetworkError:1 of
 msgid "Exception raised when the token is served by different network."
-msgstr "Виняток, що викликається коли токен належить іншої мережі."
-
+msgstr "Виняток, що виникає, якщо токен належить іншій мережі."

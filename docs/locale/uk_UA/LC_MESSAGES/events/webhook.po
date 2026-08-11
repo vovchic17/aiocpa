@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  aiosend\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-05 03:19+0300\n"
+"POT-Creation-Date: 2026-08-11 03:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk_UA\n"
@@ -47,13 +47,13 @@ msgstr ""
 
 #: ../../events/webhook.rst:15
 msgid ""
-"Usage example with `Starlette web server "
-"<https://starlette.dev/#example>`_"
+"Usage example with `FastAPI web server "
+"<https://fastapi.tiangolo.com/tutorial/first-steps/>`_"
 msgstr ""
-"Приклад використання з `вебсервером Starlette "
-"<https://starlette.dev/#example>`_"
+"Приклад використання з `вебсервером FastAPI "
+"<https://fastapi.tiangolo.com/tutorial/first-steps/>`_"
 
-#: ../../events/webhook.rst:17 ../../events/webhook.rst:28
+#: ../../events/webhook.rst:17 ../../events/webhook.rst:50
 msgid "In order to use aiosend with fastapi you need to install extra package"
 msgstr ""
 "Щоб використовувати aiosend із FastAPI, необхідно встановити додатковий "
@@ -61,28 +61,39 @@ msgstr ""
 
 #: ../../events/webhook.rst:26
 msgid ""
-"Usage example with `FastAPI web server "
-"<https://fastapi.tiangolo.com/tutorial/first-steps/>`_"
-msgstr ""
-"Приклад використання з `вебсервером FastAPI "
-"<https://fastapi.tiangolo.com/tutorial/first-steps/>`_"
-
-
-#: ../../events/webhook.rst:37
-msgid ""
 "Usage example with `Flask web server "
 "<https://flask.palletsprojects.com/en/3.0.x/quickstart/#quickstart>`_"
 msgstr ""
 "Приклад використання з `вебсервером Flask "
 "<https://flask.palletsprojects.com/en/3.0.x/quickstart/#quickstart>`_"
 
-#: ../../events/webhook.rst:39
+#: ../../events/webhook.rst:28
 msgid "In order to use aiosend with flask you need to install extra package"
 msgstr ""
 "Щоб використовувати aiosend із Flask, необхідно встановити додатковий "
 "пакет."
 
-#: ../../events/webhook.rst:47
+#: ../../events/webhook.rst:37
+msgid "Usage example with `Litestar web server <https://litestar.dev/>`_"
+msgstr ""
+"Приклад використання з `вебсервером Litestar "
+"<https://litestar.dev/>`_"
+
+#: ../../events/webhook.rst:39
+msgid "In order to use aiosend with Litestar you need to install extra package"
+msgstr ""
+"Щоб використовувати aiosend із Litestar, необхідно встановити додатковий "
+"пакет."
+
+#: ../../events/webhook.rst:48
+msgid ""
+"Usage example with `Starlette web server "
+"<https://starlette.dev/#example>`_"
+msgstr ""
+"Приклад використання з `вебсервером Starlette "
+"<https://starlette.dev/#example>`_"
+
+#: ../../events/webhook.rst:58
 msgid ""
 "**aiosend** uses `aiohttp "
 "<https://docs.aiohttp.org/en/stable/index.html>`_ as web server by "
@@ -110,9 +121,10 @@ msgstr ""
 
 #: aiosend.webhook.aiohttp_manager.AiohttpManager.register_handler:1
 #: aiosend.webhook.base.WebhookManager.register_handler:1
+#: aiosend.webhook.fastapi_manager.FastAPIManager.register_handler:1
 #: aiosend.webhook.flask_manager.FlaskManager.register_handler:1
-#: aiosend.webhook.starlette_fastapi_manager.StarletteManager.register_handler:1
-#: of
+#: aiosend.webhook.litestar_manager.LitestarManager.register_handler:1
+#: aiosend.webhook.starlette_manager.StarletteManager.register_handler:1 of
 msgid "Register webhook handler."
 msgstr "Зареєструвати обробник вебхуків."
 
@@ -128,7 +140,7 @@ msgstr ""
 msgid "Parameters"
 msgstr "Параметри"
 
-#: aiosend.webhook.base.WebhookManager.register_handler:6 of
+#: aiosend.webhook.base.WebhookManager.register_handler:7 of
 msgid "Web server handler object."
 msgstr "Об'єкт обробника вебсервера."
 
@@ -137,10 +149,11 @@ msgid "Return type"
 msgstr "Тип поверненого значення"
 
 #: aiosend.webhook.aiohttp_manager.AiohttpManager.register_handler:4
-#: aiosend.webhook.base.WebhookManager.register_handler:7
+#: aiosend.webhook.base.WebhookManager.register_handler:8
+#: aiosend.webhook.fastapi_manager.FastAPIManager.register_handler:4
 #: aiosend.webhook.flask_manager.FlaskManager.register_handler:4
-#: aiosend.webhook.starlette_fastapi_manager.StarletteManager.register_handler:4
-#: of
+#: aiosend.webhook.litestar_manager.LitestarManager.register_handler:4
+#: aiosend.webhook.starlette_manager.StarletteManager.register_handler:4 of
 msgid ":sphinx_autodoc_typehints_type:`\\:py\\:obj\\:\\`None\\``"
 msgstr ":sphinx_autodoc_typehints_type:`\\:py\\:obj\\:\\`None\\``"
 
@@ -158,42 +171,31 @@ msgstr "Менеджер вебхуків для aiohttp."
 
 #: aiosend.webhook.aiohttp_manager.AiohttpManager:3 of
 msgid ""
-"Webhook manager based on `Aiohttp "
+"Webhook manager based on `aiohttp "
 "<https://docs.aiohttp.org/en/stable/web_reference.html#aiohttp.web.Application>`_."
 msgstr ""
-"Менеджер вебхуків, що базується на `Aiohttp "
+"Менеджер вебхуків, що базується на `aiohttp "
 "<https://docs.aiohttp.org/en/stable/web_reference.html#aiohttp.web.Application>`_."
 
-#: aiosend.webhook.starlette_fastapi_manager.StarletteManager:1 of
+#: aiosend.webhook.fastapi_manager.FastAPIManager:1 of
 msgid ""
 "Bases: :py:class:`~aiosend.webhook.base.WebhookManager`\\ "
-"[:py:class:`FastAPI | APIRouter | Starlette | Router`]"
+"[:py:class:`FastAPI | APIRouter`]"
 msgstr ""
 "Базовий клас: :py:class:`~aiosend.webhook.base.WebhookManager`\\ "
-"[:py:class:`FastAPI | APIRouter | Starlette | Router`]"
+"[:py:class:`FastAPI | APIRouter`]"
 
-#: aiosend.webhook.starlette_fastapi_manager.StarletteManager:1 of
-msgid "Starlette & FastAPI webhook manager."
-msgstr "Менеджер вебхуків для Starlette та FastAPI."
+#: aiosend.webhook.fastapi_manager.FastAPIManager:1 of
+msgid "FastAPI webhook manager."
+msgstr "Менеджер вебхуків для FastAPI."
 
-#: aiosend.webhook.starlette_fastapi_manager.StarletteManager:3 of
+#: aiosend.webhook.fastapi_manager.FastAPIManager:3 of
 msgid ""
-"Webhook manager based on `Starlette "
-"<https://www.starlette.io/applications/>`_ and `FastAPI "
+"Webhook manager based on `FastAPI "
 "<https://fastapi.tiangolo.com/reference/fastapi/>`_."
 msgstr ""
-"Менеджер вебхуків, що базується на `Starlette "
-"<https://www.starlette.io/applications/>`_ та `FastAPI "
+"Менеджер вебхуків, що базується на `FastAPI "
 "<https://fastapi.tiangolo.com/reference/fastapi/>`_."
-
-#: ../../events/webhook.rst:63
-msgid ""
-"``StarletteManager`` also has a ``FastAPIManager`` alias. You can import "
-"it under a more familiar name when working with FastAPI applications:"
-msgstr ""
-"``StarletteManager`` також має псевдонім ``FastAPIManager``. Ви можете "
-"імпортувати його під більш звичною назвою під час роботи із застосунками "
-"FastAPI:"
 
 #: aiosend.webhook.flask_manager.FlaskManager:1 of
 msgid ""
@@ -215,3 +217,40 @@ msgstr ""
 "Менеджер вебхуків, що базується на `Flask "
 "<https://flask.palletsprojects.com/en/stable/api#application-object>`_."
 
+#: aiosend.webhook.litestar_manager.LitestarManager:1 of
+msgid ""
+"Bases: :py:class:`~aiosend.webhook.base.WebhookManager`\\ "
+"[:py:class:`Litestar | Router`]"
+msgstr ""
+"Базовий клас: :py:class:`~aiosend.webhook.base.WebhookManager`\\ "
+"[:py:class:`Litestar | Router`]"
+
+#: aiosend.webhook.litestar_manager.LitestarManager:1 of
+msgid "Litestar webhook manager."
+msgstr "Менеджер вебхуків для Litestar."
+
+#: aiosend.webhook.litestar_manager.LitestarManager:3 of
+msgid "``` Webhook manager based on `Litestar <https://litestar.dev/>`_. ```"
+msgstr ""
+"Менеджер вебхуків, що базується на `Litestar "
+"<https://litestar.dev/>`_."
+
+#: aiosend.webhook.starlette_manager.StarletteManager:1 of
+msgid ""
+"Bases: :py:class:`~aiosend.webhook.base.WebhookManager`\\ "
+"[:py:class:`Starlette | Router`]"
+msgstr ""
+"Базовий клас: :py:class:`~aiosend.webhook.base.WebhookManager`\\ "
+"[:py:class:`Starlette | Router`]"
+
+#: aiosend.webhook.starlette_manager.StarletteManager:1 of
+msgid "Starlette webhook manager."
+msgstr "Менеджер вебхуків для Starlette."
+
+#: aiosend.webhook.starlette_manager.StarletteManager:3 of
+msgid ""
+"Webhook manager based on `Starlette "
+"<https://www.starlette.io/applications/>`_."
+msgstr ""
+"Менеджер вебхуків, що базується на `Starlette "
+"<https://www.starlette.io/applications/>`_."
