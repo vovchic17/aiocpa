@@ -8,7 +8,8 @@ Events
 * **Polling config** - configuration for update requests
 
 .. toctree::
-
+    :maxdepth: 2
+    
     routers
     webhook
     invoice_polling
