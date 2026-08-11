@@ -1,0 +1,30 @@
+.highlight {
+    padding-left: 16px !important;
+}
+
+.highlight pre {
+    counter-reset: code-line;
+}
+
+.highlight pre .code-line {
+    counter-increment: code-line;
+}
+
+.highlight pre .code-line::before {
+    content: counter(code-line);
+
+    display: inline-block;
+    box-sizing: border-box;
+
+    width: 2em;
+    margin-right: 1em;
+    padding-right: 0.8em;
+
+    text-align: right;
+    color: #65758b;
+
+    border-right: 1px solid #343a40;
+
+    user-select: none;
+    pointer-events: none;
+}

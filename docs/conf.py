@@ -32,8 +32,8 @@ ogp_site_name = "aiosend documentation"
 ogp_description_length = 0
 ogp_social_cards = {"image_mini": "_static/rtd.ico"}
 
-html_css_files = ["extra.css", "snow.css"]
-html_js_files = ["flakes.js", "footer.js"]
+html_css_files = ["extra.css", "snow.css", "counter.css"]
+html_js_files = ["flakes.js", "footer.js", "counter.js"]
 
 common_css_variables = {
     "color-header-text": "#148DFF",
