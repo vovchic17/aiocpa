@@ -48,7 +48,7 @@ of invoices and poll them like that
         asyncio.run(main())
 
 `MagicFilter <https://docs.aiogram.dev/en/latest/dispatcher/filters/magic_filters.html#magic-filters>`_
-------------
+-------------------------------------------------------------------------------------------------------
 
 .. code-block:: python
 

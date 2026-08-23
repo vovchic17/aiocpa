@@ -26,6 +26,8 @@ Features
 * provides :doc:`additional tool methods <client/tools>`
 * provides :doc:`shortcut methods for types <client/shortcuts>`
 
+.. include:: aiosend_ui.rst
+
 Quick start
 -----------
 

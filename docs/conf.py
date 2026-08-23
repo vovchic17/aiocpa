@@ -32,7 +32,7 @@ ogp_site_name = "aiosend documentation"
 ogp_description_length = 0
 ogp_social_cards = {"image_mini": "_static/rtd.ico"}
 
-html_css_files = ["extra.css", "snow.css", "counter.css"]
+html_css_files = ["extra.css", "snow.css", "counter.css", "aiosend_ui.css"]
 html_js_files = ["flakes.js", "footer.js", "counter.js"]
 
 common_css_variables = {
@@ -82,6 +82,8 @@ html_theme_options = {
         },
     ],
 }
+
+gettext_additional_targets = {"raw"}
 
 
 def remove_return(app, what, name, obj, options, lines):

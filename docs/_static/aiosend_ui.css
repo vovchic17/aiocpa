@@ -1,0 +1,237 @@
+.playground-card {
+    height: 350px;
+    box-sizing: border-box;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: flex-end;
+    gap: 32px;
+
+    background: rgba(77, 178, 255, 0.15);
+    border-radius: 24px;
+    overflow: hidden;
+
+    font-family: "Inter", sans-serif;
+}
+
+.playground-card__content {
+    flex: 0 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 106px;
+
+    padding: 56px 32px;
+}
+
+.playground-card__text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.playground-card__title {
+    margin: 0;
+
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 700;
+
+    color: rgba(3, 16, 30, 1);
+}
+
+.playground-card__subtitle {
+    margin: 0;
+
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 400;
+
+    color: rgba(3, 16, 30, 0.5);
+}
+
+.playground-card__button {
+    width: fit-content;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 12px 24px;
+
+    background: rgba(3, 16, 30, 1);
+    border-radius: 12px;
+
+    color: rgba(255, 255, 255, 1) !important;
+
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+
+    text-decoration: none !important;
+
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease;
+}
+
+.playground-card__button:hover {
+    color: rgba(255, 255, 255, 1) !important;
+    opacity: 0.9;
+}
+
+.playground-card__button:active {
+    transform: scale(0.98);
+}
+
+.playground-card__button svg {
+    flex: 0 0 auto;
+}
+
+.playground-card__preview {
+    min-width: 0;
+    flex: 1;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    align-self: stretch;
+}
+
+.playground-card__image {
+    display: block;
+
+    width: auto;
+    height: 310px;
+    max-width: none;
+
+    object-fit: contain;
+    object-position: right bottom;
+}
+
+.playground-card__image--dark {
+    display: none;
+}
+
+[data-theme="dark"] .playground-card__title {
+    color: rgba(255, 255, 255, 1);
+}
+
+[data-theme="dark"] .playground-card__subtitle {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="dark"] .playground-card__button {
+    background: rgba(20, 141, 255, 1);
+}
+
+[data-theme="dark"] .playground-card__image--light {
+    display: none;
+}
+
+[data-theme="dark"] .playground-card__image--dark {
+    display: block;
+}
+
+[data-theme="light"] .playground-card__image--light {
+    display: block;
+}
+
+[data-theme="light"] .playground-card__image--dark {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) .playground-card__title {
+        color: rgba(255, 255, 255, 1);
+    }
+
+    body:not([data-theme="light"]) .playground-card__subtitle {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    body:not([data-theme="light"]) .playground-card__button {
+        background: rgba(20, 141, 255, 1);
+    }
+
+    body:not([data-theme="light"]) .playground-card__image--light {
+        display: none;
+    }
+
+    body:not([data-theme="light"]) .playground-card__image--dark {
+        display: block;
+    }
+}
+
+@media (max-width: 900px) {
+    .playground-card {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        height: 280px;
+
+        left: auto;
+        transform: none;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .playground-card__content {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 32px;
+        gap: 0;
+    }
+
+    .playground-card__text {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .playground-card__text + .playground-card__button {
+        margin-top: 48px;
+    }
+
+    .playground-card__title {
+        font-size: 28px;
+    }
+
+    .playground-card__subtitle {
+        font-size: 16px;
+    }
+
+    .playground-card__preview {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .playground-card__content {
+        gap: 32px;
+        padding: 24px;
+    }
+
+    .playground-card__title {
+        font-size: 28px;
+    }
+
+    .playground-card__subtitle br {
+        display: none;
+    }
+}
