@@ -98,7 +98,6 @@ msgid "provides :doc:`shortcut methods for types <client/shortcuts>`"
 msgstr "предоставляет :doc:`сокращённые методы для типов <client/shortcuts>`"
 
 #: ../../aiosend_ui.rst:1
-#, fuzzy
 msgid ""
 "<div class=\"playground-card\">\n"
 "    <div class=\"playground-card__content\">\n"
