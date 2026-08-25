@@ -7,7 +7,12 @@ from pydantic import ValidationError
 from aiosend._methods import (
     CryptoPayMethod,
 )
-from aiosend.exceptions import APIError, DeserializationError, HTTPError
+from aiosend.exceptions import (
+    APIError,
+    DeserializationError,
+    HTTPError,
+    SuspendedError,
+)
 from aiosend.types import (
     ItemsList,
     Response,
@@ -49,8 +54,8 @@ class BaseSession(ABC):
         content: str,
     ) -> Response[_CryptoPayType]:
 
-        if status_code != HTTPStatus.OK:
-            raise HTTPError(method, status_code, content)
+        if status_code == HTTPStatus.LOCKED:
+            raise SuspendedError
 
         try:
             response = Response[method.__return_type__].model_validate_json(  # type: ignore[name-defined]
@@ -58,6 +63,8 @@ class BaseSession(ABC):
                 context={"client": client},
             )
         except ValidationError as e:
+            if status_code == HTTPStatus.INTERNAL_SERVER_ERROR:
+                raise HTTPError(method, status_code, content) from e
             raise DeserializationError(
                 method,
                 "Failed to deserialize object",

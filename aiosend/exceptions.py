@@ -49,6 +49,17 @@ class HTTPError(CryptoPayError):
         )
 
 
+class SuspendedError(CryptoPayError):
+    """Exception raised when the Crypto pay app is suspended."""
+
+    def __str__(self) -> str:
+        """Return a string representation of the exception."""
+        return (
+            "Your account is suspended. You can "
+            "verify your account to restore access."
+        )
+
+
 class WrongNetworkError(CryptoPayError):
     """Exception raised when the token is served by different network."""
 
