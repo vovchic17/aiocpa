@@ -78,9 +78,10 @@ select = ["ALL"]
 fixable = ["ALL"]
 
 [tool.ruff.lint.per-file-ignores]
-"*/_methods/*" = ["PLR0913", "E501"] # too-many-arguments line-too-long
-"*/types/*" = ["A005", "E501"]       # stdlib-module-shadowing line-too-long
-"*/tools/*" = ["E501"]               # line-too-long
+"aiosend/__init__.py" = ["D205", "D400", "D415"]
+"*/_methods/*" = ["PLR0913", "E501"]             # too-many-arguments line-too-long
+"*/types/*" = ["A005", "E501"]                   # stdlib-module-shadowing line-too-long
+"*/tools/*" = ["E501"]                           # line-too-long
 "tests/*" = ["ALL"]
 "examples/*" = ["ALL"]
 "docs/*" = ["ALL"]
@@ -96,7 +97,7 @@ module = [
     "*.flask_manager.*",
     "*.litestar_manager.*",
     "*.starlette_manager.*",
-    "*.fastapi_dependencies.*"
+    "*.fastapi_dependencies.*",
 ]
 disable_error_code = ["misc", "import-not-found"]
 
