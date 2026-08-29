@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiosend \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-01 02:42+0300\n"
+"POT-Creation-Date: 2026-08-29 05:08+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk_UA\n"
@@ -17,7 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../../events/polling_config.rst:2
 msgid "Polling configuration"
@@ -87,7 +87,12 @@ msgstr ""
 msgid "function to run in background."
 msgstr "функція, що запускається у фоні."
 
-#: aiosend.polling.manager.PollingManager.start_polling:6 of
+#: aiosend.polling.manager.PollingManager.start_polling:6
+#: aiosend.polling.manager.PollingManager.stop_polling:4 of
 msgid ":sphinx_autodoc_typehints_type:`\\:py\\:obj\\:\\`None\\``"
 msgstr ""
+
+#: aiosend.polling.manager.PollingManager.stop_polling:1 of
+msgid "Stop polling."
+msgstr "Зупинка поллінгу."
 

@@ -1,18 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
-
 # Copyright (C) 2025, VoVcHiC
-
 # This file is distributed under the same license as the aiosend package.
-
 # FIRST AUTHOR [EMAIL@ADDRESS](mailto:EMAIL@ADDRESS), 2025.
-
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: aiosend \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-11 02:53+0300\n"
+"POT-Creation-Date: 2026-08-29 05:08+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME [EMAIL@ADDRESS](mailto:EMAIL@ADDRESS)\n"
 "Language: uk_UA\n"
@@ -30,7 +25,7 @@ msgstr "Винятки"
 
 #: aiosend.exceptions.APIError:1 aiosend.exceptions.APITimeoutError:1
 #: aiosend.exceptions.DeserializationError:1 aiosend.exceptions.HTTPError:1
-#: aiosend.exceptions.MethodValuesError:1
+#: aiosend.exceptions.MethodValuesError:1 aiosend.exceptions.SuspendedError:1
 #: aiosend.exceptions.WrongNetworkError:1 of
 msgid "Bases: :py:class:`~aiosend.exceptions.CryptoPayError`"
 msgstr "Базовий клас: :py:class:`~aiosend.exceptions.CryptoPayError`"
@@ -63,6 +58,11 @@ msgstr "Виняток, що виникає при отриманні неочі
 msgid "Exception raised when method values are invalid."
 msgstr "Виняток, що виникає при передаванні недопустимих значень методу."
 
+#: aiosend.exceptions.SuspendedError:1 of
+msgid "Exception raised when the Crypto pay app is suspended."
+msgstr "Виняток, що виникає, коли застосунок Crypto Pay призупинено."
+
 #: aiosend.exceptions.WrongNetworkError:1 of
 msgid "Exception raised when the token is served by different network."
 msgstr "Виняток, що виникає, якщо токен належить іншій мережі."
+
