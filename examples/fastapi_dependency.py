@@ -6,7 +6,7 @@ from aiosend import CryptoPay
 from aiosend.types import Invoice
 from aiosend.webhook import FastAPIManager
 
-app = FastAPI()
+app = FastAPI(title="My App")
 cp = CryptoPay("TOKEN", webhook_manager=FastAPIManager(app, "/handler"))
 
 async def get_app_name(request: Request) -> str:

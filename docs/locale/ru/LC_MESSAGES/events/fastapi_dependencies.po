@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the aiosend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: aiosend \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-29 05:36+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../events/fastapi_dependencies.rst:3
+msgid "FastAPI dependencies"
+msgstr "Зависимости FastAPI"
+
+#: ../../events/fastapi_dependencies.rst:5
+msgid ""
+"When using :class:`aiosend.webhook.FastAPIManager`, you can use `FastAPI "
+"dependencies <https://fastapi.tiangolo.com/tutorial/dependencies/>`_ "
+"directly inside aiosend event handlers."
+msgstr ""
+"При использовании :class:`aiosend.webhook.FastAPIManager` вы можете "
+"использовать `зависимости FastAPI "
+"<https://fastapi.tiangolo.com/tutorial/dependencies/>`_ непосредственно "
+"в обработчиках событий aiosend."
+
+#: ../../events/fastapi_dependencies.rst:9
+msgid ""
+"This allows you to reuse the same dependencies from your FastAPI "
+"application, for example database sessions, services, authentication data"
+" or request context."
+msgstr ""
+"Это позволяет повторно использовать те же зависимости из вашего приложения "
+"FastAPI, например сессии базы данных, сервисы, данные аутентификации или "
+"контекст запроса."
+
+#: ../../events/fastapi_dependencies.rst:13
+msgid "To use aiosend with FastAPI, install the ``fastapi`` extra:"
+msgstr ""
+"Чтобы использовать aiosend с FastAPI, установите дополнительную зависимость "
+"``fastapi``:"
+
+#: ../../events/fastapi_dependencies.rst:20
+msgid "Usage example"
+msgstr "Пример использования"
+
+#: ../../events/fastapi_dependencies.rst:25
+msgid "How it works"
+msgstr "Как это работает"
+
+#: ../../events/fastapi_dependencies.rst:27
+msgid ""
+"When a webhook update is received, "
+":class:`aiosend.webhook.FastAPIManager` uses FastAPI's dependency "
+"injection system to resolve dependencies declared in the matched aiosend "
+"event handler."
+msgstr ""
+"При получении обновления через вебхук "
+":class:`aiosend.webhook.FastAPIManager` использует систему внедрения "
+"зависимостей FastAPI для разрешения зависимостей, объявленных в "
+"соответствующем обработчике событий aiosend."
+
+#: ../../events/fastapi_dependencies.rst:31
+msgid ""
+"The event object itself, such as :class:`aiosend.types.Invoice`, is "
+"provided by aiosend:"
+msgstr ""
+"Сам объект события, например :class:`aiosend.types.Invoice`, передаётся "
+"библиотекой aiosend:"
+
+#: ../../events/fastapi_dependencies.rst:48
+msgid "Webhook route dependencies"
+msgstr "Зависимости маршрута вебхука"
+
+#: ../../events/fastapi_dependencies.rst:50
+msgid ""
+":class:`aiosend.webhook.FastAPIManager` also accepts FastAPI dependencies"
+" that should be executed for the webhook route itself:"
+msgstr ""
+":class:`aiosend.webhook.FastAPIManager` также принимает зависимости FastAPI, "
+"которые должны выполняться для самого маршрута вебхука:"
+
+#: ../../events/fastapi_dependencies.rst:71
+msgid "Nested dependencies"
+msgstr "Вложенные зависимости"
+
+#: ../../events/fastapi_dependencies.rst:73
+msgid "Dependencies can depend on other FastAPI dependencies as usual:"
+msgstr ""
+"Зависимости могут зависеть от других зависимостей FastAPI как обычно:"

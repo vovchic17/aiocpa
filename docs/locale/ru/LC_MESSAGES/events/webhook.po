@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiosend \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-11 03:03+0300\n"
+"POT-Creation-Date: 2026-08-29 05:36+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -53,13 +53,28 @@ msgstr ""
 "Пример использования с `веб-сервером FastAPI "
 "<https://fastapi.tiangolo.com/tutorial/first-steps/>`_"
 
-#: ../../events/webhook.rst:17 ../../events/webhook.rst:50
+#: ../../events/webhook.rst:17 ../../events/webhook.rst:57
 msgid "In order to use aiosend with fastapi you need to install extra package"
 msgstr ""
 "Чтобы использовать aiosend с FastAPI, необходимо установить "
 "дополнительный пакет."
 
-#: ../../events/webhook.rst:26
+#: ../../events/webhook.rst:25
+msgid ""
+":class:`aiosend.webhook.FastAPIManager` supports FastAPI dependency "
+"injection in event handlers using :class:`fastapi.Depends`."
+msgstr ""
+":class:`aiosend.webhook.FastAPIManager` поддерживает внедрение зависимостей "
+"FastAPI в обработчиках событий с помощью :class:`fastapi.Depends`."
+
+#: ../../events/webhook.rst:28
+msgid ""
+"See :doc:`FastAPI dependencies <fastapi_dependencies>` for more "
+"information."
+msgstr ""
+"Подробнее см. в разделе :doc:`Зависимости FastAPI <fastapi_dependencies>`."
+
+#: ../../events/webhook.rst:33
 msgid ""
 "Usage example with `Flask web server "
 "<https://flask.palletsprojects.com/en/3.0.x/quickstart/#quickstart>`_"
@@ -67,25 +82,23 @@ msgstr ""
 "Пример использования с `веб-сервером Flask "
 "<https://flask.palletsprojects.com/en/3.0.x/quickstart/#quickstart>`_"
 
-#: ../../events/webhook.rst:28
+#: ../../events/webhook.rst:35
 msgid "In order to use aiosend with flask you need to install extra package"
 msgstr ""
 "Чтобы использовать aiosend с Flask, необходимо установить дополнительный "
 "пакет."
 
-#: ../../events/webhook.rst:37
+#: ../../events/webhook.rst:44
 msgid "Usage example with `Litestar web server <https://litestar.dev/>`_"
-msgstr ""
-"Пример использования с `веб-сервером Litestar "
-"<https://litestar.dev/>`_"
+msgstr "Пример использования с `веб-сервером Litestar <https://litestar.dev/>`_"
 
-#: ../../events/webhook.rst:39
+#: ../../events/webhook.rst:46
 msgid "In order to use aiosend with Litestar you need to install extra package"
 msgstr ""
 "Чтобы использовать aiosend с Litestar, необходимо установить "
 "дополнительный пакет."
 
-#: ../../events/webhook.rst:48
+#: ../../events/webhook.rst:55
 msgid ""
 "Usage example with `Starlette web server "
 "<https://starlette.dev/#example>`_"
@@ -93,7 +106,7 @@ msgstr ""
 "Пример использования с `веб-сервером Starlette "
 "<https://starlette.dev/#example>`_"
 
-#: ../../events/webhook.rst:58
+#: ../../events/webhook.rst:65
 msgid ""
 "**aiosend** uses `aiohttp "
 "<https://docs.aiohttp.org/en/stable/index.html>`_ as web server by "
@@ -231,9 +244,7 @@ msgstr "Менеджер вебхуков для Litestar."
 
 #: aiosend.webhook.litestar_manager.LitestarManager:3 of
 msgid "``` Webhook manager based on `Litestar <https://litestar.dev/>`_. ```"
-msgstr ""
-"Менеджер вебхуков, основанный на `Litestar "
-"<https://litestar.dev/>`_."
+msgstr "Менеджер вебхуков, основанный на `Litestar <https://litestar.dev/>`_."
 
 #: aiosend.webhook.starlette_manager.StarletteManager:1 of
 msgid ""
@@ -254,3 +265,4 @@ msgid ""
 msgstr ""
 "Менеджер вебхуков, основанный на `Starlette "
 "<https://www.starlette.io/applications/>`_."
+

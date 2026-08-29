@@ -12,6 +12,7 @@ Events
     
     routers
     webhook
+    fastapi_dependencies
     invoice_polling
     check_polling
     filters

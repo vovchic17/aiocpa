@@ -20,6 +20,13 @@ Usage example with `FastAPI web server <https://fastapi.tiangolo.com/tutorial/fi
 
     pip install aiosend[fastapi]
 
+.. note::
+
+    :class:`aiosend.webhook.FastAPIManager` supports FastAPI dependency injection
+    in event handlers using :class:`fastapi.Depends`.
+    
+    See :doc:`FastAPI dependencies <fastapi_dependencies>` for more information.
+
 .. literalinclude:: ../../examples/webhook_fastapi.py
 
 Usage example with `Flask web server <https://flask.palletsprojects.com/en/3.0.x/quickstart/#quickstart>`_
