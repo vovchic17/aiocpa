@@ -4,7 +4,7 @@
 </p>
 
 [![Python](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/main/src/badges/python310_314.json)](https://www.python.org/)
-[![aiosend](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/main/src/badges/aiosend307.json)](https://pypi.org/project/aiosend/)
+[![aiosend](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/main/src/badges/aiosend308.json)](https://pypi.org/project/aiosend/)
 [![Crypto Pay API](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/vovchic17/static/main/src/badges/cryptopayapi1.5.2.json)](https://help.send.tg/en/articles/10279948-crypto-pay-api)
 [![Documentation Status](https://readthedocs.org/projects/aiosend/badge/?version=latest)](https://aiosend.readthedocs.io/en/latest/?badge=latest)
 [![Pydantic v2](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/pydantic/pydantic/main/docs/badge/v2.json)](https://pydantic.dev)
