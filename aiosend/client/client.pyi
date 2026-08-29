@@ -228,8 +228,9 @@ class CryptoPay:
     def _start_check_polling(self) -> NoneType: ...
     def start_polling(
         self,
-        parallel: Callable[[], Any] | None = None,
+        background: Callable[[], Any] | None = None,
     ) -> NoneType: ...
+    def stop_polling(self) -> NoneType: ...
     def get_invoice(
         self,
         invoice: int | Invoice,
